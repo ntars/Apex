@@ -65,7 +65,7 @@ Apex/
     │   ├── firework.js        # 烟花粒子
     │   ├── trail.js           # 指针拖尾
     │   └── bg.js              # 背景粒子与连线
-    └── img/                   # 自研 N+T 词标与 PWA 图标，含 dpet-icon.svg
+    └── img/                   # 自研 N+T 词标与 PWA 图标
 ```
 
 **为什么脚本分六个文件而不是一个**：每个文件只负责一件事，出现问题时可以单独移除。例如不需要拖尾效果时，删除 `trail.js` 的一行引用即可，其余五个文件不受影响。文件之间唯一的硬依赖是 `firework.js` 依赖 `anime.js`，因此加载顺序固定为 `security → app.min → anime → firework → trail → bg`。
@@ -104,7 +104,7 @@ Apex/
 
 `app.min.js` 在 `mousemove` 时算出指针相对卡片的坐标，写进 `--mouse-x` / `--mouse-y`；卡片 `::before` 用 `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), …)` 画出跟随的光晕。指针移出卡片范围时把 `.show` 层透明度归零，防止光晕卡在边缘。整个过程不动 DOM 结构、不引发布局重排。
 
-两张卡片 DOM 完全同构，只有文案、链接与可选图标不同——Ondra 卡在箭头前放一个 40×40 的 `assets/img/dpet-icon.svg`。同构是为了让任一卡片的状态变更不产生版式差异。
+两张卡片 DOM 完全同构，只有文案与链接不同，图标字段为可选能力（`icon: null` 时不渲染 `<img>`）。同构是为了让任一卡片的状态变更不产生版式差异。
 
 卡片外层是 `<a>`，新窗口打开一律带 `rel="noopener noreferrer"`，避免目标页面通过 `window.opener` 反控本页。
 
@@ -191,7 +191,7 @@ JSON-LD 只放组织级 `url`；项目地址由卡片直链承担，与当前项
 
 ### 名称与商标
 
-「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」「玄宠」「NT-Dpet」「玄玖大模型」「NT-Sine」等名称与标识归星玖工作室所有。MIT 与 Apache-2.0 只给代码权利，不给商标权，也不给「暗示获得背书」的权利。文档中出现的第三方名称（GitHub、哔哩哔哩、爱发电、DeepSeek、Qwen 等）归各自权利人，仅用于说明跳转目标或兼容对象。
+「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」「玄玖大模型」「NT-Sine」等名称与标识归星玖工作室所有。MIT 与 Apache-2.0 只给代码权利，不给商标权，也不给「暗示获得背书」的权利。文档中出现的第三方名称（GitHub、哔哩哔哩、爱发电、DeepSeek、Qwen 等）归各自权利人，仅用于说明跳转目标或兼容对象。
 
 ## 许可与再分发
 

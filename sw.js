@@ -2,9 +2,9 @@
  * Service Worker - 离线缓存与加速
  * 解决 GitHub Pages 国内访问慢/无法访问的问题
  * 策略：缓存优先 (Cache First) + 网络回退 + 后台更新 (Stale-While-Revalidate)
- * 版本：v7（项目卡片文案与链接更新为新口径，Xael 卡片改挂官网 x.ntars.cn，必须升版否则回访命中旧缓存）
+ * 版本：v8（移除 Ondra 卡片图标 dpet-icon.svg 及其引用，必须升版否则回访命中旧缓存）
  */
-var CACHE_NAME = 'ntarstudio-v7';
+var CACHE_NAME = 'ntarstudio-v8';
 
 // 核心静态资源预缓存列表
 var urlsToCache = [
@@ -19,7 +19,6 @@ var urlsToCache = [
   './assets/js/trail.js',
   './assets/js/bg.js',
   './assets/img/favicon-color.svg',
-  './assets/img/dpet-icon.svg',
   './assets/img/apple-touch-icon.png',
   './assets/img/icon-192.png',
   './assets/img/icon-512.png',

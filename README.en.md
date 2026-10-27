@@ -65,7 +65,7 @@ Apex/
     │   ├── firework.js        # firework particles
     │   ├── trail.js           # pointer trail
     │   └── bg.js              # background particles and links
-    └── img/                   # in-house N+T mark and PWA icons, including dpet-icon.svg
+    └── img/                   # in-house N+T mark and PWA icons
 ```
 
 **Why six script files instead of one**: each file handles one concern and can be removed independently. When the trail effect is not needed, deleting the single `<script>` reference to `trail.js` leaves the other five unaffected. The only hard dependency between files is `firework.js` on `anime.js`, which fixes the load order at `security → app.min → anime → firework → trail → bg`.
@@ -104,7 +104,7 @@ Typing is Typed.js looping `>_ Remember what is important` and `>_ Forget what i
 
 On `mousemove`, `app.min.js` computes the pointer position relative to the card and writes `--mouse-x` / `--mouse-y`; the card's `::before` draws the glow via `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), …)`. When the pointer leaves the card bounds the `.show` layer's opacity goes to zero so the glow does not linger on the edge. No DOM mutation, no layout thrash.
 
-Both cards share an identical DOM shape; only text, link and optional icon differ — the Ondra card places a 40×40 `assets/img/dpet-icon.svg` before the arrow. The shared shape is what keeps a status change on one card from producing a layout difference.
+Both cards share an identical DOM shape; only text and link differ, and the icon field is optional (no `<img>` is rendered when `icon: null`). The shared shape is what keeps a status change on one card from producing a layout difference.
 
 Cards are `<a>` elements and every new-window link carries `rel="noopener noreferrer"`, so the target page cannot reach back through `window.opener`.
 
@@ -191,7 +191,7 @@ Third-party web fonts · third-party icon libraries · front-end frameworks and 
 
 ### Names and trademarks
 
-「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」「玄宠」「NT-Dpet」「玄玖大模型」「NT-Sine」 and their marks belong to Ntarstudio. MIT and Apache-2.0 grant rights to code only — not to trademarks, and not to imply endorsement. Third-party names appearing in this document (GitHub, bilibili, afdian, DeepSeek, Qwen, …) belong to their respective owners and are used only to describe link targets or compatibility.
+「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」「玄玖大模型」「NT-Sine」 and their marks belong to Ntarstudio. MIT and Apache-2.0 grant rights to code only — not to trademarks, and not to imply endorsement. Third-party names appearing in this document (GitHub, bilibili, afdian, DeepSeek, Qwen, …) belong to their respective owners and are used only to describe link targets or compatibility.
 
 
 ## License and redistribution

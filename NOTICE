@@ -17,7 +17,7 @@ Copyright (c) 2026 星玖工作室 Ntarstudio
 品牌层面的权利不随代码许可一并授予：
 
   · 「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」
-    「玄宠」「NT-Dpet」「玄玖大模型」「NT-Sine」等名称、Logo 与界面设计归 Ntarstudio 所有。
+    「玄玖大模型」「NT-Sine」等名称、Logo 与界面设计归 Ntarstudio 所有。
   · MIT 只授予代码的使用、修改、分发权利，不授予商标使用权，也不授予
     「暗示获得原作者背书」的权利。修改版请更换品牌标识，或明确标注为非官方版本。
 
@@ -77,8 +77,6 @@ MIT 的强制义务是「保留版权声明与许可声明」，请勿删除文�
   · assets/css/base.css 中除 .magical 卡片与基础布局外的全部规则
   · index.html 中的内联脚本（主题初始化、设备彩蛋、联系我们弹窗、PWA 注册）
   · assets/img/ 下全部图标与 PWA 图标（自研 N+T 词标）
-  · assets/img/dpet-icon.svg —— 元鸣 Ondra 卡片图标，取自自有项目 NT-Dpet 的站点图标
-    （本工作室自有素材，同属 Ntarstudio，随本项目一并以 MIT 发布）
   · sw.js / manifest.json
 
 字体与图标：
