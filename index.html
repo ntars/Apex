@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow, noarchive, max-image-preview:large">
+    <meta name="baidu-site-verification" content="codeva-C4tp7NQbk5">
+    <meta name="description" content="星玖工作室（Ntarstudio）官方主页。两个在营项目：玄玖灵犀 Xael（传统术数数字化，纯离线、一套代码多端，产品已上线、官网筹备中）、元鸣 Ondra（桌面端 AI 拟人伴侣，官网 ai.ntars.cn 已上线，软件未发布）。">
+    <meta name="keywords" content="星玖工作室官网,星玖工作室,Ntarstudio,Ntars,玄玖灵犀,Xael,NT-Xhex,元鸣,Ondra,NT-Dpet,NT-Sine,传统文化,术数数字化,AI拟人伴侣,本地大模型,情感陪伴,开源项目,前端开发,微信小程序,PWA,离线应用,传统文化数字化,个人主页,品牌官网">
+    <meta name="author" content="Ntarstudio / Ntars">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; connect-src 'self'; frame-src 'none'; object-src 'none';">
+    <!-- Open Graph / 社交媒体分享预览 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="星玖工作室官网 | Ntarstudio — 玄玖灵犀 Xael · 元鸣 Ondra">
+    <meta property="og:description" content="星玖工作室（Ntarstudio）官方主页。两个在营项目：玄玖灵犀 Xael（产品已上线，官网筹备中）、元鸣 Ondra（官网已上线，软件未发布）。">
+    <meta property="og:url" content="https://www.ntars.cn/">
+    <meta property="og:site_name" content="星玖工作室官网">
+    <meta property="og:locale" content="zh_CN">
+    <link rel="canonical" href="https://www.ntars.cn/">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0E0E13">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="星玖工作室">
+    <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/img/icon-192.png">
+    <title>星玖工作室官网 - Ntarstudio</title>
+    <!-- JSON-LD 结构化数据 (Schema.org Organization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "星玖工作室官网",
+      "alternateName": ["星玖工作室", "Ntarstudio", "Ntars"],
+      "url": "https://www.ntars.cn/",
+      "description": "星玖工作室（Ntarstudio）官方品牌主页。旗下两个在营项目：玄玖灵犀 Xael（传统术数数字化，产品已上线、官网筹备中）、元鸣 Ondra（桌面端 AI 拟人伴侣，官网 ai.ntars.cn 已上线、软件未发布）。",
+      "sameAs": [
+        "https://github.com/ntars",
+        "https://space.bilibili.com/499925438",
+        "https://afdian.com/a/ntars"
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/icon.svg">
+    <link rel="shortcut icon" href="assets/img/icon.svg">
+    <script>
+        (function(){
+            document.documentElement.classList.add('theme-lock');
+            var theme;
+            var mq = window.matchMedia('(prefers-color-scheme: dark)');
+            if (mq.media !== 'not all') {
+                theme = mq.matches ? 'dark' : 'light';
+            } else {
+                var h = new Date().getHours();
+                theme = (h >= 6 && h < 18) ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+            requestAnimationFrame(function(){
+                requestAnimationFrame(function(){
+                    document.documentElement.classList.remove('theme-lock');
+                });
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body>
+
+    <!-- ==================== 烟花粒子背景画布 ==================== -->
+    <canvas class="fireworks"></canvas>
+
+    <!-- ==================== 主内容区 ==================== -->
+    <div class="index">
+
+        <!-- 问候语区域 -->
+        <div class="hello">
+            <div class="title" id="greeting-title">
+                <div class="title-hi">Hi, I'm</div>
+                <span class="title-name">Ntars</span>
+            </div>
+            <div class="hello-desc" id="typed"></div>
+        </div>
+
+        <!-- 内容分割线（虚线） -->
+        <div class="content-divider"></div>
+
+        <!-- 快速链接区域 -->
+        <div class="quickly-link">
+            <div class="main">
+                <div class="title-hi" ondblclick="var h=document.documentElement;var t=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',t);h.style.colorScheme=t;var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E0E13':'#E8EEFA')">星玖工作室出品</div>
+            </div>
+            <div class="projects-spacer"></div>
+
+            <!-- 项目卡片列表：卡片由下方 PROJECTS 配置渲染 -->
+            <div class="link-card">
+                <div class="link-card-list" id="project-cards"></div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 右上角「联系我们」入口（固定文字按钮） ==================== -->
+    <div class="contact-entry" id="contact-card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="contact-modal">联系我们</div>
+
+    <!-- ==================== 联系我们弹窗 ==================== -->
+    <div class="contact-modal" id="contact-modal" hidden>
+        <div class="contact-modal-mask" data-contact-close></div>
+        <div class="contact-modal-panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+            <div class="contact-modal-close" id="contact-modal-close" role="button" tabindex="0" aria-label="关闭">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M12.3 4.76667L11.2333 3.7L8 6.93333L4.76667 3.7L3.7 4.76667L6.93333 8L3.7 11.2333L4.76667 12.3L8 9.06667L11.2333 12.3L12.3 11.2333L9.06667 8L12.3 4.76667Z" fill="currentColor"></path>
+                </svg>
+            </div>
+            <div class="contact-modal-head">
+                <div class="contact-modal-title" id="contact-modal-title">联系我们</div>
+            </div>
+
+            <div class="contact-modal-body">
+                <!-- 官方网站（跳转星玖工作室官网，新窗口打开） -->
+                <div class="contact-group">
+                    <div class="contact-group-title">官方网站</div>
+                    <div class="contact-list">
+                        <a class="contact-item" href="https://www.ntars.cn/" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-item-label">星玖工作室官网</span>
+                            <span class="contact-item-value">www.ntars.cn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 社交平台（可跳转，新窗口打开） -->
+                <div class="contact-group">
+                    <div class="contact-group-title">社交平台</div>
+                    <div class="contact-list">
+                        <a class="contact-item" href="https://github.com/ntars" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-item-label">GitHub 主页</span>
+                            <span class="contact-item-value">github.com/ntars</span>
+                        </a>
+                        <a class="contact-item" href="https://afdian.com/a/ntars" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-item-label">爱发电</span>
+                            <span class="contact-item-value">afdian.com/a/ntars</span>
+                        </a>
+                        <a class="contact-item" href="https://space.bilibili.com/499925438" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-item-label">哔哩哔哩 Bilibili</span>
+                            <span class="contact-item-value">space.bilibili.com/499925438</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 直接联系方式（点击复制到剪贴板，不跳转） -->
+                <div class="contact-group">
+                    <div class="contact-group-title">联系方式</div>
+                    <div class="contact-list">
+                        <div class="contact-item" data-contact-copy="ntarsx@163.com" role="button" tabindex="0" title="点击复制邮箱">
+                            <span class="contact-item-label">邮箱</span>
+                            <span class="contact-item-value">ntarsx@163.com</span>
+                        </div>
+                        <div class="contact-item" data-contact-copy="3933361415" role="button" tabindex="0" title="点击复制 QQ 号">
+                            <span class="contact-item-label">QQ</span>
+                            <span class="contact-item-value">3933361415</span>
+                        </div>
+                        <div class="contact-item" data-contact-copy="Ntarsv" role="button" tabindex="0" title="点击复制微信号">
+                            <span class="contact-item-label">微信</span>
+                            <span class="contact-item-value">Ntarsv</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 页脚区域 ==================== -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-beian">
+                <a class="footer-beian-link" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">蜀ICP备2026027050号</a>
+            </div>
+            <div class="footer-copyright">©2024-2026 Ntarstudio. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- ==================== 底部装饰元素（光效、星星、地球） ==================== -->
+    <div class="widget">
+        <div class="shape-light"></div>
+        <div class="shape-star">
+            <div class="rising-stars rising-stars-visible">
+                <div style="height:1px;width:1px"></div>
+                <div style="height:2px;width:2px"></div>
+                <div style="height:1px;width:1px"></div>
+            </div>
+        </div>
+        <div class="shape-earth"></div>
+    </div>
+
+</body>
+
+<!-- ==================== 内联脚本：项目卡片渲染 / 弹窗 / 设备检测 / 打字效果 ==================== -->
+<script>
+    // ==================== 项目卡片：数据驱动渲染 ====================
+    // 箭头图标只定义一次（内联 SVG，currentColor 着色），卡片由配置数组生成，
+    // DOM 结构与类名和原静态写法完全一致，样式层零改动。
+    (function() {
+        // 状态口径：区分「官网状态」与「产品状态」，未上线的域名不得出现在链接中
+        var PROJECTS = [
+            {
+                title: '玄玖灵犀 Xael',
+                desc: '传统文化与现代科技的智慧连接 · 产品已上线，官网筹备中',
+                href: 'https://github.com/ntars/Xael',
+                icon: null  // 官网上线后挂站点图标
+            },
+            {
+                title: '元鸣 Ondra',
+                desc: '桌面端 AI 拟人伴侣 · 官网已上线',
+                href: 'https://ai.ntars.cn/',
+                icon: { src: 'assets/img/dpet-icon.svg', alt: '元鸣 Ondra 图标' }
+            }
+        ];
+
+        var ARROW_SVG =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">' +
+            '<path d="M10.55 7.58332H1.16663V6.41665H10.55L7.75415 3.62082L8.5791 2.79587L12.1645 6.3813C12.5062 6.72299 12.5062 7.27701 12.1645 7.61873L8.5791 11.2042L7.75415 10.3792L10.55 7.58332Z" fill="currentColor"></path>' +
+            '</svg>';
+
+        var list = document.getElementById('project-cards');
+        if (!list) return;
+
+        PROJECTS.forEach(function(p) {
+            var item = document.createElement('div');
+            item.className = 'magical link-card-item';
+
+            var a = document.createElement('a');
+            a.href = p.href;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+
+            var info = document.createElement('div');
+            info.className = 'info';
+            var t = document.createElement('div');
+            t.className = 'info-title';
+            t.textContent = p.title;
+            var d = document.createElement('div');
+            d.className = 'info-desc';
+            d.textContent = p.desc;
+            info.appendChild(t);
+            info.appendChild(d);
+            a.appendChild(info);
+
+            if (p.icon) {
+                var img = document.createElement('img');
+                img.src = p.icon.src;
+                img.alt = p.icon.alt;
+                img.width = 40;
+                img.height = 40;
+                a.appendChild(img);
+            }
+
+            var arrow = document.createElement('div');
+            arrow.className = 'icon icon-arrow';
+            arrow.innerHTML = ARROW_SVG;
+            a.appendChild(arrow);
+
+            item.appendChild(a);
+            list.appendChild(item);
+        });
+    })();
+
+    // ==================== 联系我们弹窗控制 ====================
+    (function() {
+        var modal = document.getElementById('contact-modal');
+        var card = document.getElementById('contact-card');
+        var closeBtn = document.getElementById('contact-modal-close');
+        var panel = modal ? modal.querySelector('.contact-modal-panel') : null;
+        if (!modal || !card) return;
+
+        var lastFocus = null;
+
+        // 滚动条宽度补偿：锁滚动条时给 body 加等宽 padding，避免内容横向位移（跳动）
+        var scrollBarW = 0;
+        var bodyPaddingRight = '';
+        var bodyOverflow = '';
+
+        function lockScroll() {
+            bodyPaddingRight = document.body.style.paddingRight;
+            bodyOverflow = document.body.style.overflow;
+            scrollBarW = window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.overflow = 'hidden';
+            if (scrollBarW > 0) {
+                document.body.style.paddingRight = scrollBarW + 'px';
+            }
+        }
+
+        function unlockScroll() {
+            document.body.style.overflow = bodyOverflow;
+            document.body.style.paddingRight = bodyPaddingRight;
+        }
+
+        function openModal() {
+            lastFocus = document.activeElement;
+            modal.hidden = false;
+            lockScroll();
+            // 触发过渡动画
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    modal.classList.add('is-open');
+                });
+            });
+            card.classList.add('is-hidden');
+            if (closeBtn) closeBtn.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove('is-open');
+            // 面板动画结束后再收起容器并恢复滚动条，
+            // 避免提前解锁导致滚动条消失、页面横向位移（视觉上"跳动"一下）
+            var target = panel || modal;
+            var finished = false;
+            var finish = function() {
+                if (finished) return;
+                finished = true;
+                target.removeEventListener('transitionend', onEnd);
+                clearTimeout(fallback);
+                modal.hidden = true;
+                unlockScroll();
+                card.classList.remove('is-hidden');
+            };
+            var onEnd = function(e) {
+                // 面板退出只过渡 opacity（transform 不参与过渡），故监听 opacity
+                if (e.target !== target || e.propertyName !== 'opacity') return;
+                finish();
+            };
+            target.addEventListener('transitionend', onEnd);
+            // 兜底：若动画被跳过（如 prefers-reduced-motion），延时后直接收起
+            var fallback = setTimeout(function() {
+                if (!modal.classList.contains('is-open')) finish();
+            }, 500);
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+
+        card.addEventListener('click', openModal);
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+            closeBtn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); closeModal(); }
+            });
+        }
+
+        // 点击遮罩关闭
+        modal.querySelectorAll('[data-contact-close]').forEach(function(el) {
+            el.addEventListener('click', closeModal);
+        });
+
+        // ESC 关闭
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.hidden) closeModal();
+        });
+
+        // 纯文本联系方式（邮箱/QQ/微信）：点击或回车复制到剪贴板，不跳转
+        // 安全模块屏蔽了选中/复制事件，这里用 Clipboard API 手动写入并给出反馈
+        function copyText(text, el) {
+            var v = el.querySelector('.contact-item-value');
+            var feedback = function(ok) {
+                if (!v || v.dataset.copied) return;
+                var original = v.textContent;
+                v.dataset.copied = '1';
+                v.textContent = ok ? '已复制' : '复制失败';
+                setTimeout(function() { v.textContent = original; delete v.dataset.copied; }, 1200);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() { feedback(true); })
+                    .catch(function() { feedback(false); });
+            } else {
+                feedback(false);
+            }
+        }
+
+        modal.querySelectorAll('[data-contact-copy]').forEach(function(el) {
+            var trigger = function() { copyText(el.getAttribute('data-contact-copy'), el); };
+            el.addEventListener('click', trigger);
+            el.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+            });
+        });
+    })();
+
+    // ==================== 设备检测与彩蛋切换功能 ====================
+    (function() {
+        var isPhone = window.innerWidth < 768;
+        var isTablet = window.innerWidth >= 768 && window.innerWidth <= 1180 &&
+                       ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        var isDesktop = !isPhone && !isTablet;
+
+        var greetingTitle = document.getElementById('greeting-title');
+        var titleHi = greetingTitle.querySelector('.title-hi');
+        var titleName = greetingTitle.querySelector('.title-name');
+        var isAnimating = false;
+        var currentMode = isDesktop ? 'studio' : (isTablet ? ((window.innerWidth > window.innerHeight) ? 'studio' : 'person') : 'person');
+
+        function updateGreeting(mode) {
+            if (mode === 'studio') {
+                titleHi.textContent = 'Hi, We\'re';
+                titleName.textContent = 'Ntarstudio';
+            } else {
+                titleHi.textContent = 'Hi, I\'m';
+                titleName.textContent = 'Ntars';
+            }
+        }
+
+        updateGreeting(currentMode);
+
+        function animateSwitch(newMode) {
+            if (isAnimating || newMode === currentMode) return;
+            isAnimating = true;
+            greetingTitle.classList.add('fade-out');
+            greetingTitle.classList.remove('fade-in');
+            setTimeout(function() {
+                currentMode = newMode;
+                updateGreeting(currentMode);
+                greetingTitle.classList.remove('fade-out');
+                greetingTitle.classList.add('fade-in');
+                setTimeout(function() {
+                    greetingTitle.classList.remove('fade-in');
+                    isAnimating = false;
+                }, 300);
+            }, 300);
+        }
+
+        greetingTitle.addEventListener('click', function() {
+            if (isTablet) return;
+            animateSwitch(currentMode === 'studio' ? 'person' : 'studio');
+        });
+
+        function handleResize() {
+            var newPhone = window.innerWidth < 768;
+            var newTablet = window.innerWidth >= 768 && window.innerWidth <= 1180 &&
+                            ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+            var newDesktop = !newPhone && !newTablet;
+
+            if (newTablet && !isTablet) {
+                isPhone = newPhone; isTablet = newTablet; isDesktop = newDesktop;
+                animateSwitch((window.innerWidth > window.innerHeight) ? 'studio' : 'person');
+                return;
+            }
+            if (!newTablet && isTablet) {
+                isPhone = newPhone; isTablet = newTablet; isDesktop = newDesktop;
+                animateSwitch(isDesktop ? 'studio' : 'person');
+                return;
+            }
+
+            if (isTablet) {
+                var newLandscape = window.innerWidth > window.innerHeight;
+                animateSwitch(newLandscape ? 'studio' : 'person');
+            }
+
+            isPhone = newPhone; isTablet = newTablet; isDesktop = newDesktop;
+
+            var themeMeta = document.querySelector('meta[name=theme-color]');
+            if (themeMeta) {
+                var theme = document.documentElement.getAttribute('data-theme');
+                themeMeta.setAttribute('content', theme === 'dark' ? '#0E0E13' : '#E8EEFA');
+            }
+        }
+
+        if (isTablet) {
+            window.addEventListener('resize', handleResize);
+            window.addEventListener('orientationchange', function() {
+                setTimeout(handleResize, 200);
+            });
+        }
+
+        window.addEventListener('resize', function() {
+            var themeMeta = document.querySelector('meta[name=theme-color]');
+            if (themeMeta) {
+                var theme = document.documentElement.getAttribute('data-theme');
+                themeMeta.setAttribute('content', theme === 'dark' ? '#0E0E13' : '#E8EEFA');
+            }
+        });
+    })();
+
+    // ==================== 打字效果（Typed.js） ====================
+    var typedOptions = {
+        strings: [
+            ">_ Remember what is important ^1000",
+            ">_ Forget what is painful ^1000",
+        ],
+        typeSpeed: 50,
+        backSpeed: 20,
+        startDelay: 300,
+        loop: true,
+        showCursor: false,
+    };
+    var typed = new Typed('#typed', typedOptions);
+</script>
+
+<!-- ==================== 脚本加载（按依赖顺序） ==================== -->
+
+<!-- 1. 安全防护模块（最高优先级，最先加载） -->
+<script src="assets/js/security.js"></script>
+
+<!-- 2. 应用核心逻辑（卡片光效 hover 等） -->
+<script src="assets/js/app.min.js"></script>
+
+<!-- 3. 动画引擎库（anime.js，烟花效果依赖） -->
+<script src="assets/js/anime.js"></script>
+
+<!-- 4. 鼠标/触摸烟花粒子效果 -->
+<script src="assets/js/firework.js"></script>
+
+<!-- 5. 鼠标拖尾效果（主题适配 + 触摸支持） -->
+<script src="assets/js/trail.js"></script>
+
+<!-- 6. 背景交互粒子（鼠标排斥 + 触摸支持） -->
+<script src="assets/js/bg.js"></script>
+
+<!-- ==================== PWA / Service Worker 注册 ==================== -->
+<script>
+    // 注册 Service Worker 实现离线缓存加速
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function (reg) {
+                    console.log('[PWA] Service Worker registered:', reg.scope);
+                    // 监听 SW 更新
+                    reg.addEventListener('updatefound', function () {
+                        var newWorker = reg.installing;
+                        if (!newWorker) return;
+                        newWorker.addEventListener('statechange', function () {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                console.log('[PWA] New version available, please refresh.');
+                            }
+                        });
+                    });
+                })
+                .catch(function (err) {
+                    console.log('[PWA] Service Worker registration failed:', err);
+                });
+        });
+    }
+
+    // ==================== PWA 安装提示（beforeinstallprompt） ====================
+    // 监听浏览器原生 PWA 安装事件，允许用户将网页安装为桌面/主屏幕应用
+    var deferredPrompt;
+    window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        // Android Chrome / 部分桌面浏览器支持安装横幅
+        // 此处预留自定义安装按钮逻辑，默认依赖浏览器原生 UI
+        console.log('[PWA] Install prompt available');
+    });
+
+    // 检测是否已以 PWA 模式运行
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        console.log('[PWA] Running in standalone mode');
+    }
+</script>
+
+</html>
