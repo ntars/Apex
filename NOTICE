@@ -1,4 +1,4 @@
-NT-Studio（星玖工作室 Ntarstudio 官网主页）
+Apex（星玖工作室 Ntarstudio 官网主页）
 Copyright (c) 2026 星玖工作室 Ntarstudio
 
 本文件是本仓库的版权与第三方组件声明。它回答三个问题：本项目自身归谁、用了别人的什么、
@@ -11,7 +11,7 @@ Copyright (c) 2026 星玖工作室 Ntarstudio
 本仓库自研代码（页面实现、样式、脚本及后续所有改动）以 MIT 协议开源，全文见 LICENSE。
 
   版权所有：Copyright (c) 2026 星玖工作室 Ntarstudio
-  项目地址：https://github.com/ntars/NT-Studio
+  项目地址：https://github.com/ntars/Apex
   线上地址：https://www.ntars.cn/
 
 品牌层面的权利不随代码许可一并授予：
@@ -31,7 +31,7 @@ Copyright (c) 2026 星玖工作室 Ntarstudio
   asorn/asorn-open —— 个人博客开源版
   https://github.com/asorn/asorn-open
   许可：Apache License 2.0（全文见 LICENSE-Apache-2.0.txt）
-  说明：NT-Studio 在其基础上修改、扩展并重新设计了界面与结构，属修改后的衍生作品。
+  说明：Apex 在其基础上修改、扩展并重新设计了界面与结构，属修改后的衍生作品。
         当前页面实际加载的样式为 assets/css/base.css；该文件中的 .magical 卡片光晕、
         布局断点等规则源自上游，其余视觉层（联系我们弹窗、双主题令牌、页脚、
         响应式细节）为本项目新增或重写。
@@ -105,8 +105,8 @@ MIT 的强制义务是「保留版权声明与许可声明」，请勿删除文�
 
 页面通过外链指向以下自有站点，内容与许可由各站点自行声明：
 
-  · https://github.com/ntars/Xael   玄玖灵犀 Xael（NT-Xhex，代码 AGPL-3.0；产品已上线，官网筹备中）
-  · https://ai.ntars.cn/            元鸣 Ondra（官网已上线；桌面端软件 NT-Dpet 未发布，代码 AGPL-3.0-or-later）
+  · https://x.ntars.cn/             玄玖灵犀 Xael（本地离线的术数文献库，微信小程序与公众号同名；代码 AGPL-3.0，产品已上线）
+  · https://ai.ntars.cn/            元鸣 Ondra（可一键部署、高度自定义的 AI 陪伴体；代码 AGPL-3.0-or-later，产品内测中）
 
 注意：三个子项目与本官网是**相互独立的仓库与许可**。官网仅提供链接，不包含其源代码，
 因此官网的 MIT 许可不会传染到子项目，子项目的 AGPL-3.0 也不会约束官网。

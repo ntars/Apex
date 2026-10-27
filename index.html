@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="index, follow, noarchive, max-image-preview:large">
     <meta name="baidu-site-verification" content="codeva-C4tp7NQbk5">
-    <meta name="description" content="星玖工作室（Ntarstudio）官方主页。两个在营项目：玄玖灵犀 Xael（传统术数数字化，纯离线、一套代码多端，产品已上线、官网筹备中）、元鸣 Ondra（桌面端 AI 拟人伴侣，官网 ai.ntars.cn 已上线，软件未发布）。">
+    <meta name="description" content="星玖工作室（Ntarstudio）官方主页。两个开源项目：玄玖灵犀 Xael（本地离线的术数文献库，微信小程序与公众号同名，产品已上线）、元鸣 Ondra（可一键部署、高度自定义的 AI 陪伴体，产品内测中）。">
     <meta name="keywords" content="星玖工作室官网,星玖工作室,Ntarstudio,Ntars,玄玖灵犀,Xael,NT-Xhex,元鸣,Ondra,NT-Dpet,NT-Sine,传统文化,术数数字化,AI拟人伴侣,本地大模型,情感陪伴,开源项目,前端开发,微信小程序,PWA,离线应用,传统文化数字化,个人主页,品牌官网">
     <meta name="author" content="Ntarstudio / Ntars">
     <meta name="referrer" content="no-referrer">
@@ -16,7 +16,7 @@
     <!-- Open Graph / 社交媒体分享预览 -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="星玖工作室官网 | Ntarstudio — 玄玖灵犀 Xael · 元鸣 Ondra">
-    <meta property="og:description" content="星玖工作室（Ntarstudio）官方主页。两个在营项目：玄玖灵犀 Xael（产品已上线，官网筹备中）、元鸣 Ondra（官网已上线，软件未发布）。">
+    <meta property="og:description" content="星玖工作室（Ntarstudio）官方主页。两个开源项目：玄玖灵犀 Xael（产品已上线）、元鸣 Ondra（产品内测中）。">
     <meta property="og:url" content="https://www.ntars.cn/">
     <meta property="og:site_name" content="星玖工作室官网">
     <meta property="og:locale" content="zh_CN">
@@ -38,7 +38,7 @@
       "name": "星玖工作室官网",
       "alternateName": ["星玖工作室", "Ntarstudio", "Ntars"],
       "url": "https://www.ntars.cn/",
-      "description": "星玖工作室（Ntarstudio）官方品牌主页。旗下两个在营项目：玄玖灵犀 Xael（传统术数数字化，产品已上线、官网筹备中）、元鸣 Ondra（桌面端 AI 拟人伴侣，官网 ai.ntars.cn 已上线、软件未发布）。",
+      "description": "星玖工作室（Ntarstudio）官方品牌主页。旗下两个开源项目：玄玖灵犀 Xael（本地离线的术数文献库，微信小程序与公众号同名，产品已上线）、元鸣 Ondra（可一键部署、高度自定义的 AI 陪伴体，产品内测中）。",
       "sameAs": [
         "https://github.com/ntars",
         "https://space.bilibili.com/499925438",
@@ -209,17 +209,17 @@
     // 箭头图标只定义一次（内联 SVG，currentColor 着色），卡片由配置数组生成，
     // DOM 结构与类名和原静态写法完全一致，样式层零改动。
     (function() {
-        // 状态口径：区分「官网状态」与「产品状态」，未上线的域名不得出现在链接中
+        // 状态口径：以项目现状描述为准，未上线内容不出现在链接与文案中
         var PROJECTS = [
             {
                 title: '玄玖灵犀 Xael',
-                desc: '传统文化与现代科技的智慧连接 · 产品已上线，官网筹备中',
-                href: 'https://github.com/ntars/Xael',
-                icon: null  // 官网上线后挂站点图标
+                desc: '本地离线的术数文献库，微信小程序与公众号同名 · 产品已上线',
+                href: 'https://x.ntars.cn/',
+                icon: null  // 官网图标备好后挂载
             },
             {
                 title: '元鸣 Ondra',
-                desc: '桌面端 AI 拟人伴侣 · 官网已上线',
+                desc: '可一键部署、高度自定义的 AI 陪伴体 · 产品内测中',
                 href: 'https://ai.ntars.cn/',
                 icon: { src: 'assets/img/dpet-icon.svg', alt: '元鸣 Ondra 图标' }
             }

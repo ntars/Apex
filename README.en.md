@@ -1,376 +1,246 @@
-# Ntarstudio Official Site — NT-Studio
+[简体中文](README.md) | **English**
 
-**English** | [简体中文](README.md)
+# Apex
 
-The official brand homepage of Ntarstudio (星玖工作室), which also serves as the unified entry point to three in-house projects. The site is a single-page static application: it depends on no front-end framework, has no build pipeline and no back-end service, and renders all of its content locally in the browser.
+The official site and project gateway of Ntarstudio (星玖工作室), codenamed Apex. One HTML file, one stylesheet, a handful of plain scripts — no framework, no build step, no backend.
 
-| Item | Content |
-| --- | --- |
-| Full project name | Ntarstudio Official Site |
-| Project code | NT-Studio |
-| Live URL | https://www.ntars.cn/ |
-| Source repository | https://github.com/ntars/NT-Studio |
-| Site form | Single-page static site (SPA-lite) · installable PWA |
-| Page footprint | 1 HTML file · 1 main stylesheet · 6 page scripts · 1 Service Worker |
-| License of first-party code | MIT |
-| License of derived portions | Apache License 2.0 |
-| ICP filing number | 蜀ICP备2026027050号 |
-| Copyright | Copyright (c) 2024–2026 Ntarstudio |
+| | |
+|---|---|
+| Code name | Apex |
+| Live | <https://www.ntars.cn/> |
+| Repository | <https://github.com/ntars/Apex> |
+| Form | Single-page static site, installable as a PWA |
+| Footprint | `index.html` + `assets/css/base.css` + 5 in-house scripts + 1 third-party animation library + `sw.js` |
+| License | MIT for original code, Apache-2.0 for derived parts |
+| ICP filing | 蜀ICP备2026027050号 |
+| Copyright | Copyright (c) 2024–2026 星玖工作室 Ntarstudio |
 
----
+## What this site is for
 
-## 1. Project Description
+A visitor should immediately obtain three answers upon landing: who this is, what they build, and where to look.
 
-### 1.1 Positioning
+So the site has exactly three jobs: **establish brand identity** (tie the three names — 星玖工作室, Ntarstudio, Ntars — together in the first screen), **route to the open-source projects** (two cards straight to the real destinations), and **state facts accurately** (nothing unreleased or retired appears in the page, its keywords or its structured data).
 
-This project is Ntarstudio's brand frontage and project distribution entry point, and it addresses three concerns:
+Its non-goals are as explicit: no accounts, no forms, no cookies, no analytics, no ads, no backend API. Everything is hard-coded in `index.html`; changing a sentence is one commit, with no CMS in between.
 
-1. **Brand recognition**: establish the correspondence among the three name forms—Ntarstudio (星玖工作室), Ntarstudio and Ntars—on the first screen;
-2. **Project navigation**: direct visitors to the official addresses of the three operating projects and state each project's launch status truthfully;
-3. **Information accuracy**: nothing offline or not yet launched appears in the page or in its metadata, so no dead links are produced and no misleading information is created.
+## Projects and how status is stated
 
-The site uses no CMS and integrates no comments, analytics, advertising or any third-party script (except Typed.js, see Chapter 4). All copy and links are maintained directly in `index.html`, and changes take effect immediately.
+| Project | What it is | Status | Where |
+|---|---|---|---|
+| **玄玖灵犀 Xael** | A local, offline library of traditional divination literature, with a same-named WeChat mini program and official account | Product live | [x.ntars.cn](https://x.ntars.cn/) |
+| **元鸣 Ondra** | A one-click deployable, highly customizable AI companion | Product in closed beta | [ai.ntars.cn](https://ai.ntars.cn/) |
 
-### 1.2 Scope Boundaries
+One rule governs every status label: **site status and product status are stated separately**. They are not equivalent — a running website does not mean an installable app, and a running app does not mean a reachable website.
 
-**This project is responsible for**: brand presentation, project navigation, aggregation of contact information, PWA installability, and structured descriptions for search engines.
+- Xael: the product is live; the same-named WeChat mini program and official account are findable, with the official site `x.ntars.cn` as the single entry point;
+- Ondra: the product is in closed beta; the official site `ai.ntars.cn` hosts the introduction and beta access, and the beta status is never folded into "live".
 
-**This project is not responsible for**:
+The status wording follows the up-to-date project descriptions above; the cards and metadata share this same framing, and any unreleased domain stays out of every metadata field.
 
-- hosting any concrete functionality of the sub-projects, each of which has its own domain, its own repository and its own license;
-- collecting user data: there is no account system, no form submission and no cookie writing;
-- providing a content management back end; page updates are made through Git commits.
+## Page structure and code layout
 
-### 1.3 The Operating Projects
-
-| Project | Positioning | Form | Status | Official address | Code license |
-| --- | --- | --- | --- | --- | --- |
-| **Xael (玄玖灵犀, NT-Xhex)** | Tool for compiling, textually collating and digitally computing traditional Chinese shushu literature | WeChat Mini Program (primary) · browser PWA · uni-app multi-platform · AI / CLI invocation | Product live (v4.3.0), official site in preparation | [github.com/ntars/Xael](https://github.com/ntars/Xael) (switches to the official site once `x.ntars.cn` goes live) | AGPL-3.0 |
-| **Ondra (元鸣)** | Desktop AI anthropomorphic companion (personality, memory, emotion, voice and appearance; stack includes the NT-Dpet distribution and the NT-Sine local model) | Electron desktop · local deployment (Apple Silicon / MLX) | Official site live (`ai.ntars.cn`), software unreleased | [ai.ntars.cn](https://ai.ntars.cn/) | AGPL-3.0-or-later / AGPL-3.0 |
-
-The status labels of both projects follow the same principle: **distinguish "site status" from "product status"**.
-
-- Xael (NT-Xhex): the product itself (v4.3.0, `version.json` as the single version source of truth) is live on its platforms; its official site `x.ntars.cn` had no DNS A record as of 2026-10-27 and does not resolve publicly, so the card carries no site link and the status is stated as "product live, official site in preparation"; the card will switch to the site address once it goes live.
-- Ondra: the official site `ai.ntars.cn` (the NT-Sine site) resolves and is deployed and reachable, and the card says "official site live"; the desktop software itself (NT-Dpet, currently 0.3.0 S0) is unreleased and has no installable artifact, stated separately from the site status so that visitors do not mistake the existence of a site for a usable product.
-
-### 1.4 Discontinued Projects
-
-The following projects are no longer operating and their domains no longer resolve; they have been removed from the page body and from all metadata. They are recorded here to explain the difference between historical information and the current position:
-
-| Former project | Former domain | Current status | Handling |
-| --- | --- | --- | --- |
-| NT-Know (玄玖知识库) | `k.ntars.cn` | Offline, no DNS A record | Card, meta, keywords, JSON-LD all removed |
-| NT-List (玄玖测试库) | `q.ntars.cn` | Offline, no DNS A record | Card, meta, keywords, JSON-LD all removed |
-
-If these names appear on other pages, in search-engine snapshots or in older screenshots, that information is outdated; this page and the three official project addresses are authoritative.
-
----
-
-## 2. Site Structure
-
-### 2.1 Page Composition
-
-From top to bottom the page consists of five blocks, all static, with no routing:
-
-| Block | Content | Interaction |
-| --- | --- | --- |
-| Greeting | "Hi, I'm Ntars" / "Hi, We're Ntarstudio" plus looping typewriter copy | Clicking the name switches between personal and studio mode; double-clicking "A Ntarstudio Production" switches the theme |
-| Divider | A horizontal dashed line that visually separates the brand area from the project area | None |
-| Projects | The heading "A Ntarstudio Production" plus three project cards | The hover glow follows the pointer; clicking opens a new window |
-| Contact us | A fixed text entry point in the top-right corner plus a modal dialog | Opens on click/Enter; closes via the overlay, the close button or `Esc` |
-| Footer | ICP filing number plus copyright line | The filing number links to the MIIT filing system |
-
-Overlays: a full-screen `canvas` firework particle layer, fixed-position bottom decorations (glow, rising stars, earth circle) and a background dot matrix.
-
-### 2.2 Directory Structure
+Five blocks top to bottom: greeting, divider, projects, the fixed contact entry at top right, footer. Plus four persistent layers (firework canvas, trail canvas, background particle canvas, bottom decoration). No router, no virtual DOM, native scrolling.
 
 ```
-NT-Studio/
-├── index.html                            # Page structure, metadata, inline logic (theme init, device detection, modal, PWA registration)
-├── manifest.json                         # PWA manifest: name, icons, launch mode, theme color
-├── sw.js                                 # Service Worker: precache, cache-first, background update, stale-cache cleanup
-├── README.md                             # This document
-├── LICENSE                               # Full MIT license text (first-party code)
-├── LICENSE-Apache-2.0.txt                # Full Apache-2.0 license text (portions derived from asorn/asorn-open)
-├── NOTICE                                # Copyright and third-party component notices (legal document)
-├── 开源方案扫描.md                        # Open-source component survey across the three projects (adopt now / evaluate / unavailable)
-├── baidu_verify_codeva-C4tp7NQbk5.html   # Baidu Search Resource Platform site verification file
-├── tencent-cloud-config.yml              # Supplementary config for Tencent Cloud COS deployment (not used by this project)
+Apex/
+├── index.html                 # structure + metadata + four inline scripts
+├── manifest.json              # PWA manifest
+├── sw.js                      # Service Worker: pre-cache, cache-first, background refresh, old-cache cleanup
+├── LICENSE                    # MIT text
+├── LICENSE-Apache-2.0.txt     # Apache-2.0 text (the asorn-derived part)
+├── NOTICE                     # copyright and third-party notices
+├── 开源方案扫描.md             # open-source survey across the three projects
+├── baidu_verify_codeva-C4tp7NQbk5.html   # Baidu site verification
+├── tencent-cloud-config.yml   # Tencent Cloud hosting reference config (currently unused)
+├── README.md / README.en.md
 └── assets/
     ├── css/
-    │   ├── base.css                      # The only stylesheet loaded by the page
-    │   ├── base.scss                     # Legacy stylesheet source from the base period, not referenced
-    │   └── base.min.css                  # Legacy minified artifact, not referenced
+    │   ├── base.css           # the only stylesheet loaded
+    │   ├── base.scss          # source matching base.css
+    │   └── base.min.css       # minified base.css
     ├── js/
-    │   ├── security.js                   # Security: blocks selection, copying, context menu and shortcuts; tamper monitoring
-    │   ├── app.min.js                    # Card glow: writes pointer coordinates into CSS variables
-    │   ├── anime.js                      # anime.js v2.0.2 (third-party, MIT)
-    │   ├── firework.js                   # Firework particles: triggered by click/touch
-    │   ├── trail.js                      # Pointer trail: pointer movement spawns gradient particles
-    │   └── bg.js                         # Background particles: floating nodes and links, repelled by the pointer
-    └── img/
-        ├── icon.svg                      # Primary icon (SVG, preferred favicon)
-        ├── favicon-color.svg             # Color site icon
-        ├── apple-touch-icon.png          # iOS home-screen icon 180×180
-        ├── icon-192.png                  # PWA icon 192×192
-        └── icon-512.png                  # PWA icon 512×512
+    │   ├── security.js        # blocks selection/copy/context menu/shortcuts, tamper monitoring
+    │   ├── app.min.js         # card glow: pointer coordinates → CSS variables
+    │   ├── anime.js           # anime.js v2.0.2 (third-party, MIT, unmodified)
+    │   ├── firework.js        # firework particles
+    │   ├── trail.js           # pointer trail
+    │   └── bg.js              # background particles and links
+    └── img/                   # in-house N+T mark and PWA icons, including dpet-icon.svg
 ```
 
-On `base.scss` and `base.min.css`: both derive from the asorn/asorn-open base period and are out of sync with the current styles (`base.scss` still contains modules such as about and blog that this site does not use). They take no part in any build and are referenced by no page; they are kept because files carrying traces of an upstream source should not be deleted at will. Once there is no need to trace them, they can be removed together in a separate commit.
+**Why six script files instead of one**: each file handles one concern and can be removed independently. When the trail effect is not needed, deleting the single `<script>` reference to `trail.js` leaves the other five unaffected. The only hard dependency between files is `firework.js` on `anime.js`, which fixes the load order at `security → app.min → anime → firework → trail → bg`.
 
-### 2.3 Build and Run
+**Why the cards are configuration-driven**: card content lives in a `PROJECTS` array inside `index.html` (title, description, link, optional icon), and the arrow SVG is defined once. Changing a project's status is one data line instead of a block of HTML — which is what prevents "updated the card, forgot the metadata" and "the two cards drifted apart in structure", both of which have happened here before.
 
-This project has no build step, no package-manager dependencies and no compiled artifacts. `index.html` is the final artifact and can be served directly by a static server. Style changes are made by editing `assets/css/base.css` directly.
+## Implementation notes
 
----
+### Theme: follow the system, allow manual override, forget it on reload
 
-## 3. Features and Implementation Details
+An inline script in `<head>` reads `prefers-color-scheme`; when the media query is unavailable it falls back to local time (light 6:00–18:00, dark otherwise) and writes the result to `<html data-theme>` plus `color-scheme`. Double-clicking the "星玖工作室出品" heading flips it manually and syncs `<meta name="theme-color">` so the mobile address bar matches.
 
-### 3.1 Theme System
+The manual choice is deliberately not persisted in localStorage. Following the system is the default experience; storing a switch would add one more piece of state to explain. Reload returns to the system preference.
 
-**Resolution order** (executed synchronously by an inline script inside `<head>`, before the stylesheet loads):
+**No first-frame flash**: the script adds `theme-lock` to `<html>`, which suppresses every transition, and only removes it after two consecutive `requestAnimationFrame` callbacks. Without those two frames the browser paints once in its default colours and then jumps — a white flash on a dark system.
 
-1. Read `window.matchMedia('(prefers-color-scheme: dark)')`. If the media query is usable (`media !== 'not all'`), take the system preference;
-2. If it is not usable, fall back to local time: 6:00–18:00 is light, all other hours are dark;
-3. Write the result into `<html data-theme>` and also set `color-scheme`, so that form controls and scrollbars follow the theme.
+All colours live in two custom-property blocks (`:root` and `[data-theme="dark"]`); no hard-coded colour values in the page. New elements pick up both themes by referencing variables. Transitions are handled by one 0.5s rule under `html:not(.theme-lock)`.
 
-**First-frame flash prevention**: the script first adds a `theme-lock` class to `<html>`, and the stylesheet suppresses transitions while that class is present; after the theme is written, the class is removed on two consecutive `requestAnimationFrame` frames. The purpose is to avoid the white flash caused by the browser painting the first frame in the default color and then switching instantly.
+### Greeting: three device classes, two voices
 
-**Manual toggle**: double-clicking the "A Ntarstudio Production" heading flips `data-theme` and updates `<meta name="theme-color">` in step, so that the address-bar color matches on mobile browsers. The manual choice is not written to local storage and is re-evaluated against the system preference after a reload—this is deliberate: the site treats "follow the system" as the default experience and introduces no extra state persistence.
+| Device | Rule | Shows |
+|---|---|---|
+| Phone | viewport < 768px | Hi, I'm **Ntars** |
+| Tablet | 768–1180px with touch | studio mode in landscape, personal mode in portrait |
+| Desktop | everything else | Hi, We're **Ntarstudio** |
 
-**Transition**: theme changes cross-fade over 0.5s through CSS custom properties, covering the background, cards, gradient text, glow, trail, fireworks and bottom stars.
+Tablet detection additionally requires `ontouchstart in window` or `navigator.maxTouchPoints > 0`, otherwise a wide desktop window would be misread. On tablets the mode is decided by orientation, driven by `resize` and `orientationchange` (the latter delayed 200ms to let the rotation finish), so tap-to-toggle is disabled there — a manual state would fight the orientation state.
 
-**Color tokens**: all colors are centralized in two sets of custom properties, `:root` and `[data-theme="dark"]`, covering the background (light `#E8EEFA` / dark `#0E0E13`), cards, primary text, secondary text, accent (light `#4A6CF7` / dark `#6361DC`), card glow, border gradients, dot matrix and footer colors. No hard-coded color values exist in the page, so a new element needs only to reference the variables to adapt to both themes automatically.
+Switching runs `fade-out` (300ms), swaps the text, then `fade-in` (300ms), with an `isAnimating` flag blocking rapid taps.
 
-### 3.2 Device Adaptation and Greeting
+Typing is Typed.js looping `>_ Remember what is important` and `>_ Forget what is painful`, with `typeSpeed: 50`, `backSpeed: 20`, `startDelay: 300`, `loop: true`, `showCursor: false`. Hiding the cursor is a deliberate choice: particles and a trail are already in motion, and an additional blinking cursor would break the overall calm.
 
-**Thresholds**:
+### Project cards: a glow that follows the pointer
 
-| Device type | Condition | Displayed copy |
-| --- | --- | --- |
-| Phone | Viewport width < 768px | Hi, I'm **Ntars** (personal mode) |
-| Tablet | 768px ≤ viewport width ≤ 1180px and touch capability present | Studio mode in landscape, personal mode in portrait |
-| Desktop | Everything else | Hi, We're **Ntarstudio** (studio mode) |
+`.link-card-list` uses `grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))` with a 16px gap, capped at 968px and centred. Two columns on desktop, one on narrow screens, no media query needed.
 
-Tablet detection additionally requires `ontouchstart in window` or `navigator.maxTouchPoints > 0`, so that a desktop browser in a large window is not misclassified as a tablet. On tablets the page listens to `resize` and `orientationchange` (the latter is handled after a 200ms delay, waiting for the system to finish rotating) and switches mode automatically on rotation; because the mode is already determined by orientation, click-to-toggle is disabled on tablets, so that a manual state cannot overwrite the orientation decision.
+On `mousemove`, `app.min.js` computes the pointer position relative to the card and writes `--mouse-x` / `--mouse-y`; the card's `::before` draws the glow via `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), …)`. When the pointer leaves the card bounds the `.show` layer's opacity goes to zero so the glow does not linger on the edge. No DOM mutation, no layout thrash.
 
-**Toggle animation**: `fade-out` is added first (300ms), the copy is replaced when the animation ends, then `fade-in` is added (300ms); during this an `isAnimating` flag prevents rapid clicks from corrupting the state.
+Both cards share an identical DOM shape; only text, link and optional icon differ — the Ondra card places a 40×40 `assets/img/dpet-icon.svg` before the arrow. The shared shape is what keeps a status change on one card from producing a layout difference.
 
-**Typewriter effect**: driven by Typed.js, looping two lines of copy, `>_ Remember what is important` and `>_ Forget what is painful`, with the parameters `typeSpeed: 50`, `backSpeed: 20`, `startDelay: 300`, `loop: true`, `showCursor: false`. Turning the cursor off is deliberate: the page already has background particles and a pointer trail, and a blinking cursor on top of them would break the overall sense of calm.
+Cards are `<a>` elements and every new-window link carries `rel="noopener noreferrer"`, so the target page cannot reach back through `window.opener`.
 
-### 3.3 Project Cards
+### Contact modal: two scrolling pitfalls
 
-**Layout**: `.link-card-list` uses `grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))` with a 16px gap and a maximum width of 968px, centered on the page. The two cards form two equal columns on desktop and drop automatically to one column on narrow screens, with no extra media queries.
+The entry is a fixed text button `#contact-card` at the top right (`role="button"`, `tabindex="0"`, `aria-haspopup="dialog"`, `aria-controls`) that responds to clicks and keys. It closes three equivalent ways: the overlay, the close button, `Esc`.
 
-**Glow interaction**: on `mousemove`, `app.min.js` reads the pointer coordinates relative to the card and writes them into the two CSS variables `--mouse-x` / `--mouse-y`; the card's `::before` draws the follow glow with `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), ...)`, and the `.show` layer draws the hover fill. When the pointer leaves the card area, the opacity of `.show` is set to 0, so that no glow lingers at the card edges. This implementation adds no extra DOM structure and triggers no layout reflow.
+**Pitfall one — the page shifts when the scrollbar disappears.** On open it measures `window.innerWidth - document.documentElement.clientWidth`, adds that width to `body` as `padding-right`, then sets `overflow: hidden`. Without the compensation, the content behind shifts sideways as the scrollbar vanishes.
 
-**Structural consistency**: the two cards use the same DOM structure and arrow icon (inline SVG, colored with `currentColor`); only the copy, links and an optional icon differ — the Ondra card places a 40×40 project icon `assets/img/dpet-icon.svg` (taken from the in-house NT-Dpet site icon, natively supported by the `.link-card-item img` rule) before the arrow. The purpose is to ensure that a status change on any one card cannot cause a layout difference.
+**Pitfall two — the exit animation pulls the panel toward its transform origin.** Closing does not unlock scrolling immediately; it waits for the panel's `opacity` transition to finish (`transitionend`, with a 500ms timer as a fallback for `prefers-reduced-motion`), then hides the container and restores scrolling. The exit transitions `opacity` only, never `transform`, otherwise the panel would travel toward its transform origin.
 
-**Accessibility**: the outer element of each card is an `<a>`; when opening in a new window it always carries `rel="noopener noreferrer"`, preventing the target page from controlling this page back through `window.opener`.
+Content sits in two groups: social platforms (GitHub, afdian, bilibili) as outbound links, and contact details (email, QQ, WeChat) as plain text that copy on click. Copying bypasses the event layer and calls `navigator.clipboard.writeText()` directly, because `security.js` globally blocks `selectstart` and `copy`. Success shows "已复制", failure shows "复制失败", the original text returns after 1.2s, and a `data-copied` marker keeps repeated clicks from stacking timers.
 
-### 3.4 Contact Modal
+### Visual effects and the security layer
 
-**Entry point**: the fixed text button `#contact-card` in the top-right corner, with `position: fixed`, `role="button"`, `tabindex="0"`, `aria-haspopup="dialog"` and `aria-controls`; it responds to mouse clicks and to the keyboard `Enter` / `Space`.
+| Effect | File | Trigger | Theme-aware |
+|---|---|---|---|
+| Fireworks | `firework.js` | click / touch | particle colours follow `data-theme` |
+| Trail | `trail.js` | pointer movement | dark trail on light, light trail on dark |
+| Background particles | `bg.js` | always, repelled by pointer | node and link colours follow the theme |
+| Card glow | `app.min.js` | card hover | `--magical-glow` |
+| Bottom decoration | `base.css` | always | glow + three drifting star layers + earth disc |
 
-**Closing**: clicking the overlay, clicking the close button at the top-right of the panel, or pressing `Esc`—the three are equivalent.
+`security.js` blocks selection, copy, cut, the context menu, dragging, F12 and the view-source shortcuts, hides link URLs on hover, reloads when `body` is emptied, and prints a notice when DevTools is detected.
 
-**Scroll lock and offset compensation**: on open, the scrollbar width is computed as `window.innerWidth - document.documentElement.clientWidth` and applied to `body` as an equal `padding-right`, before `overflow: hidden` is set. Without this compensation, the disappearing scrollbar would shift the whole page to the right and cause a horizontal jump.
+This needs saying plainly: **these measures only raise the bar for casual copying; they protect nothing.** Front-end code is always visible to the visitor and no script changes that. Do not put anything confidential in the front end.
 
-**Close sequence**: closing does not unlock scrolling immediately; it waits for the panel's `opacity` transition to end (listening to `transitionend`, with a 500ms timer as a fallback that covers the case where `prefers-reduced-motion` skips animations), then hides the container and restores scrolling. The exit animation transitions only `opacity` and does not involve `transform`; otherwise the panel would move toward its transform origin and look as if it were being "sucked" into the corner.
+The page declares its allowlist via `<meta http-equiv="Content-Security-Policy">`: `default-src` / `script-src` limited to `'self'`, inline scripts and `https://unpkg.com`; `img-src` to `'self'` and `data:`; `frame-src` / `object-src` to `'none'`; `connect-src` to `'self'` (the page makes no outbound API calls). It also sets `nosniff`, `X-Frame-Options: DENY` and `referrer: no-referrer`.
 
-**Content grouping**: the social platforms (GitHub, Afdian, Bilibili) are external links that open in a new window; the contact details (email, QQ, WeChat) are plain text that copy to the clipboard on click.
+### PWA and cache discipline
 
-**Clipboard implementation**: `security.js` intercepts `selectstart` and `copy` globally, and the plain-text items cannot be reached through an `<a>`; the copy feature therefore bypasses the event layer and writes directly with `navigator.clipboard.writeText()`. On success it shows "Copied", on failure "Copy failed", and it restores the original copy after 1.2s; during that feedback window the same item is de-duplicated through a `data-copied` marker, which prevents repeated clicks from stacking timers.
+`manifest.json` declares `display: standalone`, `display_override: ["standalone", "minimal-ui"]`, `orientation: portrait-primary`, `lang: zh-CN`, categories `lifestyle` / `utilities`, with 192, 512 and SVG icons.
 
-**Accessibility**: the panel is `role="dialog"` with `aria-modal="true"` and an `aria-labelledby` pointing at the heading; on open, focus moves to the close button, and on close it returns to the element that triggered the dialog; every interactive item supports keyboard operation.
+`sw.js` runs cache-first with background refresh: a cache hit returns immediately while the network response is fetched and written back; a miss goes to the network; a failed navigation falls back to `index.html`, other assets return 503. `install` calls `skipWaiting()`, `activate` deletes non-current caches and calls `clients.claim()`.
 
-### 3.5 Visual Effects
+**`CACHE_NAME` is currently `ntarstudio-v6`.** Change any pre-cached asset — including the CDN-loaded Typed.js — and the version must be bumped, or returning visitors stay pinned to the old cache. This is the easiest step to forget and the most visible when skipped.
 
-| Effect | File | Trigger | Theme adaptation |
-| --- | --- | --- | --- |
-| Firework particles | `firework.js` | Click / touch | Reads CSS variables to determine the particle color |
-| Pointer trail | `trail.js` | Pointer movement | Dark trail on the light theme, light trail on the dark theme |
-| Background particles | `bg.js` | Always on, repelled by the pointer | Node and link colors switch with the theme |
-| Card glow | `app.min.js` | Card hover | Controlled by `--magical-glow` |
-| Bottom decorations | `base.css` | Always on | Glow, three layers of rising stars (1px / 2px / 1px), earth circle |
-
-Scripts load in dependency order: `security.js` → `app.min.js` → `anime.js` → `firework.js` → `trail.js` → `bg.js`. The fireworks rely on anime.js timeline capabilities and must therefore load after it; the security module has the highest priority and executes before the other scripts.
-
-### 3.6 Security Hardening
-
-`security.js` provides the following interception: it blocks text selection, copying and cutting; blocks the context menu and dragging; suppresses the shortcuts associated with developer tools and source viewing (F12, `Ctrl+Shift+I/C`, `Ctrl+U/S/P`, `Ctrl+A`); hides address hints when hovering links; monitors whether `body` has been emptied and reloads the page if so; and prints a notice in the console when developer tools are detected as open.
-
-**Limits of these measures (important)**: the measures above only raise the bar for casual copying; they constitute no form of content protection or encryption whatsoever. Front-end code and page content are always visible to visitors, and no security script can change that. Information that must remain confidential must never be placed in the front end.
-
-**Content Security Policy**: the page declares its resource allowlist through `<meta http-equiv="Content-Security-Policy">`. `default-src` and `script-src` allow only `'self'`, inline scripts and `https://unpkg.com`; `img-src` allows only `'self'` and `data:`; `frame-src` and `object-src` are `'none'`, forbidding embedded frames and plugins; `connect-src` is limited to `'self'`, and the page issues no external API requests. The page also declares `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `X-XSS-Protection` and `referrer: no-referrer`, where `no-referrer` prevents the referrer address from leaking when a visitor navigates from this page to a third party.
-
-### 3.7 PWA
-
-**Manifest**: `manifest.json` declares `display: standalone`, `display_override: ["standalone", "minimal-ui"]`, `orientation: portrait-primary`, `lang: zh-CN` and the categories `lifestyle` / `utilities`, and provides icons in 192, 512 and SVG formats.
-
-**Cache strategy**: `sw.js` uses "cache-first with background update". On a cache hit the response is returned immediately while a network request runs in the background and the new response is written back to the cache; on a miss the request goes to the network, and a successful response is written to the cache; if the network fails and the request is for HTML, it falls back to `index.html`, while other resources return 503.
-
-**Cache discipline**: `CACHE_NAME` is currently `ntarstudio-v4`. Whenever any resource covered by the precache list changes (including Typed.js loaded through the CDN), this version number must be bumped at the same time, otherwise visitors will keep hitting the old cache. The `install` phase calls `skipWaiting()`, and the `activate` phase deletes all caches that are not the current version and calls `clients.claim()` to take over pages immediately.
-
-**Installation**: the page listens to `beforeinstallprompt` and stores the event object; it currently relies on the browser's native install UI and provides no custom install button. `display-mode: standalone` is used to determine whether it is already running as an app.
-
-### 3.8 SEO and Structured Data
+### SEO and structured data
 
 | Item | Content |
-| --- | --- |
-| `description` | Covers the brand name and the positioning, status and domain of the two operating projects |
-| `keywords` | Brand terms, project codes and product type terms; all terms of discontinued projects removed |
-| Open Graph | `og:type` / `title` / `description` / `url` / `site_name` / `locale` |
-| canonical | `https://www.ntars.cn/`, consistent with `og:url` |
-| JSON-LD | Schema.org `Organization`, with `name`, `alternateName`, `url`, `description`, `sameAs` (GitHub, Bilibili, Afdian) |
-| robots | `index, follow, noarchive, max-image-preview:large`; `noarchive` stops search engines from saving snapshots |
-| Site verification | Baidu, verified both by `baidu_verify_codeva-C4tp7NQbk5.html` and by the `baidu-site-verification` meta tag |
+|---|---|
+| `description` | brand name plus the positioning and status of both open-source projects |
+| `keywords` | brand terms, code names, product categories; no retired projects |
+| Open Graph | `type` / `title` / `description` / `url` / `site_name` / `locale` |
+| canonical | `https://www.ntars.cn/`, matching `og:url` |
+| JSON-LD | Schema.org `Organization`: `name`, `alternateName`, `url`, `description`, `sameAs` (GitHub, bilibili, afdian) |
+| robots | `index, follow, noarchive, max-image-preview:large` |
+| Verification | Baidu `baidu_verify_codeva-C4tp7NQbk5.html` plus a `baidu-site-verification` meta tag |
 
-The JSON-LD keeps only the organization-level `url` (the site itself); the two operating projects' official addresses are presented in the project cards and the status table. Ondra's official site `ai.ntars.cn` is now live and reachable by search engines through the card's direct link; `x.ntars.cn` is not live and therefore appears in no metadata.
+JSON-LD carries only the organisation-level `url`; project addresses are handled by direct card links. `x.ntars.cn` is not live and therefore appears in no metadata at all.
 
-### 3.9 Footer and ICP Filing
+The footer holds two lines: the ICP filing number (linking to `beian.miit.gov.cn` in a new window) and `© 2024 - 2026 Ntarstudio. All Rights Reserved.`
 
-The footer sits after the page content and before the bottom decoration layer, and contains two lines: the ICP filing number (linking to `beian.miit.gov.cn`, opening in a new window) and the copyright line `© 2024 - 2026 Ntarstudio. All Rights Reserved.` The filing number uses its own style class and does not change meaning with the theme; only its color follows the theme.
+## Stack
 
----
+| Layer | Choice |
+|---|---|
+| Markup | Native HTML5, semantic tags plus `role` where needed |
+| Styling | Native CSS: custom properties + Grid + Flexbox, no preprocessor in the build |
+| Behaviour | Native JavaScript (mostly ES5 so older browsers run it directly) |
+| Animation | anime.js v2.0.2, used only by the fireworks |
+| Fonts | System stack, no web fonts |
+| Icons | In-house SVG / PNG |
+| Offline | Service Worker + Web App Manifest |
+| Deployment | EdgeOne Pages |
 
-## 4. Tech Stack and Open-Source Components
+No jQuery / Vue / React / UI kit, no Tailwind-style atomic CSS, no Vite / Webpack / Rollup, no npm dependencies — hence no `node_modules`, `package.json` or lock file in the repository.
 
-### 4.1 Technical Composition
+### Third-party components
 
-| Layer | Choice | Notes |
-| --- | --- | --- |
-| Structure | Native HTML5 | Single file, semantic tags plus supplementary `role` attributes |
-| Styling | Native CSS (custom properties + Grid + Flexbox) | No preprocessor in the build, no CSS framework |
-| Interaction | Native JavaScript (mostly ES5 syntax) | No framework, no module bundling, loaded directly with `<script>` |
-| Animation | anime.js v2.0.2 | Used only by the firework particles |
-| Fonts | System font stack | No web fonts loaded |
-| Icons | In-house SVG / PNG | No icon library |
-| Offline | Service Worker + Web App Manifest | Cache-first strategy |
-| Deployment | EdgeOne Pages | Static hosting, no server-side runtime; pushing to `main` triggers an automatic EdgeOne release — no GitHub Pages or Tencent Cloud COS |
+| Component | Version | Copyright | License | How it is included | Purpose |
+|---|---|---|---|---|---|
+| asorn/asorn-open | — | asorn | Apache-2.0 | source derivative | starting point |
+| anime.js | v2.0.2 | Julian Garnier (2017) | MIT | whole file at `assets/js/anime.js` | fireworks timeline and easing |
+| Typed.js | 2.0.16 | Matt Boldt | MIT | unpkg CDN + SW pre-cache | greeting typing effect |
 
-The page uses no jQuery, Vue, React or any UI component library; no atomic CSS framework such as Tailwind; no build tool (Vite / Webpack / Rollup); and no npm dependencies. The repository therefore contains no `node_modules`, `package.json` or lock file.
+**Derivative relationship**: this project was modified, extended and visually redesigned from asorn/asorn-open and is therefore a derivative work. Per Apache-2.0 section 4, the original copyright notice, the full license text (`LICENSE-Apache-2.0.txt`) and a statement of changes (`NOTICE`) are retained. In the current `base.css`, the `.magical` card glow and some layout breakpoints come from upstream; the contact modal, dual-theme tokens, footer and responsive details are new or rewritten here.
 
-### 4.2 Third-Party Components
+**MIT obligations**: keep the original copyright and license notices when redistributing. The `Released under the MIT license` header in `anime.js` must not be removed; Typed.js is loaded from a CDN and needs its license text attached if it is ever vendored locally.
 
-The following is all third-party content actually used or distributed by the page. The complete copyright notices and redistribution obligations are in [`NOTICE`](NOTICE).
+### Explicitly not used
 
-| # | Component | Version | Copyright holder | License | Integration | Purpose |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | asorn/asorn-open | — | asorn | Apache-2.0 | Source derivation | Initial base for the page structure and basic layout |
-| 2 | anime.js | v2.0.2 | Julian Garnier (2017) | MIT | Whole file embedded at `assets/js/anime.js` | Timeline and easing for the firework particles |
-| 3 | Typed.js | 2.0.16 | Matt Boldt (year as stated in the upstream LICENSE) | MIT | unpkg CDN + Service Worker precache | Typewriter effect in the greeting area |
+Third-party web fonts · third-party icon libraries · front-end frameworks and UI kits · analytics and tracking · ads, comments, support widgets · cookies and local storage writes · backend APIs and databases. None of the above.
 
-**Note on derivation**: this project modifies, extends and redesigns the interface and structure of asorn/asorn-open, and is therefore a modified derivative work. In accordance with Section 4 of Apache-2.0, the original copyright notice, the full license text (`LICENSE-Apache-2.0.txt`) and a statement of changes (`NOTICE`) have been retained. In the `base.css` actually loaded by the page, the card glow (`.magical`) and some layout breakpoints come from upstream; the contact modal, the dual-theme tokens, the footer and the responsive details are new or rewritten by this project.
+### Names and trademarks
 
-**License obligations**:
+「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」「玄宠」「NT-Dpet」「玄玖大模型」「NT-Sine」 and their marks belong to Ntarstudio. MIT and Apache-2.0 grant rights to code only — not to trademarks, and not to imply endorsement. Third-party names appearing in this document (GitHub, bilibili, afdian, DeepSeek, Qwen, …) belong to their respective owners and are used only to describe link targets or compatibility.
 
-- **MIT (anime.js, Typed.js)**: the original copyright notice and license statement must be retained on distribution. The `anime.js` file header already retains the `Released under the MIT license` statement and it must not be removed; `Typed.js` is loaded from a CDN, and if it is ever embedded locally, its license text must be included as well.
-- **Apache-2.0 (asorn/asorn-open)**: distributing a derivative work requires retaining the copyright notice and the full license text, and stating which files were modified. This project discharges that obligation through `NOTICE` and `LICENSE-Apache-2.0.txt`.
 
-### 4.3 Not Used (Exclusions)
+## License and redistribution
 
-To avoid misunderstanding, the following are **not used by this project**:
+| Scope | License |
+|---|---|
+| Original code (markup, styles, scripts and later changes) | MIT, see [`LICENSE`](LICENSE) |
+| Portions derived from asorn/asorn-open | Apache-2.0, see [`LICENSE-Apache-2.0.txt`](LICENSE-Apache-2.0.txt) |
+| Brand names, logo, interface design | All rights reserved, see [`NOTICE`](NOTICE) |
 
-| Item | Status |
-| --- | --- |
-| Third-party web fonts (Google Fonts etc.) | Not used. The font stack is system fonts, with no external font requests |
-| Third-party icon libraries (Font Awesome, iconfont etc.) | Not used. The icons are in-house SVG / PNG |
-| Front-end frameworks and UI component libraries | Not used |
-| Analytics and tracking scripts (Google Analytics, Baidu Tongji etc.) | Not used |
-| Advertising, comment and customer-service widgets | Not used |
-| Cookie and local-storage writes | Not used (theme state is not persisted) |
-| Back-end APIs and databases | Not used |
+Redistribution must keep `NOTICE`, `LICENSE`, `LICENSE-Apache-2.0.txt` and the copyright and license headers in `assets/js/anime.js`. Do not remove or alter third-party notices; modified versions must not use the original brand marks or imply endorsement.
 
-### 4.4 Trademark and Name Statement
 
-The names and marks "Ntarstudio (星玖工作室)", "Ntarstudio", "Xael (玄玖灵犀)", "NT-Xhex", "Ondra (元鸣)", "NT-Dpet (玄宠)", "NT-Dpet", "NT-Sine (玄玖大模型)" and "NT-Sine" are owned by Ntarstudio. MIT and Apache-2.0 grant rights to code only: they grant no right to use the trademarks and no right to use them in a way that implies endorsement by the original authors.
-
-Third-party names mentioned in the page and in this document (GitHub, Bilibili, Afdian, DeepSeek, Qwen and others) are owned by their respective rights holders and are used only to identify navigation targets or compatibility targets; no affiliation or endorsement is implied.
-
----
-
-## 5. Copyright and Licensing
-
-### 5.1 License of This Project
-
-| Scope | License | Full text |
-| --- | --- | --- |
-| First-party code (page structure, styles, scripts and subsequent changes) | MIT | [`LICENSE`](LICENSE) |
-| Portions derived from asorn/asorn-open | Apache License 2.0 | [`LICENSE-Apache-2.0.txt`](LICENSE-Apache-2.0.txt) |
-| Brand names, logo, interface design | All rights reserved | See `NOTICE` |
-
-### 5.2 Redistribution Requirements
-
-When redistributing this project, the following must be retained:
-
-1. `NOTICE` (copyright and third-party notices);
-2. `LICENSE` (full MIT text);
-3. `LICENSE-Apache-2.0.txt` (full Apache-2.0 text);
-4. the original copyright and license statements in the header of `assets/js/anime.js`;
-5. the copyright notices for the upstream-derived styles in `assets/css/base.css` (already recorded in `NOTICE`).
-
-The copyright and license statements of third-party files must not be removed or altered. Modified versions must not use the original project's brand marks and must not imply endorsement by the original authors.
-
----
-
-## 6. Development and Operations
-
-### 6.1 Local Run
+## Running and deploying
 
 ```bash
 python3 -m http.server 8000
-# visit http://localhost:8000
+# open http://localhost:8000
 ```
 
-Service Worker registers only under `localhost` or HTTPS; the `file://` protocol is not supported. The page has no build step, so a refresh after a change takes effect immediately.
+No build step — edit and refresh. The Service Worker registers only on `localhost` or HTTPS; `file://` is unsupported.
 
-### 6.2 Change Checklist
+**There is exactly one deployment path**: push to `main`, and EdgeOne Pages publishes automatically to the main domain `www.ntars.cn`. The repository contains no workflow files, triggers no GitHub Actions, and does not use Tencent Cloud COS.
 
-1. The titles, descriptions and links of the two cards match the real status of the operating projects;
-2. `description`, `keywords`, `og:*`, JSON-LD and `canonical` match the wording of the page body;
-3. When precached resources change, `CACHE_NAME` in `sw.js` has been bumped;
-4. Both the light and the dark theme have been checked (double-click the heading to switch);
-5. There is no text truncation or layout overflow at phone (< 768px), tablet (768–1180px) or desktop widths;
-6. The background does not scroll while the modal is open, and the scroll position does not jump after it closes;
-7. Any newly added third-party resource has its source, copyright holder, license and modifications recorded in `NOTICE` and in section 4.2 of this document.
+### Checklist before committing
 
-### 6.3 Deployment
+1. Both cards' titles, descriptions, links and statuses match reality, and no unreleased domain appears anywhere;
+2. `description`, `keywords`, `og:*`, JSON-LD and `canonical` agree with the visible copy;
+3. If a pre-cached asset changed, `CACHE_NAME` in `sw.js` was bumped;
+4. Both themes were checked (double-click the heading to switch);
+5. Phone (< 768px), tablet (768–1180px) and desktop widths show no truncation or overflow;
+6. The modal locks background scrolling and the page position does not jump after closing;
+7. Any new third-party asset is logged in `NOTICE` and in the table above with source, copyright holder, license and modifications.
 
-| Method | Status | Notes |
-| --- | --- | --- |
-| EdgeOne Pages | **Current production method (only)** | The main domain `www.ntars.cn` points to EdgeOne Pages; pushing to `main` publishes automatically. This project contains no workflow files and triggers no GitHub Actions |
+### Release discipline
 
-### 6.4 Release Discipline
+- Check `CACHE_NAME` after any content change — the step most often missed;
+- When a project's status changes (live, retired, new domain), update the card, the metadata and this document together;
+- A retired project must never return to the page, its keywords or its structured data;
+- Confirm a new third-party component's license is MIT / Apache-2.0 compatible and log it in `NOTICE` before committing.
 
-- After any change to the page content, the `sw.js` cache version must be checked in step, so that visitors do not stay on an old version for long;
-- When the status of a sub-project changes (launch, shutdown, domain change), the two cards, the metadata and the status table in this document must all be updated together;
-- Discontinued projects must never reappear in any form in the page, the keywords or the structured data;
-- Before adding a third-party component, confirm that its license is compatible with Apache-2.0 / MIT, and register it in `NOTICE` before committing.
+## Contact
 
----
-
-## 7. Changelog
-
-| Date | Content |
-| --- | --- |
-| 2026-10-27 | Project framing updated: the three cards became two — Xael (玄玖灵犀, product live v4.3.0, official site `x.ntars.cn` not yet resolving, repository linked for now) and Ondra (元鸣, official site `ai.ntars.cn` live, software unreleased); the Ondra card uses the NT-Dpet icon asset (assets/img/dpet-icon.svg); the standalone NT-Sine card and the pet.ntars.cn link were removed as Ondra now covers them; meta, Open Graph and JSON-LD synchronized; cache version bumped to `ntarstudio-v6`; NOTICE trademark list, external links and asset registration updated |
-| 2026-10-23 | Project information corrected: the three cards changed to NT-Xhex, NT-Dpet and NT-Sine; the discontinued NT-Know and NT-List removed; meta, Open Graph, JSON-LD and canonical synchronized; copyright and license statements for anime.js and Typed.js added to `NOTICE`; cache version bumped to `ntarstudio-v4`; deployment notes corrected against actual measurements (GitHub Pages not enabled) |
-| 2026-10-20 | License change: first-party code switched to MIT, derived portions retain the full Apache-2.0 text and acknowledgements |
-| 2026-10-20 | License compliance: `LICENSE` completed with the official full Apache-2.0 text; `NOTICE` added to record upstream provenance |
-| 2026-10-15 | Icon replaced with a rounded-square "N+T" wordmark |
-| 2026-10-15 | Initial commit: Ntarstudio official site homepage |
-
----
-
-## Appendix: Contact
-
-| Category | Name | Content |
-| --- | --- | --- |
-| Official website | Ntarstudio official site | https://www.ntars.cn/ |
-| Social platform | GitHub | https://github.com/ntars |
-| Social platform | Afdian | https://afdian.com/a/ntars |
-| Social platform | Bilibili | https://space.bilibili.com/499925438 |
-| Contact | Email | ntarsx@163.com |
-| Contact | QQ | 3933361415 |
-| Contact | WeChat | Ntarsv |
+| | |
+|---|---|
+| Website | <https://www.ntars.cn/> |
+| GitHub | <https://github.com/ntars> |
+| afdian | <https://afdian.com/a/ntars> |
+| bilibili | <https://space.bilibili.com/499925438> |
+| Email | ntarsx@163.com |
+| QQ | 3933361415 |
+| WeChat | Ntarsv |
