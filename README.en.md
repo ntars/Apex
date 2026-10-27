@@ -2,11 +2,11 @@
 
 # Apex
 
-The official site and project gateway of Ntarstudio (星玖工作室), codenamed Apex. One HTML file, one stylesheet, a handful of plain scripts — no framework, no build step, no backend.
+The official site and project gateway of Ntarstudio (星玖工作室). Its English name is Apex. One HTML file, one stylesheet, a handful of plain scripts — no framework, no build step, no backend.
 
 | | |
 |---|---|
-| Code name | Apex |
+| English name | Apex |
 | Live | <https://www.ntars.cn/> |
 | Repository | <https://github.com/ntars/Apex> |
 | Form | Single-page static site, installable as a PWA |
@@ -28,7 +28,7 @@ Its non-goals are as explicit: no accounts, no forms, no cookies, no analytics, 
 | Project | What it is | Status | Where |
 |---|---|---|---|
 | **玄玖灵犀 Xael** | A local, offline library of traditional divination literature, with a same-named WeChat mini program and official account | Product live | [x.ntars.cn](https://x.ntars.cn/) |
-| **元鸣 Ondra** | A one-click deployable, highly customizable AI companion | Product in closed beta | [ai.ntars.cn](https://ai.ntars.cn/) |
+| **空谷 Ondra** | A one-click deployable, highly customizable AI companion | Product in closed beta | [ai.ntars.cn](https://ai.ntars.cn/) |
 
 One rule governs every status label: **site status and product status are stated separately**. They are not equivalent — a running website does not mean an installable app, and a running app does not mean a reachable website.
 
@@ -191,7 +191,7 @@ Third-party web fonts · third-party icon libraries · front-end frameworks and 
 
 ### Names and trademarks
 
-「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」「玄玖大模型」「NT-Sine」 and their marks belong to Ntarstudio. MIT and Apache-2.0 grant rights to code only — not to trademarks, and not to imply endorsement. Third-party names appearing in this document (GitHub, bilibili, afdian, DeepSeek, Qwen, …) belong to their respective owners and are used only to describe link targets or compatibility.
+「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「空谷」「Ondra」「玄玖大模型」「NT-Sine」 and their marks belong to Ntarstudio. MIT and Apache-2.0 grant rights to code only — not to trademarks, and not to imply endorsement. Third-party names appearing in this document (GitHub, bilibili, afdian, DeepSeek, Qwen, …) belong to their respective owners and are used only to describe link targets or compatibility.
 
 
 ## License and redistribution

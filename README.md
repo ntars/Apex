@@ -2,11 +2,11 @@
 
 # Apex
 
-星玖工作室（Ntarstudio）的官网主页与项目入口，代号 Apex。一个 HTML 文件、一份样式表、几个原生脚本，没有框架、没有构建、没有后端。
+星玖工作室（Ntarstudio）的官网主页与项目入口，英文名 Apex。一个 HTML 文件、一份样式表、几个原生脚本，没有框架、没有构建、没有后端。
 
 | | |
 |---|---|
-| 代号 | Apex |
+| 英文名 | Apex |
 | 线上 | <https://www.ntars.cn/> |
 | 仓库 | <https://github.com/ntars/Apex> |
 | 形态 | 单页静态站点，可安装为 PWA |
@@ -27,8 +27,8 @@
 
 | 项目 | 是什么 | 状态 | 去哪里 |
 |---|---|---|---|
-| **玄玖灵犀 Xael** | 本地离线的术数文献库，微信小程序与公众号同名 | 产品已上线 | [x.ntars.cn](https://x.ntars.cn/) |
-| **元鸣 Ondra** | 可一键部署、高度自定义的 AI 陪伴体 | 产品内测中 | [ai.ntars.cn](https://ai.ntars.cn/) |
+| **玄玖灵犀 Xael** | 本地离线的中华文化术数文献库，微信小程序与公众号同名 | 产品已上线 | [x.ntars.cn](https://x.ntars.cn/) |
+| **空谷 Ondra** | 可一键部署、高度自定义的 AI 陪伴体 | 产品内测中 | [ai.ntars.cn](https://ai.ntars.cn/) |
 
 状态标注遵守一条规矩：**官网状态与产品状态分开说**。两者不等价——官网在跑不代表软件能装，软件在跑也不代表官网能开。
 
@@ -147,7 +147,7 @@ Apex/
 | 项 | 内容 |
 |---|---|
 | `description` | 品牌名 + 两个开源项目的定位与状态 |
-| `keywords` | 品牌词、项目代号、产品类型词；不含任何下线项目 |
+| `keywords` | 品牌词、项目英文名、产品类型词；不含任何下线项目 |
 | Open Graph | `type` / `title` / `description` / `url` / `site_name` / `locale` |
 | canonical | `https://www.ntars.cn/`，与 `og:url` 一致 |
 | JSON-LD | Schema.org `Organization`：`name`、`alternateName`、`url`、`description`、`sameAs`（GitHub、哔哩哔哩、爱发电） |
@@ -191,7 +191,7 @@ JSON-LD 只放组织级 `url`；项目地址由卡片直链承担，与当前项
 
 ### 名称与商标
 
-「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」「玄玖大模型」「NT-Sine」等名称与标识归星玖工作室所有。MIT 与 Apache-2.0 只给代码权利，不给商标权，也不给「暗示获得背书」的权利。文档中出现的第三方名称（GitHub、哔哩哔哩、爱发电、DeepSeek、Qwen 等）归各自权利人，仅用于说明跳转目标或兼容对象。
+「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「空谷」「Ondra」「玄玖大模型」「NT-Sine」等名称与标识归星玖工作室所有。MIT 与 Apache-2.0 只给代码权利，不给商标权，也不给「暗示获得背书」的权利。文档中出现的第三方名称（GitHub、哔哩哔哩、爱发电、DeepSeek、Qwen 等）归各自权利人，仅用于说明跳转目标或兼容对象。
 
 ## 许可与再分发
 

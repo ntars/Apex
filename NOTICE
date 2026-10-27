@@ -1,5 +1,5 @@
 Apex（星玖工作室 Ntarstudio 官网主页）
-Copyright (c) 2026 星玖工作室 Ntarstudio
+Copyright (c) 2024–2026 星玖工作室 Ntarstudio
 
 本文件是本仓库的版权与第三方组件声明。它回答三个问题：本项目自身归谁、用了别人的什么、
 再分发时必须保留什么。修改或再分发前请先读本文件与仓库根 LICENSE。
@@ -10,13 +10,13 @@ Copyright (c) 2026 星玖工作室 Ntarstudio
 
 本仓库自研代码（页面实现、样式、脚本及后续所有改动）以 MIT 协议开源，全文见 LICENSE。
 
-  版权所有：Copyright (c) 2026 星玖工作室 Ntarstudio
+  版权所有：Copyright (c) 2024–2026 星玖工作室 Ntarstudio
   项目地址：https://github.com/ntars/Apex
   线上地址：https://www.ntars.cn/
 
 品牌层面的权利不随代码许可一并授予：
 
-  · 「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「元鸣」「Ondra」
+  · 「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「空谷」「Ondra」
     「玄玖大模型」「NT-Sine」等名称、Logo 与界面设计归 Ntarstudio 所有。
   · MIT 只授予代码的使用、修改、分发权利，不授予商标使用权，也不授予
     「暗示获得原作者背书」的权利。修改版请更换品牌标识，或明确标注为非官方版本。
@@ -104,7 +104,7 @@ MIT 的强制义务是「保留版权声明与许可声明」，请勿删除文�
 页面通过外链指向以下自有站点，内容与许可由各站点自行声明：
 
   · https://x.ntars.cn/             玄玖灵犀 Xael（本地离线的术数文献库，微信小程序与公众号同名；代码 AGPL-3.0，产品已上线）
-  · https://ai.ntars.cn/            元鸣 Ondra（可一键部署、高度自定义的 AI 陪伴体；代码 AGPL-3.0-or-later，产品内测中）
+  · https://ai.ntars.cn/            空谷 Ondra（可一键部署、高度自定义的 AI 陪伴体；代码 AGPL-3.0-or-later，产品内测中）
 
 注意：三个子项目与本官网是**相互独立的仓库与许可**。官网仅提供链接，不包含其源代码，
 因此官网的 MIT 许可不会传染到子项目，子项目的 AGPL-3.0 也不会约束官网。
