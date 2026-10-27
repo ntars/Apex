@@ -154,7 +154,7 @@ The page declares its allowlist via `<meta http-equiv="Content-Security-Policy">
 | robots | `index, follow, noarchive, max-image-preview:large` |
 | Verification | Baidu `baidu_verify_codeva-C4tp7NQbk5.html` plus a `baidu-site-verification` meta tag |
 
-JSON-LD carries only the organisation-level `url`; project addresses are handled by direct card links. `x.ntars.cn` is not live and therefore appears in no metadata at all.
+JSON-LD carries only the organisation-level `url`; project addresses are handled by direct card links, consistent with the current project status framing.
 
 The footer holds two lines: the ICP filing number (linking to `beian.miit.gov.cn` in a new window) and `© 2024 - 2026 Ntarstudio. All Rights Reserved.`
 

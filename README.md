@@ -154,7 +154,7 @@ Apex/
 | robots | `index, follow, noarchive, max-image-preview:large` |
 | 验证 | 百度 `baidu_verify_codeva-C4tp7NQbk5.html` + `baidu-site-verification` 元标记 |
 
-JSON-LD 只放组织级 `url`；项目地址由卡片直链承担。`x.ntars.cn` 未上线，因此不出现在任何元信息里。
+JSON-LD 只放组织级 `url`；项目地址由卡片直链承担，与当前项目状态口径一致。
 
 页脚两行：备案号（链到 `beian.miit.gov.cn`，新窗口）与 `© 2024 - 2026 Ntarstudio. All Rights Reserved.`。
 
