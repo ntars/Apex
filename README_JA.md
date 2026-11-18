@@ -1,4 +1,4 @@
-[简体中文](README.md) | [English](README.en.md) | **日本語** | [한국어](README.ko.md) | [Français](README.fr.md) | [Русский](README.ru.md) | [Español](README.es.md) | [العربية](README.ar.md)
+[简体中文](README.md) | [English](README_EN.md) | **日本語** | [한국어](README_KO.md) | [Français](README_FR.md) | [Русский](README_RU.md) | [Español](README_ES.md) | [العربية](README_AR.md)
 
 # Apex
 
@@ -13,12 +13,17 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-6-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 一、プロジェクト名と位置づけ
+
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+>
+> **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
+
 
 **名称**：Apex。頂点を意味します。スタジオ公式サイトとして、担うのは「製品」ではなく「入口」の役割です。
 
@@ -70,13 +75,13 @@
 
 ---
 
-## 三、七つのプロジェクト
+## 三、コア機能：七つのプロジェクト
 
 公式サイトの「星玖工作室出品」ブロックは七つのプロジェクトを並べ、状態順に並びます：公開済みが先、計画中が後。
 
 **七つのプロジェクト＝Apex、Desop、TapMC、Ondra、Wacmin、Webroit、Xael。** GitHub はこれらを載せる platform であり、プロジェクトではありません。Wacmin 内部の四方向は実装詳細であり、単独では列挙しません。
 
-### 3.1 公開済み
+### 3.1 公開済み・開発中
 
 #### Xael（玄玖霊犀）· 公開済み
 
@@ -97,16 +102,17 @@
 
 | | |
 |---|---|
-| 内容 | 全プラグイン方式のデスクトップ AI コンパニオン。75 個の着脱可能プラグイン、データはすべて端末内に保持 |
-| 技術 | TypeScript · Rust · Tauri |
-| バージョン | ベータ `1.3.0-alpha` |
+| 内容 | 全プラグイン方式のデスクトップ AI コンパニオン。UI はプラグインの投影だけを読み、感情・記憶・文脈が三つの中核機構、データはすべて端末内 |
+| 技術 | Flutter（デスクトップ・Web）· Cordis 4.1.0（プラグイン基盤）· dsh カーネル（Node） |
+| バージョン | `2.0.0-alpha` |
+| プラットフォーム | macOS は実行可、Web はビルド可、その他はプロジェクト生成のみ |
 | ライセンス | Apache-2.0 / MIT |
 | 入口 | <https://ai.ntars.cn/> |
 | リポジトリ | <https://github.com/ntars/Ondra> |
 
-三つの中核機構：感情（慣性を持つ状態量であり、毎ターン書き直す形容詞ではない）、記憶（11 環の完全な連鎖であり、ベクトルストアではない）、文脈（凍結プレフィックス＋増分注入＋予算パッキング）。残り 57 のプラグインが人格・音声・ゲーティング・保存を担います。
+三つの中核機構：感情（慣性を持つ状態量）、記憶（11 環の連鎖）、文脈（凍結プレフィックス＋増分注入＋予算パッキング）。プラグイン画面は同梱 18 件とアセンブリ層 75 件を合わせた 93 件を表示します。
 
-**見る価値**：「寄り添い」を工学的に分解し、コストに敏感な部分（プレフィックスキャッシュ）をきちんと計算しています——毎ターン system prompt を組み直すとコストが 44 倍になります。
+**見る価値**：「寄り添い」をそれぞれ工学化できる機構に分解し、起動順の補丁で同時 apply による 18 プラグインの無言の降格を 55 件から 0 件にしました。
 
 #### Webroit · 公開中
 
@@ -152,22 +158,24 @@ HTML 一枚、スタイルシート一枚、素のスクリプト数本。フレ
 
 **見る価値**：「ビルドなしフロントエンド」のサンプルです——HTML 一枚でサイトをどう構成するか、そして六年更新しなくても壊れないこと。
 
-#### TapMC · 開発初期
+#### TapMC · 骨組み段階
 
 | | |
 |---|---|
-| 内容 | PCL を参考にした多端末 Minecraft Java 版ランチャー、スマホ側に統合版のタッチ操作感を |
-| 技術 | 未定 |
+| 内容 | モジュール化可能なマルチプレイ砂場ゲームの骨組み。Flutter の 7 端末フロントエンドと Java サーバーを、JSON-RPC 2.0 の 1 本の契約でつなぐ |
+| 技術 | Flutter（フロントエンド）· Java 21（バックエンド） |
+| 状態 | 骨組み段階：経路は開通、バックエンド 61 件・フロントエンド 18 件のテストが通過、リリースなし |
+| プラットフォーム | Web と Android はビルド通過、残り 5 端末は未検証 |
 | ライセンス | Apache-2.0 / MIT |
 | リポジトリ | <https://github.com/ntars/TapMC> |
 
-デスクトップ側はバージョン管理、ローダー、Java マッチング、アカウント、MOD、MOD パック、クラッシュ原因の切り分けを担当。スマホ側はタッチスティック、スワイプ視点、長押し操作、ホットバードラッグを実装します。核心の取捨は起動ロジックを一つだけ持ち、両端は実行環境と操作層でのみ分岐すること。
+バックエンドが唯一の真実の源で、フロントエンドは表示と入力だけを担います。世界は 24×16 の二次元グリッド、5 種のブロック。MOD が受け取れるのは `ModContext` だけで `WorldGrid` には触れられず、ルールを迂回できません。
 
-**見る価値**：「スマホの操作感が統合版に劣る」を本物の問題として解き、単にタッチをマウスに写像するのではありません。
+**見る価値**：「ルールをどちらで計算するか」をレビューの規律ではなくコンパイル時の制約で固定しています。カーネルはネットワーク依存がなく、ポートを開かずに単体テストで全体ロジックを走らせられます（22 ケース）。
 
 ### 3.2 計画中 / Planned
 
-**以下の二つは資料のみで、実行可能なコードはありません。** 状態の表現は「公開済み」と「計画中」を厳密に区別し、計画を実装済みとして書きません。
+**以下は資料のみで、実行可能なコードはありません。** 状態の表現は「公開済み」と「計画中」を厳密に区別し、計画を実装済みとして書きません。
 
 
 #### Desop · 計画中
@@ -190,17 +198,17 @@ HTML 一枚、スタイルシート一枚、素のスクリプト数本。フレ
 | プロジェクト | 状態 | 意味 |
 |---|---|---|
 | Xael | 公開済み | 正式版があり、ダウンロードして使える |
-| Ondra | ベータ | ベータ版があるが、公募ベータでも正式版でもない |
+| Ondra | ベータ | `2.0.0-alpha`：macOS は実行可、Web はビルド可、その他は生成のみ |
 | Wacmin | 利用可能 | 四方向すべて完了・テスト済み、CLI と MCP 接続を含む |
 | Apex | 公開中 | サイトが動いており、ソースも公開 |
-| TapMC | 計画中 | 文書のみ、実行可能なコードなし |
+| TapMC | 骨組み段階 | 経路は開通し 79 件のテストが通るが、リリースはない |
 | Desop | 計画中 | 文書のみ、実行可能なコードなし |
 
 **なぜ計画中のプロジェクトもカードに載せるのか**：サイトはスタジオの名札であり、「すでに完成したもの」だけでなく「いま作っているもの」を示すものだからです。状態を明示すれば十分で、訪問者は「計画中」の四文字を見ればダウンロードできるものがないと分かります——隠すより正直です。
 
 ---
 
-## 四、中核の見どころ
+## 四、コア特性
 
 ### 見どころ一：七つのプロジェクトが一ページで分かる、三か所が同源
 
@@ -244,7 +252,7 @@ HTML 一枚、スタイルシート一枚、素のスクリプト数本。フレ
 
 ---
 
-## 五、サイトの実装
+## 五、設計詳細と技術的取捨
 
 **本章は本文で唯一サイト自体を扱う部分です。** 意図的に圧縮しています——プロジェクト紹介こそが主眼です。
 
@@ -414,7 +422,7 @@ Apex/
 ├── LICENSE                    # MIT 全文
 ├── LICENSE-Apache-2.0.txt     # Apache-2.0 全文（asorn 派生部分）
 ├── NOTICE                     # 著作権と第三者表示
-├── README.md / README.en.md
+├── README.md / README_EN.md
 └── assets/
     ├── css/
     │   ├── base.css           # 唯一読み込まれるスタイルシート

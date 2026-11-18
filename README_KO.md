@@ -1,4 +1,4 @@
-[简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | **한국어** | [Français](README.fr.md) | [Русский](README.ru.md) | [Español](README.es.md) | [العربية](README.ar.md)
+[简体中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md) | **한국어** | [Français](README_FR.md) | [Русский](README_RU.md) | [Español](README_ES.md) | [العربية](README_AR.md)
 
 # Apex
 
@@ -13,12 +13,17 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-6-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. 프로젝트 이름과 위치
+
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+>
+> **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
+
 
 **이름**: Apex, 정점을 뜻합니다. 스튜디오 공식 사이트로서 맡는 역할은 「제품」이 아니라 「입구」입니다.
 
@@ -70,13 +75,13 @@
 
 ---
 
-## 3. 일곱 프로젝트
+## 3. 핵심 기능: 일곱 프로젝트
 
 공식 사이트의 「星玖工作室出品」 블록은 일곱 프로젝트를 상태 순으로 나열합니다: 공개가 먼저, 계획 중이 뒤.
 
 **일곱 프로젝트 = Apex, Desop, TapMC, Ondra, Wacmin, Webroit, Xael.** GitHub는 이들을 싣는 플랫폼이며 프로젝트가 아닙니다. Wacmin 내부의 네 방향은 구현 세부이며 단독으로 열거하지 않습니다.
 
-### 3.1 공개
+### 3.1 공개 및 개발 중
 
 #### Xael(현구령서) · 공개
 
@@ -97,16 +102,17 @@
 
 | | |
 |---|---|
-| 무엇인가 | 전면 플러그인 방식 데스크톱 AI 컴패니언. 75개 탈부착 플러그인, 모든 데이터는 기기 내부에 보관 |
-| 기술 | TypeScript · Rust · Tauri |
-| 버전 | 베타 `1.3.0-alpha` |
+| 무엇인가 | 전면 플러그인 방식 데스크톱 AI 컴패니언. UI는 플러그인 투영만 읽고, 감정·기억·맥락이 세 가지 핵심 메커니즘이며 데이터는 모두 기기 안에 있음 |
+| 기술 | Flutter(데스크톱·웹) · Cordis 4.1.0(플러그인 프레임워크) · dsh 커널(Node) |
+| 버전 | `2.0.0-alpha` |
+| 플랫폼 | macOS 실행 가능, 웹 빌드 가능, 나머지는 프로젝트만 생성 |
 | 라이선스 | Apache-2.0 / MIT |
 | 입구 | <https://ai.ntars.cn/> |
 | 저장소 | <https://github.com/ntars/Ondra> |
 
-세 가지 핵심 메커니즘: 감정(관성을 지닌 상태량이며 매 턴 다시 쓰는 형용사가 아님), 기억(11환의 완전한 사슬이며 벡터 스토어가 아님), 맥락(동결 프리픽스 + 증분 주입 + 예산 패킹). 나머지 57개 플러그인이 인격·음성·게이팅·저장을 맡습니다.
+세 가지 핵심 메커니즘: 감정(관성을 지닌 상태량), 기억(11단계 사슬), 맥락(동결 프리픽스 + 증분 주입 + 예산 패킹). 플러그인 화면은 번들 18개와 어셈블리 75개를 합친 93개를 표시합니다.
 
-**볼 만한 이유**: 「곁에 있음」을 공학적으로 분해했고, 비용에 민감한 부분(프리픽스 캐시)을 제대로 계산합니다 — 매 턴 system prompt를 다시 조립하면 비용이 44배가 됩니다.
+**볼 만한 이유**: 「곁에 있음」을 각각 공학화할 수 있는 메커니즘으로 분해했고, 부팅 순서 패치로 동시 apply 때문에 조용히 강등된 18개 플러그인을 55건에서 0건으로 줄였습니다.
 
 #### Webroit · 공개 중
 
@@ -152,22 +158,24 @@ HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개. 프레임워
 
 **볼 만한 이유**: 「빌드 없는 프론트엔드」의 샘플입니다 — HTML 한 장으로 사이트를 어떻게 구성하는지, 그리고 6년을 업데이트하지 않아도 깨지지 않는다는 것.
 
-#### TapMC · 초기 개발
+#### TapMC · 골격 단계
 
 | | |
 |---|---|
-| 무엇인가 | PCL을 참고한 멀티 플랫폼 Minecraft Java 에디션 런처, 폰에서 베드락의 터치 감각을 |
-| 기술 | 미정 |
+| 무엇인가 | 모듈화 가능한 멀티플레이 샌드박스 게임 골격. Flutter 7개 플랫폼 프런트엔드와 Java 서버를 하나의 JSON-RPC 2.0 계약으로 연결 |
+| 기술 | Flutter(프런트엔드) · Java 21(백엔드) |
+| 상태 | 골격 단계: 경로 개통, 백엔드 61개·프런트엔드 18개 테스트 통과, 릴리스 없음 |
+| 플랫폼 | Web과 Android 빌드 통과, 나머지 5개 플랫폼 미검증 |
 | 라이선스 | Apache-2.0 / MIT |
 | 저장소 | <https://github.com/ntars/TapMC> |
 
-데스크톱 쪽은 버전 관리, 로더, Java 매칭, 계정, 모드, 모드팩, 크래시 원인 분류를 담당. 폰 쪽은 터치 스틱, 스와이프 시점, 길게 누르기, 핫바 드래그를 구현합니다. 핵심 절충은 실행 로직을 하나만 두고 양 끝이 실행 환경과 조작 계층에서만 갈라지는 것입니다.
+백엔드가 유일한 진실 원천이고 프런트엔드는 표시와 입력만 담당합니다. 세계는 24×16 2차원 그리드, 블록 5종. 모드는 `ModContext`만 받고 `WorldGrid`에는 닿을 수 없어 규칙을 우회할 수 없습니다.
 
-**볼 만한 이유**: 「폰 조작감이 베드락에 못 미친다」를 진짜 문제로 풀며, 단순히 터치를 마우스에 사상하지 않습니다.
+**볼 만한 이유**: 「규칙을 어디서 계산하는가」를 리뷰 규율이 아니라 컴파일 시점 제약으로 고정했습니다. 커널은 네트워크 의존이 없어 포트를 열지 않고도 전체 로직을 단위 테스트로 돌립니다(22개).
 
 ### 3.2 계획 중 / Planned
 
-**아래 두 프로젝트는 자료만 있고 실행 가능한 코드가 없습니다.** 상태 표현은 「공개」와 「계획 중」을 엄격히 구분하며 계획을 구현된 것으로 쓰지 않습니다.
+**아래 프로젝트는 자료만 있고 실행 가능한 코드가 없습니다.** 상태 표현은 「공개」와 「계획 중」을 엄격히 구분하며 계획을 구현된 것으로 쓰지 않습니다.
 
 
 #### Desop · 계획 중
@@ -190,17 +198,17 @@ HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개. 프레임워
 | 프로젝트 | 상태 | 의미 |
 |---|---|---|
 | Xael | 공개 | 정식 버전이 있어 내려받아 쓸 수 있음 |
-| Ondra | 베타 | 베타 빌드가 있으나 공개 베타도 정식판도 아님 |
+| Ondra | 베타 | `2.0.0-alpha`: macOS 실행 가능, 웹 빌드 가능, 나머지는 생성만 |
 | Wacmin | 사용 가능 | 네 방향 모두 완료·테스트, CLI 및 MCP 연결 포함 |
 | Apex | 공개 중 | 사이트가 돌아가고 소스도 공개 |
-| TapMC | 계획 중 | 문서만 있고 실행 가능한 코드 없음 |
+| TapMC | 골격 단계 | 경로가 개통되어 79개 테스트가 통과하지만 릴리스는 없음 |
 | Desop | 계획 중 | 문서만 있고 실행 가능한 코드 없음 |
 
 **왜 계획 중 프로젝트도 카드에 싣는가**: 사이트는 스튜디오의 명패이며 「이미 완성한 것」만이 아니라 「지금 만드는 것」을 보여주는 곳이기 때문입니다. 상태를 분명히 적으면 충분하고, 방문자는 「계획 중」 네 글자를 보면 내려받을 것이 없다는 걸 압니다 — 숨기는 것보다 정직합니다.
 
 ---
 
-## 4. 핵심 하이라이트
+## 4. 핵심 특성
 
 ### 하이라이트 1: 일곱 프로젝트를 한 페이지에서, 세 곳이 같은 원천
 
@@ -244,7 +252,7 @@ HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개. 프레임워
 
 ---
 
-## 5. 사이트 구현
+## 5. 설계 세부 사항과 기술적 트레이드오프
 
 **이 장은 이 문서에서 사이트 자체를 다루는 유일한 부분입니다.** 의도적으로 압축했습니다 — 프로젝트 소개가 본령입니다.
 
@@ -414,7 +422,7 @@ Apex/
 ├── LICENSE                    # MIT 전문
 ├── LICENSE-Apache-2.0.txt     # Apache-2.0 전문(asorn 파생 부분)
 ├── NOTICE                     # 저작권과 제3자 표시
-├── README.md / README.en.md
+├── README.md / README_EN.md
 └── assets/
     ├── css/
     │   ├── base.css           # 유일하게 로드되는 스타일시트

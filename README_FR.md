@@ -1,4 +1,4 @@
-[简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | **Français** | [Русский](README.ru.md) | [Español](README.es.md) | [العربية](README.ar.md)
+[简体中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md) | [한국어](README_KO.md) | **Français** | [Русский](README_RU.md) | [Español](README_ES.md) | [العربية](README_AR.md)
 
 # Apex
 
@@ -13,12 +13,17 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-6-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Nom et positionnement
+
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+>
+> **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
+
 
 **Nom** : Apex, « sommet ». En tant que site officiel du studio, il joue le rôle d'une entrée, non d'un produit.
 
@@ -68,13 +73,13 @@ Le site a exactement trois responsabilités :
 
 ---
 
-## 3. Les sept projets
+## 3. Fonctionnalités clés : les sept projets
 
 La section « 星玖工作室出品 » de la page d'accueil présente sept projets, classés par état : publiés d'abord, planifiés ensuite.
 
 **Les sept projets sont Apex, Desop, TapMC, Ondra, Wacmin, Webroit et Xael.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
 
-### 3.1 Publiés
+### 3.1 Publiés et en développement
 
 #### Xael (玄玖灵犀) · Publié
 
@@ -95,16 +100,17 @@ Couvre les Quatre Piliers, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, 
 
 | | |
 |---|---|
-| Ce que c'est | Compagnon IA de bureau entièrement modulaire, 75 plugins chargeables, toutes les données restent en local |
-| Technologies | TypeScript · Rust · Tauri |
-| Version | Bêta `1.3.0-alpha` |
+| Ce que c'est | Compagnon IA de bureau entièrement modulaire : l'interface ne lit que la projection des plugins ; émotion, mémoire et contexte sont les trois mécanismes clés ; les données restent locales |
+| Technologies | Flutter (bureau et web) · Cordis 4.1.0 (framework de plugins) · noyau dsh (Node) |
+| Version | `2.0.0-alpha` |
+| Plateformes | macOS exécutable, web compilable ; les autres cibles n'ont que des projets générés |
 | Licence | Apache-2.0 / MIT |
 | Entrée | <https://ai.ntars.cn/> |
 | Dépôt | <https://github.com/ntars/Ondra> |
 
-Trois mécanismes centraux : l'émotion (un état avec inertie, non un adjectif réécrit à chaque tour), la mémoire (une chaîne de onze maillons, non un magasin vectoriel) et le contexte (préfixe figé + injection incrémentale + emballage budgétaire). Les 57 autres plugins gèrent la persona, la voix, le filtrage et le stockage.
+Trois mécanismes clés : émotion (état à inertie), mémoire (chaîne de onze maillons), contexte (préfixe figé + injection incrémentale + budget). La page des plugins fusionne 18 entrées embarquées et 75 entrées d'assemblage, soit 93.
 
-**Pourquoi y jeter un œil** : il décompose « l'accompagnement » en parties ingénierables et fait correctement l'arithmétique du coût — reconstruire le prompt système à chaque tour multiplie la facture par 44.
+**Pourquoi y jeter un œil** : l'accompagnement y est décomposé en mécanismes ingénierables séparément, et un correctif d'ordre de démarrage a ramené de 55 à 0 les dégradations silencieuses de 18 plugins.
 
 #### Webroit · En ligne
 
@@ -150,22 +156,24 @@ Un fichier HTML, une feuille de style, quelques scripts natifs. Pas de framework
 
 **Pourquoi y jeter un œil** : c'est un exemple de front-end sans build — comment un seul fichier HTML organise tout un site, et survit six ans sans mise à jour.
 
-#### TapMC · Développement initial
+#### TapMC · Étape de squelette
 
 | | |
 |---|---|
-| Ce que c'est | Lanceur Minecraft Java Edition multiplateforme inspiré de PCL, offrant le toucher de Bedrock sur mobile |
-| Technologies | À définir |
+| Ce que c'est | Squelette de jeu sandbox multijoueur modulaire : un front Flutter sur sept cibles et un serveur Java, reliés par un seul contrat JSON-RPC 2.0 |
+| Technologies | Flutter (front) · Java 21 (serveur) |
+| État | Squelette : le chemin fonctionne, 61 tests serveur et 18 tests front passent ; aucune version publiée |
+| Plateformes | Web et Android compilent ; les cinq autres cibles restent à vérifier |
 | Licence | Apache-2.0 / MIT |
 | Dépôt | <https://github.com/ntars/TapMC> |
 
-Le côté bureau couvre la gestion des versions, les loaders, la correspondance Java, les comptes, les mods, les modpacks et le triage des plantages ; le côté mobile construit le joystick tactile, le regard par balayage, l'appui long et le glisser de la barre rapide. Le compromis central : la logique de lancement n'existe qu'une fois, les deux côtés ne divergent que par l'environnement d'exécution et la couche d'interaction.
+Le serveur est l'unique source de vérité ; le front se contente d'afficher et de capter les entrées. Monde en grille 24×16, cinq types de blocs. Les mods ne reçoivent que `ModContext`, jamais `WorldGrid` : les règles ne peuvent pas être contournées.
 
-**Pourquoi y jeter un œil** : il traite « le mobile se sent moins bien que Bedrock » comme le vrai problème, plutôt que de simplement mapper le toucher sur une souris.
+**Pourquoi y jeter un œil** : la question « où les règles sont-elles calculées » est fixée par une contrainte de compilation, pas par la discipline en revue. Le noyau n'a aucune dépendance réseau, donc toute la logique se teste sans ouvrir de port (22 cas).
 
 ### 3.2 Planifiés
 
-**Les deux projets ci-dessous n'ont que de la documentation — aucun code exécutable.** Le libellé d'état sépare strictement « publié » et « planifié ».
+**Le projet ci-dessous n'a que de la documentation — aucun code exécutable.** Le libellé d'état sépare strictement « publié » et « planifié ».
 
 
 #### Desop · Planifié
@@ -188,17 +196,17 @@ Aucune modification système, mode utilisateur pur, la désinstallation restaure
 | Projet | État | Signification |
 |---|---|---|
 | Xael | Publié | Une version stable existe, téléchargeable et utilisable |
-| Ondra | Bêta interne | Une build bêta existe, ni bêta publique ni version stable |
+| Ondra | Bêta interne | `2.0.0-alpha` : macOS exécutable, web compilable ; les autres cibles ne sont que générées |
 | Wacmin | Disponible | Les quatre directions terminées et testées, avec accès CLI et MCP |
 | Apex | En ligne | Le site tourne et la source est publique |
-| TapMC | Planifié | Documentation seulement, aucun code exécutable |
+| TapMC | Étape de squelette | Le chemin fonctionne et 79 tests passent, sans version publiée |
 | Desop | Planifié | Documentation seulement, aucun code exécutable |
 
 **Pourquoi les projets planifiés figurent quand même sur le site** : le site est la plaque du studio, montrant « ce qui est en construction », pas seulement « ce qui est terminé ». Indiquer clairement l'état suffit — un visiteur qui lit « Planifié » sait qu'il n'y a rien à télécharger, ce qui est plus honnête que de le cacher.
 
 ---
 
-## 4. Points forts
+## 4. Caractéristiques clés
 
 ### Point fort 1 : sept projets sur une page, trois sources synchronisées
 
@@ -242,7 +250,7 @@ Aucune modification système, mode utilisateur pur, la désinstallation restaure
 
 ---
 
-## 5. Mise en œuvre du site
+## 5. Détails de conception et arbitrages techniques
 
 **C'est le seul chapitre consacré au site lui-même.** Il est volontairement comprimé — les projets sont l'essentiel.
 
@@ -412,7 +420,7 @@ Apex/
 ├── LICENSE                    # Texte intégral MIT
 ├── LICENSE-Apache-2.0.txt     # Texte intégral Apache-2.0 (parties dérivées d'asorn)
 ├── NOTICE                     # Mentions de copyright et de tiers
-├── README.md / README.en.md
+├── README.md / README_EN.md
 └── assets/
     ├── css/
     │   ├── base.css           # La seule feuille de style chargée
@@ -471,7 +479,7 @@ Apex/
 
 ---
 
-## 15. Limites connues
+## 15. Problèmes connus et limites
 
 1. **La version du cache dépend d'un humain** : oublier d'incrémenter `CACHE_NAME` laisse les visiteurs récurrents sur un ancien cache, sans qu'aucune erreur ne soit levée.
 2. **L'état manuel du thème n'est pas persisté** : un rechargement revient à la préférence système — par conception.

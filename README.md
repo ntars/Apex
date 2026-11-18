@@ -1,10 +1,10 @@
-[简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Русский](README.ru.md) | [Español](README.es.md) | [العربية](README.ar.md)
+[简体中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md) | [한국어](README_KO.md) | [Français](README_FR.md) | [Русский](README_RU.md) | [Español](README_ES.md) | [العربية](README_AR.md)
 
 # Apex
 
 **星玖工作室（Ntarstudio）的官网，以及七个项目的总索引。**
 
-The official site of Ntarstudio — and the index to six projects.
+The official site of Ntarstudio — and the index to seven projects.
 
 > **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**七个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
 
@@ -15,12 +15,17 @@ The official site of Ntarstudio — and the index to six projects.
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-6-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 一、项目名称与定位
+
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+>
+> **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
+
 
 **名称**：Apex，意为顶点。作为工作室的官网，它承担的是「入口」而非「产品」的角色。
 
@@ -72,13 +77,13 @@ The official site of Ntarstudio — and the index to six projects.
 
 ---
 
-## 三、七个项目
+## 三、核心功能
 
 首页「星玖工作室出品」区块展示七个项目，按状态排序：已上线在前，排期开发在后。
 
 **七个项目 = Apex、Desop、TapMC、Ondra、Wacmin、Webroit、Xael。** GitHub 是承载这些项目的平台，不算项目；Wacmin 内部的四个方向是它的实现细节，不单独列。
 
-### 3.1 已发布
+### 3.1 已发布与开发中
 
 #### 玄玖灵犀 Xael · 产品已上线
 
@@ -99,32 +104,30 @@ The official site of Ntarstudio — and the index to six projects.
 
 | | |
 |---|---|
-| 是什么 | 全插件式桌面 AI 陪伴体，75 个可装卸插件，数据全留本机 |
-| 技术 | TypeScript · Rust · Tauri（桌面）· WebView + 浏览器栈（安卓） |
-| 版本 | 内测 `1.3.0-alpha` |
-| 平台 | macOS · Windows · Android 三端已发布 |
+| 是什么 | 全插件式桌面 AI 陪伴体：界面只读插件投影，情绪、记忆、上下文是三个核心机制，数据全留本机 |
+| 技术 | Flutter（桌面与 Web）· Cordis 4.1.0（插件框架）· dsh 内核（Node） |
+| 版本 | 内测 `2.0.0-alpha` |
+| 平台 | macOS 可运行、Web 可构建；其余端只生成过工程 |
 | 许可 | Apache-2.0 / MIT |
 | 入口 | <https://ai.ntars.cn/> |
 | 仓库 | <https://github.com/ntars/Ondra> |
 
-三个核心机制：情绪（带惯性的状态量，不是每轮重新描述的形容词）、记忆（11 环完整链路，不是一个向量库）、上下文（冻结前缀 + 增量注入 + 预算装箱）。其余 57 个插件承担人设、声音、门控、存储等职责。
+三个核心机制：情绪（带惯性的状态量）、记忆（11 环链路）、上下文（冻结前缀 + 增量注入 + 预算装箱）。插件页把随包 18 条与装配层 75 条合并成 93 条，可逐条开关。
 
-**安卓端不是简化版**。`1.3.0` 把 75 个真插件装进了 WebView——cordis 本身是纯 ESM、零 Node 依赖，只需为 30 个 import `node:*` 的插件补一层替身（`fs` 走内存镜像 + IndexedDB 落盘、`crypto` 与 `zlib` 自带实现）。实测 75/76 装载成功，唯一装不上的那个要 `node:net` 起端口探测，WebView 里没有对应物。
-
-**为什么值得看**：它对「陪伴」这件事做了工程化拆解，且把成本敏感的部分（前缀缓存）算得很清楚——每轮重拼 system prompt 会让成本涨 44 倍。更难得的是同一个插件体系在桌面和手机上是**同一份代码**，而不是「手机端另写一套」——后者必然演变成两份真源，同一句话在两个平台算出不同的情绪值。
+**为什么值得看**：它把「陪伴」拆成可分别工程化的机制，并用一个启动时序补丁把并发 apply 造成的 18 个插件静默降级从 55 条修到 0 条；界面与插件之间只有投影一层，页面不持有插件内部状态。
 
 #### Webroit · 已上线
 
 | | |
 |---|---|
-| 是什么 | 浏览器里的安卓玩机工具箱，WebUSB 直连 ADB 与 Fastboot，152 项能力 |
+| 是什么 | 浏览器里的安卓玩机工具箱，WebUSB 直连 ADB 与 Fastboot，26 项功能已实现、152 项规划 |
 | 技术 | TypeScript · Vite · WebUSB · ya-webadb |
 | 形态 | 纯静态站点，零后端、零安装、零驱动 |
 | 许可 | Apache-2.0 / MIT |
 | 入口 | <https://adb.ntars.cn/> |
 | 仓库 | <https://github.com/ntars/Webroit> |
 
-把 Android 玩机所需的一切搬进浏览器。底层用 Tango 实现 ADB 协议，交付的是玩机者能直接用的界面与流程——应用管理、文件浏览、终端、投屏、日志、刷机，共 152 项能力，按风险分级。
+把 Android 玩机所需的一切搬进浏览器。底层用 Tango 实现 ADB 协议，交付的是玩机者能直接用的界面与流程——应用管理、文件浏览、终端、投屏、日志、刷机，26 项已实现、152 项规划，按风险分级。
 
 **为什么值得看**：它把「环境准备」整层删掉了。传统路径是下载 Platform-Tools → 配 PATH → 装 USB 驱动 → 写 udev 规则 → 连设备 → 敲命令；它把前面五步压成「打开网页 → 点连接 → 点功能」。而真正的难点从来不是敲命令，是「装完了还是连不上」时那种分不清是线、是口、是驱动、还是 `adb.exe` 还挂在后台的时刻。
 
@@ -136,8 +139,8 @@ The official site of Ntarstudio — and the index to six projects.
 |---|---|
 | 是什么 | macOS 与 Windows 的双向互通套件，并对外开放 AI 接入 |
 | 技术 | Node.js · Python · Rust |
-| 状态 | 四个方向全部完成，972 项测试 |
-| 许可 | MIT |
+| 状态 | 四个方向全部完成，测试全部通过 |
+| 许可 | Apache-2.0 / MIT |
 | 仓库 | <https://github.com/ntars/Wacmin> |
 
 按「宿主 × 动作」填满四个方向，四个都已写完并通过测试：
@@ -167,20 +170,20 @@ The official site of Ntarstudio — and the index to six projects.
 
 **为什么值得看**：它是「零构建前端」的一个样本——一个 HTML 文件如何组织好一个站点，且六年不更新也不会失效。
 
-#### TapMC · 开发初期
+#### TapMC · 骨架阶段
 
 | | |
 |---|---|
-| 是什么 | 一款多端 Minecraft Java 版启动器：可在 mac / win / linux / android / ios 上管理版本与模组，并让手机端的 Java 版拥有基岩版那样的触屏手感 |
-| 技术 | Rust（核心）+ Tauri 2（壳） |
-| 状态 | 启动核心可编译、有单元测试；界面与发行版尚无 |
-| 平台 | 桌面三端 + 安卓优先，iOS 排在安卓之后 |
+| 是什么 | 可模组化的多人沙盒游戏骨架：Flutter 七端前端 + Java 服务端，只通过一份 JSON-RPC 2.0 协议耦合 |
+| 技术 | Flutter（前端）· Java 21（后端） |
+| 状态 | 骨架阶段：链路已通，后端 61 个测试、前端 18 个测试通过；无发行版 |
+| 平台 | Web 与 Android 构建通过，其余五端待验 |
 | 许可 | Apache-2.0 / MIT |
 | 仓库 | <https://github.com/ntars/TapMC> |
 
-桌面端覆盖版本管理、加载器、Java 匹配、账号、模组、整合包、崩溃归因；手机端做触屏摇杆、滑动视角、长按交互、快捷栏拖拽。核心取舍是启动逻辑只有一份，两端只在运行环境与交互层分叉。
+后端是唯一真相来源，前端只负责呈现与输入；世界为 24×16 二维网格、五种方块；模组只能拿到 `ModContext`、拿不到 `WorldGrid`，绕不过规则。
 
-**为什么值得看**：它把「手机端手感不如基岩版」当作真问题来解，而不是简单地把触屏映射成鼠标。而且它对**做不到的事写得很直白**——iOS 端单独列了一节说明为什么排在最后：无 JIT、无子进程、App Store 不允许下载并执行外部代码，三条叠起来只剩「JRE 静态编进二进制」或「渲染搬到服务端」两条路。后者已经不叫本地启动器了。
+**为什么值得看**：它把「规则在哪算」用编译期约束钉死，而不是靠评审纪律；内核零网络依赖，整局逻辑可不起端口跑单测（22 个用例）。
 
 ### 3.2 排期开发 / Planned
 
@@ -206,18 +209,18 @@ The official site of Ntarstudio — and the index to six projects.
 | 项目 | 状态 | 含义 |
 |---|---|---|
 | Xael | 产品已上线 | 有正式版本（`5.0.0`），可下载可用 |
-| Ondra | 产品内测中 | 有内测包（`1.3.0-alpha`），三端可装，但不是公测版，也不是正式版 |
+| Ondra | 产品内测中 | `2.0.0-alpha`：macOS 可运行、Web 可构建，其余端只生成过工程 |
 | Webroit | 已上线 | 静态站点在 `adb.ntars.cn` 跑着，全部能力可用，源码公开 |
 | Wacmin | 可用 | 四个方向全部完成并通过测试，含 CLI 与 MCP 接入；不是「内测」也不是「正式版」，它本就以 CLI 形态交付 |
 | Apex | 已上线 | 站点在跑，源码公开 |
-| TapMC | 开发初期 | 启动核心可编译且有测试，但没有可运行的启动器，也无发行版 |
+| TapMC | 骨架阶段 | 链路已通、79 个测试通过，但没有发行版 |
 | Desop | 排期开发 | 只有文档，没有可运行代码 |
 
 **为什么排期项目也进官网卡片**：官网是工作室的门牌，展示的是「在做什么」，不只是「已经做成了什么」。排期项目标注清楚状态即可，访客看到「排期开发」四个字就知道点进去没有可下载内容——这比藏着不展示更诚实。
 
 ---
 
-## 四、核心亮点
+## 四、核心特性
 
 ### 亮点一：七个项目一页看完，三处口径同源
 
@@ -261,7 +264,7 @@ The official site of Ntarstudio — and the index to six projects.
 
 ---
 
-## 五、网站实现
+## 五、设计细节与工程取舍
 
 **本章是本文中唯一讲网站自身实现的部分。** 篇幅有意压缩——项目介绍才是重点。
 
@@ -431,7 +434,7 @@ Apex/
 ├── LICENSE                    # MIT 全文
 ├── LICENSE-Apache-2.0.txt     # Apache-2.0 全文（asorn 派生部分）
 ├── NOTICE                     # 版权与第三方声明
-├── README.md / README.en.md
+├── README.md / README_EN.md
 └── assets/
     ├── css/
     │   ├── base.css           # 唯一被加载的样式表
@@ -519,7 +522,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 
 ---
 
-## 十八、参与贡献方式
+## 十八、参与贡献
 
 ### 18.1 改动前自查
 

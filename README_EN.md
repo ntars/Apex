@@ -1,4 +1,4 @@
-[简体中文](README.md) | **English** | [日本語](README.ja.md) | [한국어](README.ko.md) | [Français](README.fr.md) | [Русский](README.ru.md) | [Español](README.es.md) | [العربية](README.ar.md)
+[简体中文](README.md) | **English** | [日本語](README_JA.md) | [한국어](README_KO.md) | [Français](README_FR.md) | [Русский](README_RU.md) | [Español](README_ES.md) | [العربية](README_AR.md)
 
 # Apex
 
@@ -13,12 +13,17 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-6-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Name and Positioning
+
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+>
+> **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
+
 
 **Name**: Apex, meaning summit. As the studio's official site it plays the role of an entrance, not a product.
 
@@ -68,13 +73,13 @@ The site has exactly three responsibilities:
 
 ---
 
-## 3. The Seven Projects
+## 3. Core Features
 
 The homepage's "星玖工作室出品" section shows seven projects, ordered by status: released first, planned after.
 
 **The seven projects are Apex, Desop, TapMC, Ondra, Wacmin, Webroit and Xael.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
 
-### 3.1 Released
+### 3.1 Released and in development
 
 #### Xael (玄玖灵犀) · Released
 
@@ -95,32 +100,30 @@ Covers Four Pillars, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hu
 
 | | |
 |---|---|
-| What it is | Fully pluggable desktop AI companion, 75 loadable plugins, all data stays local |
-| Stack | TypeScript · Rust · Tauri (desktop) · WebView + browser stack (Android) |
-| Version | Beta `1.3.0-alpha` |
-| Platforms | macOS · Windows · Android, all released |
+| What it is | A plugin-first desktop AI companion: the UI reads only plugin projections, emotion, memory and context are the three core mechanisms, and all data stays local |
+| Stack | Flutter (desktop and web) · Cordis 4.1.0 (plugin framework) · dsh kernel (Node) |
+| Version | Beta `2.0.0-alpha` |
+| Platforms | macOS runs, web builds; the remaining targets only have generated projects |
 | License | Apache-2.0 / MIT |
 | Entry | <https://ai.ntars.cn/> |
 | Repository | <https://github.com/ntars/Ondra> |
 
-Three core mechanisms: emotion (state with inertia, not an adjective rewritten each turn), memory (an eleven-link chain, not a vector store), and context (frozen prefix + incremental injection + budget packing). The other 57 plugins handle persona, voice, gating and storage.
+Three core mechanisms: emotion (state with inertia), memory (an eleven-link chain) and context (frozen prefix + incremental injection + budget packing). The plugin page merges 18 bundled entries with 75 from the assembly layer — 93 in total, each toggleable.
 
-**Android is not a cut-down version.** `1.3.0` puts the 75 real plugins inside the WebView — cordis itself is pure ESM with zero Node dependencies, so all it takes is a stand-in layer for the 30 plugins that import `node:*` (`fs` backed by an in-memory mirror plus IndexedDB persistence, `crypto` and `zlib` implemented in-house). Measured: 75 of 76 load successfully; the one that does not needs `node:net` for port probing, which has no counterpart in a WebView.
-
-**Why it is worth a look**: it engineers "companionship" into parts, and does the cost arithmetic properly — rebuilding the system prompt every turn multiplies the bill by 44. More unusually, the same plugin system runs on desktop and phone as **one body of code** rather than a phone-specific rewrite — the latter inevitably becomes a second source of truth, where the same sentence yields different emotion values on each platform.
+**Why it is worth a look**: it breaks "companionship" into separately engineered mechanisms, and a boot-order patch took the silent degradation of 18 plugins from 55 entries to zero. Only one projection layer sits between UI and plugins, so pages never hold plugin internals.
 
 #### Webroit · Live
 
 | | |
 |---|---|
-| What it is | An Android toolbox in the browser: ADB and Fastboot over WebUSB, 152 features |
+| What it is | An Android toolbox in the browser: ADB and Fastboot over WebUSB, 26 features shipped and 152 planned |
 | Stack | TypeScript · Vite · WebUSB · ya-webadb |
 | Form | A pure static site — no backend, no install, no drivers |
 | License | Apache-2.0 / MIT |
 | Entry | <https://adb.ntars.cn/> |
 | Repository | <https://github.com/ntars/Webroit> |
 
-Brings everything you need for Android tinkering into the browser. The ADB protocol is implemented on top of Tango; what ships is the interface and the workflows a tinkerer actually uses — app management, file browsing, terminal, screen mirroring, logs and flashing, 152 features in all, each carrying a risk tier.
+Brings everything you need for Android tinkering into the browser. The ADB protocol is implemented on top of Tango; what ships is the interface and the workflows a tinkerer actually uses — app management, file browsing, terminal, screen mirroring, logs and flashing, 26 shipped and 152 planned, each carrying a risk tier.
 
 **Why it is worth a look**: it deletes the entire "environment setup" layer. The traditional path is download Platform-Tools → configure PATH → install USB drivers → write udev rules → connect → type commands; it compresses the first five steps into "open the page → click connect → click a feature". And the real difficulty was never typing the commands — it was the moment after setup when it still will not connect and you cannot tell whether it is the cable, the port, the driver, or an `adb.exe` still holding the interface in the background.
 
@@ -132,8 +135,8 @@ Brings everything you need for Android tinkering into the browser. The ADB proto
 |---|---|
 | What it is | Bidirectional interoperability suite between macOS and Windows, with an AI access layer |
 | Stack | Node.js · Python · Rust |
-| Status | All four directions complete, 972 tests |
-| License | MIT |
+| Status | All four directions complete, all tests passing |
+| License | Apache-2.0 / MIT |
 | Repository | <https://github.com/ntars/Wacmin> |
 
 Four directions, crossing "host" with "action" — all four written and passing tests:
@@ -163,20 +166,20 @@ One HTML file, one stylesheet, a handful of plain scripts. No framework, no buil
 
 **Why it is worth a look**: it is a sample of build-free front-end — how one HTML file can organise a whole site, and survive six years without updates.
 
-#### TapMC · Early development
+#### TapMC · Skeleton stage
 
 | | |
 |---|---|
-| What it is | A multi-platform Minecraft Java Edition launcher: manage versions and mods on macOS, Windows, Linux, Android and iOS, and give Java Edition on phones the touch feel of Bedrock Edition |
-| Stack | Rust (core) + Tauri 2 (shell) |
-| Status | Launch core compiles and is unit-tested; no interface and no releases yet |
-| Platforms | Three desktop platforms, plus Android first, with iOS after Android |
+| What it is | A moddable multiplayer sandbox game skeleton: a Flutter front end on seven platforms plus a Java server, coupled by one JSON-RPC 2.0 contract |
+| Stack | Flutter (front end) · Java 21 (back end) |
+| Status | Skeleton: the path works, 61 back-end and 18 front-end tests pass; no release |
+| Platforms | Web and Android build; the other five targets are unverified |
 | License | Apache-2.0 / MIT |
 | Repository | <https://github.com/ntars/TapMC> |
 
-The desktop side covers version management, loaders, Java matching, accounts, mods, modpacks and crash triage; the phone side builds touch sticks, swipe look, long press and hotbar dragging. The core trade-off is that launch logic exists once, with the two sides diverging only in runtime and interaction layer.
+The back end is the single source of truth; the front end only renders and collects input. The world is a 24×16 grid with five block types, and mods receive `ModContext` but never `WorldGrid`, so rules cannot be bypassed.
 
-**Why it is worth a look**: it treats "phones feel worse than Bedrock" as the real problem, rather than simply mapping touch onto a mouse. It is also unusually direct about **what it cannot do** — iOS gets its own section explaining why it comes last: no JIT, no child processes, and App Store rules forbidding downloading and executing external code. Stack those three and only two paths remain: compile the JRE statically into the binary, or move rendering to a server. The latter is no longer a local launcher.
+**Why it is worth a look**: "where the rules are computed" is fixed by a compile-time constraint rather than review discipline, and the network-free core lets the whole logic run in unit tests without a port (22 cases).
 
 ### 3.2 Planned
 
@@ -202,20 +205,20 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 | Project | Status | Meaning |
 |---|---|---|
 | Xael | Released | A stable version (`5.0.0`) exists, downloadable and usable |
-| Ondra | Internal beta | Beta builds exist (`1.3.0-alpha`) for all three platforms, but this is neither a public beta nor a stable release |
+| Ondra | Internal beta | `2.0.0-alpha`: macOS runs and web builds; the other targets only have generated projects |
 | Webroit | Live | The static site runs at `adb.ntars.cn`, all features usable, source public |
 | Wacmin | Available | All four directions complete and tested, with CLI and MCP access; neither "beta" nor "stable release" applies — it ships as a CLI |
 | Apex | Live | The site runs and the source is public |
-| TapMC | Early development | The launch core compiles and is tested, but there is no runnable launcher and no release |
+| TapMC | Skeleton stage | The path works and 79 tests pass, but there is no release |
 | Desop | Planned | Documentation only, no runnable code |
 
 **Why planned projects appear on the site at all**: the site is the studio's nameplate, showing "what is being built", not only "what has been finished". Labelling the status clearly is enough — a visitor who reads "Planned" knows there is nothing to download, which is more honest than hiding it.
 
 ---
 
-## 4. Highlights
+## 4. Core Characteristics
 
-### Highlight 1: Six projects on one page, three sources in step
+### Highlight 1: Seven projects on one page, three sources in step
 
 - **Name**: Single-page index.
 - **Value**: Solves "to learn what this studio builds you must open seven repositories".
@@ -257,7 +260,7 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 
 ---
 
-## 5. Site Implementation
+## 5. Design Details and Engineering Trade-offs
 
 **This is the only chapter about the site itself.** It is deliberately compressed — the projects are the point.
 
@@ -427,7 +430,7 @@ Apex/
 ├── LICENSE                    # Full MIT text
 ├── LICENSE-Apache-2.0.txt     # Full Apache-2.0 text (asorn-derived parts)
 ├── NOTICE                     # Copyright and third-party statements
-├── README.md / README.en.md
+├── README.md / README_EN.md
 └── assets/
     ├── css/
     │   ├── base.css           # The only stylesheet loaded
@@ -486,7 +489,7 @@ Apex/
 
 ---
 
-## 15. Known Limitations
+## 15. Known Issues and Limitations
 
 1. **The cache version depends on a human**: forgetting to bump `CACHE_NAME` leaves returning visitors on an old cache, with no error raised anywhere.
 2. **Manual theme state is not persisted**: a reload returns to the system preference — by design.
@@ -561,7 +564,7 @@ Copyright (c) 2024–2026 Ntarstudio
 
 ---
 
-## 20. NOTICE Open-source Compliance
+## 20. NOTICE and Open-Source Compliance
 
 Every third-party component and asset used by this project is disclosed item by item in [NOTICE](NOTICE).
 
