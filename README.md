@@ -2,11 +2,11 @@
 
 # Apex
 
-**星玖工作室（Ntarstudio）的官网，以及七个项目的总索引。**
+**星玖工作室（Ntarstudio）的官网，以及九个项目的总索引。**
 
-The official site of Ntarstudio — and the index to seven projects.
+The official site of Ntarstudio — and the index to nine projects.
 
-> **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**七个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
+> **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**九个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -15,14 +15,14 @@ The official site of Ntarstudio — and the index to seven projects.
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-9-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 一、项目名称与定位
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与九个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its nine projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -37,7 +37,7 @@ The official site of Ntarstudio — and the index to seven projects.
 2. **它是静态文件，不是应用**。没有后端、没有数据库、没有账号体系。所有内容硬编码在 `index.html`，改一行文字就是一次提交。
 3. **它是索引，不是内容源**。项目的真实信息在各项目自己的仓库与站点，本页只做汇总与跳转，不重复建设。
 
-**为什么这个仓库的 README 要重点介绍项目**：官网首页的「星玖工作室出品」区块列出了全部七个项目。这个列表与本文第三章、与 GitHub 自述文件三处同源。**任何想快速了解工作室在做什么的人，看这一页就够了**，不必逐个仓库翻。
+**为什么这个仓库的 README 要重点介绍项目**：官网首页的「星玖工作室出品」区块列出了全部九个项目。这个列表与本文第三章、与 GitHub 自述文件三处同源。**任何想快速了解工作室在做什么的人，看这一页就够了**，不必逐个仓库翻。
 
 ---
 
@@ -58,7 +58,7 @@ The official site of Ntarstudio — and the index to seven projects.
 | 职责 | 做法 |
 |---|---|
 | 建立品牌识别 | 首屏把「星玖工作室 / Ntarstudio / Ntars」三个称呼对应起来 |
-| 导向开源项目 | 七张卡片直连正式地址 |
+| 导向开源项目 | 九张卡片直连正式地址 |
 | 信息如实 | 未上线、已下线的信息一律不出现在页面、关键词、结构化数据里 |
 
 ### 2.4 适用场景
@@ -79,11 +79,11 @@ The official site of Ntarstudio — and the index to seven projects.
 
 ## 三、核心功能
 
-首页「星玖工作室出品」区块展示七个项目，按状态排序：已上线在前，排期开发在后。
+首页「星玖工作室出品」区块展示九个项目，按状态排序：已上线或已交付在前，开发中居中，排期开发在后。
 
-**七个项目 = Apex、Desop、TapMC、Ondra、Wacmin、Webroit、Xael。** GitHub 是承载这些项目的平台，不算项目；Wacmin 内部的四个方向是它的实现细节，不单独列。
+**九个项目 = Xael、Ondra、Webroit、Wacmin、Gitrule-skill、Apex、Flutter-IDE、TapMC、Desop。** GitHub 是承载这些项目的平台，不算项目；Wacmin 内部的四个方向是它的实现细节，不单独列。
 
-### 3.1 已发布与开发中
+### 3.1 已发布、已交付与开发中
 
 #### 玄玖灵犀 Xael · 产品已上线
 
@@ -156,6 +156,21 @@ The official site of Ntarstudio — and the index to seven projects.
 
 **为什么值得看**：它按确定性排序开发，把最可能失败的一环留到最后，并预先定义了降级路径——即使最后一环不成立，前三项仍成立。而事实证明这一环也成立了。另外那层 `ai/` 不是「顺手加个 MCP」，是把调度逻辑从 shell 壳里抽成 `directions.mjs` 后自然长出来的——抽出的过程还暴露了一个沉睡缺陷：`/api/status` 每次请求都会把 21 行中文用法写进 stdout 并把 `exitCode` 设成 2，console 从不读自己的 stdout 所以一直没被发现，但 MCP 规范要求 stdout 只出现协议消息，同一写法在 MCP 上是致命的。
 
+#### Gitrule-skill · 已交付
+
+| | |
+|---|---|
+| 是什么 | 一套覆盖项目全生命周期的通用规范模板：立项、需求、架构、开发、测试、部署、运维、迭代，以及文档、合规与 AI 程序化接入 |
+| 技术 | Markdown（零第三方依赖）· Python CLI · MCP 服务器 |
+| 规模 | 66 篇规范，简体中文与英语各一套，一一对应 |
+| 状态 | 已交付：CLI 校验 0 问题，Skill、专家包、MCP 服务器三种接入齐备 |
+| 许可 | MIT |
+| 仓库 | <https://github.com/ntars/Gitrule-skill> |
+
+一份规范一个文件，各自独立、按需取用。配套零依赖 CLI 检查断链、孤岛、职责句、代码围栏、索引计数与占位符登记，`optimize` 只做可安全自动修复的项。
+
+**为什么值得看**：它把「README 写哪 20 章、仓库怎么命名、简介与话题怎么设」这类口头约定变成可校验的文件与命令。本次十个仓库的文档对齐即以它为唯一基准。
+
 #### Apex · 已上线
 
 | | |
@@ -169,6 +184,21 @@ The official site of Ntarstudio — and the index to seven projects.
 一个 HTML、一份样式表、几个原生脚本。没有框架、没有构建、没有后端。零依赖意味着三年后还能跑。
 
 **为什么值得看**：它是「零构建前端」的一个样本——一个 HTML 文件如何组织好一个站点，且六年不更新也不会失效。
+
+#### Flutter-IDE · 骨架阶段
+
+| | |
+|---|---|
+| 是什么 | 源码优先的 Flutter 可视化搭建 IDE：画布拖拽、属性面板改值，产出可脱离工具维护的 Dart 代码 |
+| 技术 | Dart 3.14+ · Flutter Desktop |
+| 版本 | `0.1.0` |
+| 状态 | 骨架阶段：工作区、47 条设计令牌、物料协议与五条校验规则完成；codegen、AST 写回与点选待实现 |
+| 许可 | Apache-2.0 / MIT |
+| 仓库 | <https://github.com/ntars/Flutter-IDE> |
+
+判定项目是否成立的唯一标准：删掉 IDE，项目还能否正常 `flutter run`。因此意图大纲、覆盖层与设计令牌全部是进 git 的明文文件，不存在只活在工具里的项目结构。
+
+**为什么值得看**：它把「不被工具锁定」写成三条可验收的标准——无私有 Schema、改一处只有一处 diff、同一输入两次生成结果一致，而不是一句口号。
 
 #### TapMC · 骨架阶段
 
@@ -210,9 +240,11 @@ The official site of Ntarstudio — and the index to seven projects.
 |---|---|---|
 | Xael | 产品已上线 | 有正式版本（`5.0.0`），可下载可用 |
 | Ondra | 产品内测中 | `2.0.0-alpha`：macOS 可运行、Web 可构建，其余端只生成过工程 |
-| Webroit | 已上线 | 静态站点在 `adb.ntars.cn` 跑着，全部能力可用，源码公开 |
+| Webroit | 已上线 | 静态站点在 `adb.ntars.cn` 运行，26 项功能可用，源码公开 |
 | Wacmin | 可用 | 四个方向全部完成并通过测试，含 CLI 与 MCP 接入；不是「内测」也不是「正式版」，它本就以 CLI 形态交付 |
+| Gitrule-skill | 已交付 | 66 篇规范中英双语，CLI 校验 0 问题；不设发行版号，按主干交付 |
 | Apex | 已上线 | 站点在跑，源码公开 |
+| Flutter-IDE | 骨架阶段 | 契约、令牌与五条校验规则可用；codegen、AST 写回与点选未实现，无发行版 |
 | TapMC | 骨架阶段 | 链路已通、79 个测试通过，但没有发行版 |
 | Desop | 排期开发 | 只有文档，没有可运行代码 |
 
@@ -222,7 +254,7 @@ The official site of Ntarstudio — and the index to seven projects.
 
 ## 四、核心特性
 
-### 亮点一：七个项目一页看完，三处口径同源
+### 亮点一：九个项目集中呈现，三处口径同源
 
 - **亮点名称**：单页总索引。
 - **价值**：解决「想知道这个工作室在做什么，得逐个仓库翻」的问题。
@@ -335,7 +367,7 @@ The official site of Ntarstudio — and the index to seven projects.
 项目状态变化（上线、下线、换域名）时，以下三处必须同时更新：
 
 1. `index.html` 的 `PROJECTS` 数组；
-2. 本文第三章「七个项目」；
+2. 本文第三章「九个项目」；
 3. GitHub 自述文件 `ntars/ntars` 的项目表。
 
 **已下线项目不得以任何形式回流**——不出现在页面、关键词或结构化数据里。
@@ -393,7 +425,7 @@ python3 -m http.server 8000
 
 ### 8.1 看项目
 
-直接读本文第三章「七个项目」，或访问首页 <https://www.ntars.cn/>。
+直接读本文第三章「九个项目」，或访问首页 <https://www.ntars.cn/>。
 
 ### 8.2 本地跑网站
 
@@ -515,7 +547,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 ## 十七、后续路线图
 
 1. **缓存版本自动化**：用构建时的资源哈希替代手写 `CACHE_NAME`。
-2. **卡片图标**：七个项目的图标备好后挂载，当前均为 `icon: null`。
+2. **卡片图标**：九个项目的图标备好后挂载，当前均为 `icon: null`。
 3. **无障碍审计**：已有 `role`、`tabindex`、`aria-*`，但未做完整的键盘走查与读屏测试。
 4. **减少第三方依赖**：Typed.js 功能简单，可用约 40 行原生代码替代。
 5. **OG 预览图**：当前无 `og:image`，社交平台分享时无缩略图。
@@ -526,7 +558,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 
 ### 18.1 改动前自查
 
-1. 七张卡片的标题、描述、链接与项目真实状态一致；
+1. 九张卡片的标题、描述、链接与项目真实状态一致；
 2. `description`、`keywords`、`og:*`、JSON-LD、`canonical` 与正文口径同步；
 3. 动了预缓存里的资源，`sw.js` 的 `CACHE_NAME` 已升版；
 4. 亮色与暗色两套主题都看过；

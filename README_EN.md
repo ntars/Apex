@@ -2,9 +2,9 @@
 
 # Apex
 
-**The official site of Ntarstudio — and the index to seven projects.**
+**The official site of Ntarstudio — and the index to nine projects.**
 
-> **This repository has two roles**: it is the source of the studio's homepage (one HTML file, one stylesheet, a handful of plain scripts), and it is **the index to seven projects**. This document focuses on the latter: what each project is, how far it has got, and where to look. The site's own implementation is compressed into Chapter 5 and deliberately kept short.
+> **This repository has two roles**: it is the source of the studio's homepage (one HTML file, one stylesheet, a handful of plain scripts), and it is **the index to nine projects**. This document focuses on the latter: what each project is, how far it has got, and where to look. The site's own implementation is compressed into Chapter 5 and deliberately kept short.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -13,14 +13,14 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-9-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Name and Positioning
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与九个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its nine projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **It is static files, not an application.** No backend, no database, no accounts. All content is hard-coded in `index.html`; changing one line of text is one commit.
 3. **It is an index, not a content source.** A project's real information lives in its own repository and site. This page summarises and links; it does not duplicate.
 
-**Why this README focuses on the projects**: the "星玖工作室出品" section on the homepage lists all seven projects. That list, Chapter 3 of this document, and the GitHub profile README are three renderings of one source. **Anyone who wants a quick picture of what the studio is building only needs this page** — no need to open seven repositories.
+**Why this README focuses on the projects**: the "星玖工作室出品" section on the homepage lists all nine projects. That list, Chapter 3 of this document, and the GitHub profile README are three renderings of one source. **Anyone who wants a quick picture of what the studio is building only needs this page** — no need to open seven repositories.
 
 ---
 
@@ -75,11 +75,11 @@ The site has exactly three responsibilities:
 
 ## 3. Core Features
 
-The homepage's "星玖工作室出品" section shows seven projects, ordered by status: released first, planned after.
+The homepage's "星玖工作室出品" section shows nine projects, ordered by status: released or delivered first, in development in the middle, planned last.
 
-**The seven projects are Apex, Desop, TapMC, Ondra, Wacmin, Webroit and Xael.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
+**The nine projects are Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
 
-### 3.1 Released and in development
+### 3.1 Released, delivered and in development
 
 #### Xael (玄玖灵犀) · Released
 
@@ -152,6 +152,21 @@ Four directions, crossing "host" with "action" — all four written and passing 
 
 **Why it is worth a look**: it orders development by certainty, leaving the most likely failure until last, and defines a degradation path in advance — even if the last one fails, the first three still stand. As it turned out, the last one works too. The `ai/` layer was not bolted on as "an MCP wrapper": extracting the scheduling logic out of the shell into `directions.mjs` is what produced it — and the extraction surfaced a dormant defect. `/api/status` imported the entry point on every request, which wrote 21 lines of Chinese usage text to stdout and set `exitCode` to 2. The console never reads its own stdout, so nobody noticed; but the MCP spec requires stdout to carry protocol messages only, which makes the same pattern fatal there.
 
+#### Gitrule-skill · Delivered
+
+| | |
+|---|---|
+| What it is | A universal specification set covering the project lifecycle: planning, requirements, architecture, development, testing, deployment, operations and iteration, plus documentation, compliance and programmatic access |
+| Stack | Markdown (zero third-party dependencies) · Python CLI · MCP server |
+| Scope | 66 specifications in Simplified Chinese and English, one-to-one |
+| Status | Delivered: CLI reports 0 issues; Skill, expert package and MCP server all available |
+| License | MIT |
+| Repository | <https://github.com/ntars/Gitrule-skill> |
+
+One specification per file, independent and read on demand. A zero-dependency CLI checks broken links, orphans, responsibility sentences, code fences, index counts and placeholder registration; `optimize` only applies safe automatic fixes.
+
+**Why it is worth a look**: it turns conventions — which 20 chapters a README needs, how a repository is named, how the description and topics are set — into checkable files and commands. The alignment of all ten repositories used it as the single baseline.
+
 #### Apex · Live
 
 | | |
@@ -165,6 +180,21 @@ Four directions, crossing "host" with "action" — all four written and passing 
 One HTML file, one stylesheet, a handful of plain scripts. No framework, no build, no backend. Zero dependencies means it still runs three years from now.
 
 **Why it is worth a look**: it is a sample of build-free front-end — how one HTML file can organise a whole site, and survive six years without updates.
+
+#### Flutter-IDE · Skeleton stage
+
+| | |
+|---|---|
+| What it is | A source-first visual IDE for Flutter: drag on a canvas, edit in panels, and keep Dart you can maintain without the tool |
+| Stack | Dart 3.14+ · Flutter Desktop |
+| Version | `0.1.0` |
+| Status | Skeleton: workspace, 47 design tokens, block protocol and five validation rules are done; codegen, AST write-back and point-and-click remain |
+| License | Apache-2.0 / MIT |
+| Repository | <https://github.com/ntars/Flutter-IDE> |
+
+The single test of whether the project should exist: delete the IDE and see whether the project still runs `flutter run`. Intent outlines, overlays and design tokens are therefore plain files in git; no project structure lives only inside the tool.
+
+**Why it is worth a look**: "not locked into a tool" is written as three acceptance criteria — no private Schema, one change yields one diff, the same input generates the same output twice — rather than a slogan.
 
 #### TapMC · Skeleton stage
 
@@ -206,9 +236,11 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 |---|---|---|
 | Xael | Released | A stable version (`5.0.0`) exists, downloadable and usable |
 | Ondra | Internal beta | `2.0.0-alpha`: macOS runs and web builds; the other targets only have generated projects |
-| Webroit | Live | The static site runs at `adb.ntars.cn`, all features usable, source public |
+| Webroit | Live | The static site runs at `adb.ntars.cn`, 26 features usable, source public |
 | Wacmin | Available | All four directions complete and tested, with CLI and MCP access; neither "beta" nor "stable release" applies — it ships as a CLI |
+| Gitrule-skill | Delivered | 66 specifications in Chinese and English, CLI reports 0 issues; no versioned release, delivered from the main branch |
 | Apex | Live | The site runs and the source is public |
+| Flutter-IDE | Skeleton stage | Contracts, tokens and five validation rules usable; codegen, AST write-back and point-and-click unimplemented; no release |
 | TapMC | Skeleton stage | The path works and 79 tests pass, but there is no release |
 | Desop | Planned | Documentation only, no runnable code |
 
@@ -218,10 +250,10 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 
 ## 4. Core Characteristics
 
-### Highlight 1: Seven projects on one page, three sources in step
+### Highlight 1: Nine projects on one page, three sources in step
 
 - **Name**: Single-page index.
-- **Value**: Solves "to learn what this studio builds you must open seven repositories".
+- **Value**: Solves "to learn what this studio builds you must open nine repositories".
 - **Implementation**: The homepage cards, Chapter 3 of this document and the GitHub profile README list the same set with consistent status wording.
 - **Differentiation**: Most personal pages list released projects only, or scatter the information across repository READMEs.
 - **Evidence**: The three lists match item by item; see the status table in 5.9.
@@ -511,7 +543,7 @@ The README describes the site's current state; releases record what changed each
 ## 17. Roadmap
 
 1. **Automate the cache version**: replace the hand-written `CACHE_NAME` with a build-time asset hash.
-2. **Card icons**: mount icons for all seven projects once available; all are currently `icon: null`.
+2. **Card icons**: mount icons for all nine projects once available; all are currently `icon: null`.
 3. **Accessibility audit**: `role`, `tabindex` and `aria-*` are present, but a full keyboard walkthrough and screen-reader test have not been done.
 4. **Reduce third-party dependencies**: Typed.js is simple enough to replace with roughly 40 lines of native code.
 5. **Open Graph preview image**: there is currently no `og:image`.
@@ -522,7 +554,7 @@ The README describes the site's current state; releases record what changed each
 
 ### 18.1 Self-check before changing anything
 
-1. All seven cards' titles, descriptions and links match the projects' real status;
+1. All nine cards' titles, descriptions and links match the projects' real status;
 2. `description`, `keywords`, `og:*`, JSON-LD and `canonical` stay in sync with the body copy;
 3. If any pre-cached asset changed, `CACHE_NAME` has been bumped;
 4. Both light and dark themes have been reviewed;

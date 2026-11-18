@@ -2,9 +2,9 @@
 
 # Apex
 
-**El sitio oficial de Ntarstudio (星玖工作室) — y el índice de los siete proyectos.**
+**El sitio oficial de Ntarstudio (星玖工作室) — y el índice de los nueve proyectos.**
 
-> **Este repositorio tiene dos roles**: es el código fuente del sitio del estudio (un archivo HTML, una hoja de estilos, unos pocos scripts nativos) y es **el índice de los siete proyectos**. Este documento se centra en lo segundo: qué es cada proyecto, en qué punto está y dónde mirar. La implementación del sitio se comprime en el capítulo 5 y se mantiene deliberadamente breve.
+> **Este repositorio tiene dos roles**: es el código fuente del sitio del estudio (un archivo HTML, una hoja de estilos, unos pocos scripts nativos) y es **el índice de los nueve proyectos**. Este documento se centra en lo segundo: qué es cada proyecto, en qué punto está y dónde mirar. La implementación del sitio se comprime en el capítulo 5 y se mantiene deliberadamente breve.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -13,14 +13,14 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-7-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-9-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Nombre y posicionamiento
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与七个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its seven projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与九个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its nine projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **Son archivos estáticos, no una aplicación.** Sin backend, sin base de datos, sin cuentas. Todo el contenido está escrito en `index.html`; cambiar una línea de texto es un commit.
 3. **Es un índice, no una fuente de contenido.** La información real de un proyecto vive en su propio repositorio y su propio sitio. Esta página resume y enlaza; no duplica.
 
-**Por qué este README se centra en los proyectos**: la sección «星玖工作室出品» de la página de inicio enumera los siete proyectos. Esa lista, el capítulo 3 de este documento y el README de perfil de GitHub son tres representaciones de una misma fuente. **Quien quiera una idea rápida de lo que construye el estudio solo necesita esta página** — no hace falta abrir siete repositorios.
+**Por qué este README se centra en los proyectos**: la sección «星玖工作室出品» de la página de inicio enumera los nueve proyectos. Esa lista, el capítulo 3 de este documento y el README de perfil de GitHub son tres representaciones de una misma fuente. **Quien quiera una idea rápida de lo que construye el estudio solo necesita esta página** — no hace falta abrir nueve repositorios.
 
 ---
 
@@ -73,13 +73,13 @@ El sitio tiene exactamente tres responsabilidades:
 
 ---
 
-## 3. Funciones principales: los siete proyectos
+## 3. Funciones principales: los nueve proyectos
 
-La sección «星玖工作室出品» de la página de inicio muestra siete proyectos, ordenados por estado: publicados primero, planificados después.
+La sección «星玖工作室出品» de la página de inicio muestra nueve proyectos, ordenados por estado: publicados primero, planificados después.
 
-**Los siete proyectos son Apex, Desop, TapMC, Ondra, Wacmin, Webroit y Xael.** GitHub es la plataforma que los aloja, no un proyecto; las cuatro direcciones internas de Wacmin son un detalle de implementación y no se enumeran por separado.
+**Los nueve proyectos son Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC y Desop.** GitHub es la plataforma que los aloja, no un proyecto; las cuatro direcciones internas de Wacmin son un detalle de implementación y no se enumeran por separado.
 
-### 3.1 Publicados y en desarrollo
+### 3.1 Publicados, entregados y en desarrollo
 
 #### Xael (玄玖灵犀) · Publicado
 
@@ -142,6 +142,21 @@ Completa cuatro direcciones cruzando «anfitrión» con «acción»: producir un
 
 **Por qué vale la pena**: ordena el desarrollo por certeza, deja el fallo más probable para el final y define de antemano una ruta de degradación — incluso si falla, las tres primeras se sostienen.
 
+#### Gitrule-skill · Entregado
+
+| | |
+|---|---|
+| Qué es | Un conjunto de especificaciones genéricas que cubre todo el ciclo de vida: definición, requisitos, arquitectura, desarrollo, pruebas, despliegue, operación, iteración, además de documentación, cumplimiento y acceso programático por IA |
+| Tecnologías | Markdown (sin dependencias de terceros) · CLI en Python · servidor MCP |
+| Volumen | 66 especificaciones en chino simplificado e inglés, una a una |
+| Estado | Entregado: el CLI no informa problemas; Skill, paquete de experto y servidor MCP están disponibles |
+| Licencia | MIT |
+| Repositorio | <https://github.com/ntars/Gitrule-skill> |
+
+Una especificación por archivo, independiente y consultada según necesidad. Un CLI sin dependencias comprueba enlaces rotos, archivos huérfanos, frases de responsabilidad, bloques de código, recuentos de índice y registro de marcadores.
+
+**Por qué vale la pena**: convierte convenciones —qué 20 capítulos necesita un README, cómo se nombra un repositorio, cómo se redactan descripción y temas— en archivos y comandos verificables. La alineación de los diez repositorios se apoyó en esta base única.
+
 #### Apex · En línea
 
 | | |
@@ -155,6 +170,21 @@ Completa cuatro direcciones cruzando «anfitrión» con «acción»: producir un
 Un archivo HTML, una hoja de estilos, unos pocos scripts nativos. Sin framework, sin compilación, sin backend. Cero dependencias significa que seguirá funcionando dentro de tres años.
 
 **Por qué vale la pena**: es una muestra de front-end sin compilación — cómo un solo archivo HTML organiza todo un sitio y sobrevive seis años sin actualizaciones.
+
+#### Flutter-IDE · Etapa de esqueleto
+
+| | |
+|---|---|
+| Qué es | Un IDE visual de Flutter centrado en el código: arrastrar en un lienzo, editar en paneles y obtener Dart mantenible sin la herramienta |
+| Tecnologías | Dart 3.14+ · Flutter Desktop |
+| Versión | `0.1.0` |
+| Estado | Esqueleto: espacio de trabajo, 47 tokens de diseño, protocolo de bloques y cinco reglas de validación terminados; codegen, escritura AST y selección pendientes |
+| Licencia | Apache-2.0 / MIT |
+| Repositorio | <https://github.com/ntars/Flutter-IDE> |
+
+El único criterio de viabilidad: elimine el IDE y el proyecto debe seguir pasando `flutter run`. Por eso los esquemas de intención, las capas y los tokens de diseño son archivos de texto en git; no hay estructuras que vivan solo dentro de la herramienta.
+
+**Por qué vale la pena**: «no quedar atado a una herramienta» está escrito como tres criterios de aceptación —sin Schema privado, un cambio produce un solo diff, la misma entrada genera dos veces el mismo resultado— y no como un eslogan.
 
 #### TapMC · Etapa de esqueleto
 
@@ -197,8 +227,11 @@ Cero cambios en el sistema, modo usuario puro, desinstalar lo restaura todo. Los
 |---|---|---|
 | Xael | Publicado | Existe una versión estable, descargable y usable |
 | Ondra | Beta interna | `2.0.0-alpha`: macOS ejecutable, web compilable; las demás solo generadas |
+| Webroit | En línea | Sitio estático en servicio en adb.ntars.cn, 26 funciones utilizables, código público |
 | Wacmin | Disponible | Las cuatro direcciones terminadas y probadas, con acceso CLI y MCP |
+| Gitrule-skill | Entregado | 66 especificaciones en chino e inglés, el CLI no informa problemas; sin número de versión, se entrega desde la rama principal |
 | Apex | En línea | El sitio funciona y el código es público |
+| Flutter-IDE | Etapa de esqueleto | Contratos, tokens y cinco reglas de validación utilizables; codegen, escritura AST y selección sin implementar; sin versión publicada |
 | TapMC | Etapa de esqueleto | El camino funciona y 79 pruebas pasan; sin versión publicada |
 | Desop | Planificado | Solo documentación, sin código ejecutable |
 
@@ -208,7 +241,7 @@ Cero cambios en el sistema, modo usuario puro, desinstalar lo restaura todo. Los
 
 ## 4. Características principales
 
-### Destacado 1: siete proyectos en una página, tres fuentes sincronizadas
+### Destacado 1: nueve proyectos en una página, tres fuentes sincronizadas
 
 - **Nombre**: índice de página única.
 - **Valor**: resuelve «para saber qué construye este estudio hay que abrir seis repositorios».
@@ -501,7 +534,7 @@ El README describe el estado actual del sitio; las releases registran qué cambi
 ## 17. Hoja de ruta
 
 1. **Automatizar la versión de caché**: sustituir el `CACHE_NAME` escrito a mano por un hash de recursos en tiempo de compilación.
-2. **Iconos de las tarjetas**: montar los iconos de los siete proyectos cuando existan; ahora todos son `icon: null`.
+2. **Iconos de las tarjetas**: montar los iconos de los nueve proyectos cuando existan; ahora todos son `icon: null`.
 3. **Auditoría de accesibilidad**: hay `role`, `tabindex` y `aria-*`, pero no se ha hecho un recorrido completo con teclado ni una prueba con lector de pantalla.
 4. **Reducir dependencias de terceros**: Typed.js es lo bastante simple para reemplazarlo con unas cuarenta líneas nativas.
 5. **Imagen de vista previa Open Graph**: actualmente no hay `og:image`.
