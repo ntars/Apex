@@ -2,9 +2,9 @@
  * Service Worker - 离线缓存与加速
  * 解决 GitHub Pages 国内访问慢/无法访问的问题
  * 策略：缓存优先 (Cache First) + 网络回退 + 后台更新 (Stale-While-Revalidate)
- * 版本：v9（加入行简 Serica 卡片，index.html 与元数据同改，必须升版否则回访命中旧缓存）
+ * 版本：v10（十个项目改为状态分组 + 组内字母序重排，index.html 变更，必须升版否则回访命中旧缓存）
  */
-var CACHE_NAME = 'ntarstudio-v9';
+var CACHE_NAME = 'ntarstudio-v10';
 
 // 核心静态资源预缓存列表
 var urlsToCache = [

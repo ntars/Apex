@@ -75,26 +75,40 @@ The site has exactly three responsibilities:
 
 ## 3. Core Features
 
-The homepage's "星玖工作室出品" section shows ten projects, ordered by status: released or delivered first, in development in the middle, planned last.
+The homepage's "星玖工作室出品" section shows ten projects, grouped by status — released or delivered first, in development in the middle, planned last — and sorted by Latin name within each group.
 
-**The ten projects are Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC, Serica and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
+**The ten projects are Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
 
 ### 3.1 Released, delivered and in development
 
-#### Xael (玄玖灵犀) · Released
+#### Apex · Live
 
 | | |
 |---|---|
-| What it is | Offline corpus of Chinese traditional metaphysics: 22 functions computed from first principles, no lookup tables, no network |
-| Stack | JavaScript (zero dependencies) · PWA · WeChat Mini Program · uni-app |
-| Version | 5.0.0 |
-| License | Apache-2.0 / MIT |
-| Entry | <https://x.ntars.cn/> |
-| Repository | <https://github.com/ntars/Xael> |
+| What it is | The site you are reading — the studio's nameplate and project index |
+| Stack | HTML · CSS · Vanilla JS |
+| License | MIT (Apache-2.0 for derived parts) |
+| Entry | <https://www.ntars.cn/> |
+| Repository | <https://github.com/ntars/Apex> |
 
-Covers Four Pillars, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, Xuan Kong Flying Stars and almanac date selection. The calendar foundation derives new moons from astronomical series in real time rather than shipping a table; twenty public-domain classics serve as base texts, each rule corrected item by item with its evidence tier stated. The mini program and official account are searchable under the same name.
+One HTML file, one stylesheet, a handful of plain scripts. No framework, no build, no backend. Zero dependencies means it still runs three years from now.
 
-**Why it is worth a look**: it takes "compute it, do not look it up" all the way down, and annotates every conclusion with its textual basis and remaining uncertainty.
+**Why it is worth a look**: it is a sample of build-free front-end — how one HTML file can organise a whole site, and survive six years without updates.
+
+#### Gitrule-skill · Delivered
+
+| | |
+|---|---|
+| What it is | A universal specification set covering the project lifecycle: planning, requirements, architecture, development, testing, deployment, operations and iteration, plus documentation, compliance and programmatic access |
+| Stack | Markdown (zero third-party dependencies) · Python CLI · MCP server |
+| Scope | 66 specifications in Simplified Chinese and English, one-to-one |
+| Status | Delivered: CLI reports 0 issues; Skill, expert package and MCP server all available |
+| License | MIT |
+| Repository | <https://github.com/ntars/Gitrule-skill> |
+
+One specification per file, independent and read on demand. A zero-dependency CLI checks broken links, orphans, responsibility sentences, code fences, index counts and placeholder registration; `optimize` only applies safe automatic fixes.
+
+**Why it is worth a look**: it turns conventions — which 20 chapters a README needs, how a repository is named, how the description and topics are set — into checkable files and commands. The alignment of all ten repositories used it as the single baseline.
 
 #### Ondra (空谷) · Internal beta
 
@@ -111,23 +125,6 @@ Covers Four Pillars, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hu
 Three core mechanisms: emotion (state with inertia), memory (an eleven-link chain) and context (frozen prefix + incremental injection + budget packing). The plugin page merges 18 bundled entries with 75 from the assembly layer — 93 in total, each toggleable.
 
 **Why it is worth a look**: it breaks "companionship" into separately engineered mechanisms, and a boot-order patch took the silent degradation of 18 plugins from 55 entries to zero. Only one projection layer sits between UI and plugins, so pages never hold plugin internals.
-
-#### Webroit · Live
-
-| | |
-|---|---|
-| What it is | An Android toolbox in the browser: ADB and Fastboot over WebUSB, 26 features shipped and 152 planned |
-| Stack | TypeScript · Vite · WebUSB · ya-webadb |
-| Form | A pure static site — no backend, no install, no drivers |
-| License | Apache-2.0 / MIT |
-| Entry | <https://adb.ntars.cn/> |
-| Repository | <https://github.com/ntars/Webroit> |
-
-Brings everything you need for Android tinkering into the browser. The ADB protocol is implemented on top of Tango; what ships is the interface and the workflows a tinkerer actually uses — app management, file browsing, terminal, screen mirroring, logs and flashing, 26 shipped and 152 planned, each carrying a risk tier.
-
-**Why it is worth a look**: it deletes the entire "environment setup" layer. The traditional path is download Platform-Tools → configure PATH → install USB drivers → write udev rules → connect → type commands; it compresses the first five steps into "open the page → click connect → click a feature". And the real difficulty was never typing the commands — it was the moment after setup when it still will not connect and you cannot tell whether it is the cable, the port, the driver, or an `adb.exe` still holding the interface in the background.
-
-**Two things worth noting**: the whole product is a static `dist/`, and `grep -r "http" dist/` finds no backend address of its own — "data never leaves your machine" is a verifiable fact, not a promise. It also grades every operation by risk, so a command copied from somewhere tells you what it will change and whether it can be undone.
 
 #### Wacmin · Available
 
@@ -152,34 +149,37 @@ Four directions, crossing "host" with "action" — all four written and passing 
 
 **Why it is worth a look**: it orders development by certainty, leaving the most likely failure until last, and defines a degradation path in advance — even if the last one fails, the first three still stand. As it turned out, the last one works too. The `ai/` layer was not bolted on as "an MCP wrapper": extracting the scheduling logic out of the shell into `directions.mjs` is what produced it — and the extraction surfaced a dormant defect. `/api/status` imported the entry point on every request, which wrote 21 lines of Chinese usage text to stdout and set `exitCode` to 2. The console never reads its own stdout, so nobody noticed; but the MCP spec requires stdout to carry protocol messages only, which makes the same pattern fatal there.
 
-#### Gitrule-skill · Delivered
+#### Webroit · Live
 
 | | |
 |---|---|
-| What it is | A universal specification set covering the project lifecycle: planning, requirements, architecture, development, testing, deployment, operations and iteration, plus documentation, compliance and programmatic access |
-| Stack | Markdown (zero third-party dependencies) · Python CLI · MCP server |
-| Scope | 66 specifications in Simplified Chinese and English, one-to-one |
-| Status | Delivered: CLI reports 0 issues; Skill, expert package and MCP server all available |
-| License | MIT |
-| Repository | <https://github.com/ntars/Gitrule-skill> |
+| What it is | An Android toolbox in the browser: ADB and Fastboot over WebUSB, 26 features shipped and 152 planned |
+| Stack | TypeScript · Vite · WebUSB · ya-webadb |
+| Form | A pure static site — no backend, no install, no drivers |
+| License | Apache-2.0 / MIT |
+| Entry | <https://adb.ntars.cn/> |
+| Repository | <https://github.com/ntars/Webroit> |
 
-One specification per file, independent and read on demand. A zero-dependency CLI checks broken links, orphans, responsibility sentences, code fences, index counts and placeholder registration; `optimize` only applies safe automatic fixes.
+Brings everything you need for Android tinkering into the browser. The ADB protocol is implemented on top of Tango; what ships is the interface and the workflows a tinkerer actually uses — app management, file browsing, terminal, screen mirroring, logs and flashing, 26 shipped and 152 planned, each carrying a risk tier.
 
-**Why it is worth a look**: it turns conventions — which 20 chapters a README needs, how a repository is named, how the description and topics are set — into checkable files and commands. The alignment of all ten repositories used it as the single baseline.
+**Why it is worth a look**: it deletes the entire "environment setup" layer. The traditional path is download Platform-Tools → configure PATH → install USB drivers → write udev rules → connect → type commands; it compresses the first five steps into "open the page → click connect → click a feature". And the real difficulty was never typing the commands — it was the moment after setup when it still will not connect and you cannot tell whether it is the cable, the port, the driver, or an `adb.exe` still holding the interface in the background.
 
-#### Apex · Live
+**Two things worth noting**: the whole product is a static `dist/`, and `grep -r "http" dist/` finds no backend address of its own — "data never leaves your machine" is a verifiable fact, not a promise. It also grades every operation by risk, so a command copied from somewhere tells you what it will change and whether it can be undone.
+
+#### Xael (玄玖灵犀) · Released
 
 | | |
 |---|---|
-| What it is | The site you are reading — the studio's nameplate and project index |
-| Stack | HTML · CSS · Vanilla JS |
-| License | MIT (Apache-2.0 for derived parts) |
-| Entry | <https://www.ntars.cn/> |
-| Repository | <https://github.com/ntars/Apex> |
+| What it is | Offline corpus of Chinese traditional metaphysics: 22 functions computed from first principles, no lookup tables, no network |
+| Stack | JavaScript (zero dependencies) · PWA · WeChat Mini Program · uni-app |
+| Version | 5.0.0 |
+| License | Apache-2.0 / MIT |
+| Entry | <https://x.ntars.cn/> |
+| Repository | <https://github.com/ntars/Xael> |
 
-One HTML file, one stylesheet, a handful of plain scripts. No framework, no build, no backend. Zero dependencies means it still runs three years from now.
+Covers Four Pillars, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, Xuan Kong Flying Stars and almanac date selection. The calendar foundation derives new moons from astronomical series in real time rather than shipping a table; twenty public-domain classics serve as base texts, each rule corrected item by item with its evidence tier stated. The mini program and official account are searchable under the same name.
 
-**Why it is worth a look**: it is a sample of build-free front-end — how one HTML file can organise a whole site, and survive six years without updates.
+**Why it is worth a look**: it takes "compute it, do not look it up" all the way down, and annotates every conclusion with its textual basis and remaining uncertainty.
 
 #### Flutter-IDE · Skeleton stage
 
@@ -196,21 +196,6 @@ The single test of whether the project should exist: delete the IDE and see whet
 
 **Why it is worth a look**: "not locked into a tool" is written as three acceptance criteria — no private Schema, one change yields one diff, the same input generates the same output twice — rather than a slogan.
 
-#### TapMC · Skeleton stage
-
-| | |
-|---|---|
-| What it is | A moddable multiplayer sandbox game skeleton: a Flutter front end on seven platforms plus a Java server, coupled by one JSON-RPC 2.0 contract |
-| Stack | Flutter (front end) · Java 21 (back end) |
-| Status | Skeleton: the path works, 61 back-end and 18 front-end tests pass; no release |
-| Platforms | Web and Android build; the other five targets are unverified |
-| License | Apache-2.0 / MIT |
-| Repository | <https://github.com/ntars/TapMC> |
-
-The back end is the single source of truth; the front end only renders and collects input. The world is a 24×16 grid with five block types, and mods receive `ModContext` but never `WorldGrid`, so rules cannot be bypassed.
-
-**Why it is worth a look**: "where the rules are computed" is fixed by a compile-time constraint rather than review discipline, and the network-free core lets the whole logic run in unit tests without a port (22 cases).
-
 #### Serica (行简) · Skeleton stage
 
 | | |
@@ -226,6 +211,21 @@ The back end is the single source of truth; the front end only renders and colle
 The seed compiler emits no C and calls neither LLVM nor an assembler or linker: it writes Mach-O itself. Chinese punctuation is grammar at the lexical layer rather than typography, diagnostics report both the code-point column and the display column (`line 3, column 38 (display 55)`), and rebuilding the same source yields identical bytes. What works today is compile-time constants, code-point slicing, integer arithmetic, bitwise operations, compile-time constant arrays and one declarative window — **not enough to write production software**.
 
 **Why it is worth a look**: it turns "Chinese is not just translated keywords" into checkable engineering constraints — a 5,000-line seed cap, a per-line attribution table, deleting the seed after self-hosting, and an output type that a single `file` command verifies — rather than a vision document.
+
+#### TapMC · Skeleton stage
+
+| | |
+|---|---|
+| What it is | A moddable multiplayer sandbox game skeleton: a Flutter front end on seven platforms plus a Java server, coupled by one JSON-RPC 2.0 contract |
+| Stack | Flutter (front end) · Java 21 (back end) |
+| Status | Skeleton: the path works, 61 back-end and 18 front-end tests pass; no release |
+| Platforms | Web and Android build; the other five targets are unverified |
+| License | Apache-2.0 / MIT |
+| Repository | <https://github.com/ntars/TapMC> |
+
+The back end is the single source of truth; the front end only renders and collects input. The world is a 24×16 grid with five block types, and mods receive `ModContext` but never `WorldGrid`, so rules cannot be bypassed.
+
+**Why it is worth a look**: "where the rules are computed" is fixed by a compile-time constraint rather than review discipline, and the network-free core lets the whole logic run in unit tests without a port (22 cases).
 
 ### 3.2 Planned
 
@@ -250,15 +250,15 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 
 | Project | Status | Meaning |
 |---|---|---|
-| Xael | Released | A stable version (`5.0.0`) exists, downloadable and usable |
-| Ondra | Internal beta | `2.0.0-alpha`: macOS runs and web builds; the other targets only have generated projects |
-| Webroit | Live | The static site runs at `adb.ntars.cn`, 26 features usable, source public |
-| Wacmin | Available | All four directions complete and tested, with CLI and MCP access; neither "beta" nor "stable release" applies — it ships as a CLI |
-| Gitrule-skill | Delivered | 66 specifications in Chinese and English, CLI reports 0 issues; no versioned release, delivered from the main branch |
 | Apex | Live | The site runs and the source is public |
+| Gitrule-skill | Delivered | 66 specifications in Chinese and English, CLI reports 0 issues; no versioned release, delivered from the main branch |
+| Ondra | Internal beta | `2.0.0-alpha`: macOS runs and web builds; the other targets only have generated projects |
+| Wacmin | Available | All four directions complete and tested, with CLI and MCP access; neither "beta" nor "stable release" applies — it ships as a CLI |
+| Webroit | Live | The static site runs at `adb.ntars.cn`, 26 features usable, source public |
+| Xael | Released | A stable version (`5.0.0`) exists, downloadable and usable |
 | Flutter-IDE | Skeleton stage | Contracts, tokens and five validation rules usable; codegen, AST write-back and point-and-click unimplemented; no release |
-| TapMC | Skeleton stage | The path works and 79 tests pass, but there is no release |
 | Serica | Skeleton stage | The seed compiler builds the P0b/P1b subset into a Mach-O binary, and P0b passed acceptance on macOS arm64; no release, not usable for production software |
+| TapMC | Skeleton stage | The path works and 79 tests pass, but there is no release |
 | Desop | Planned | Documentation only, no runnable code |
 
 **Why planned projects appear on the site at all**: the site is the studio's nameplate, showing "what is being built", not only "what has been finished". Labelling the status clearly is enough — a visitor who reads "Planned" knows there is nothing to download, which is more honest than hiding it.
@@ -356,7 +356,7 @@ Each file does one thing and can be removed alone. The only hard dependency is `
 
 ### 5.6 The cache version number is the easiest step to forget
 
-**`CACHE_NAME` is currently `ntarstudio-v9`.** Changing anything in the pre-cache list — including Typed.js from CDN — requires bumping the version, or returning visitors stay on the old cache.
+**`CACHE_NAME` is currently `ntarstudio-v10`.** Changing anything in the pre-cache list — including Typed.js from CDN — requires bumping the version, or returning visitors stay on the old cache.
 
 ### 5.7 The honest limits of the security measures
 

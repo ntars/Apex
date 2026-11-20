@@ -75,26 +75,40 @@ El sitio tiene exactamente tres responsabilidades:
 
 ## 3. Funciones principales: los diez proyectos
 
-La sección «星玖工作室出品» de la página de inicio muestra diez proyectos, ordenados por estado: publicados primero, planificados después.
+La sección «星玖工作室出品» de la página de inicio muestra diez proyectos, agrupados por estado — publicados o entregados primero, en desarrollo en medio, planificados al final — y ordenados por nombre latino dentro de cada grupo.
 
-**Los diez proyectos son Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC, Serica y Desop.** GitHub es la plataforma que los aloja, no un proyecto; las cuatro direcciones internas de Wacmin son un detalle de implementación y no se enumeran por separado.
+**Los diez proyectos son Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC y Desop.** GitHub es la plataforma que los aloja, no un proyecto; las cuatro direcciones internas de Wacmin son un detalle de implementación y no se enumeran por separado.
 
 ### 3.1 Publicados, entregados y en desarrollo
 
-#### Xael (玄玖灵犀) · Publicado
+#### Apex · En línea
 
 | | |
 |---|---|
-| Qué es | Corpus sin conexión de metafísica china: 22 funciones calculadas desde los principios primeros, sin tablas de consulta, sin red |
-| Tecnologías | JavaScript (sin dependencias) · PWA · miniprograma de WeChat · uni-app |
-| Versión | 5.0.0 |
-| Licencia | Apache-2.0 / MIT |
-| Entrada | <https://x.ntars.cn/> |
-| Repositorio | <https://github.com/ntars/Xael> |
+| Qué es | El sitio que estás leyendo — la placa del estudio y el índice de proyectos |
+| Tecnologías | HTML · CSS · Vanilla JS |
+| Licencia | MIT (Apache-2.0 para las partes derivadas) |
+| Entrada | <https://www.ntars.cn/> |
+| Repositorio | <https://github.com/ntars/Apex> |
 
-Cubre Cuatro Pilares, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, Estrellas Voladoras Xuan Kong y selección de fechas del almanaque. La base calendárica deriva las lunas nuevas de series astronómicas en tiempo real en lugar de incluir una tabla; veinte clásicos de dominio público sirven como textos base, con cada regla corregida elemento por elemento y su nivel de evidencia indicado. El miniprograma y la cuenta oficial se buscan con el mismo nombre.
+Un archivo HTML, una hoja de estilos, unos pocos scripts nativos. Sin framework, sin compilación, sin backend. Cero dependencias significa que seguirá funcionando dentro de tres años.
 
-**Por qué vale la pena**: lleva «calcular en lugar de consultar» hasta el final y anota cada conclusión con su base textual y la incertidumbre restante.
+**Por qué vale la pena**: es una muestra de front-end sin compilación — cómo un solo archivo HTML organiza todo un sitio y sobrevive seis años sin actualizaciones.
+
+#### Gitrule-skill · Entregado
+
+| | |
+|---|---|
+| Qué es | Un conjunto de especificaciones genéricas que cubre todo el ciclo de vida: definición, requisitos, arquitectura, desarrollo, pruebas, despliegue, operación, iteración, además de documentación, cumplimiento y acceso programático por IA |
+| Tecnologías | Markdown (sin dependencias de terceros) · CLI en Python · servidor MCP |
+| Volumen | 66 especificaciones en chino simplificado e inglés, una a una |
+| Estado | Entregado: el CLI no informa problemas; Skill, paquete de experto y servidor MCP están disponibles |
+| Licencia | MIT |
+| Repositorio | <https://github.com/ntars/Gitrule-skill> |
+
+Una especificación por archivo, independiente y consultada según necesidad. Un CLI sin dependencias comprueba enlaces rotos, archivos huérfanos, frases de responsabilidad, bloques de código, recuentos de índice y registro de marcadores.
+
+**Por qué vale la pena**: convierte convenciones —qué 20 capítulos necesita un README, cómo se nombra un repositorio, cómo se redactan descripción y temas— en archivos y comandos verificables. La alineación de los diez repositorios se apoyó en esta base única.
 
 #### Ondra (空谷) · Beta interna
 
@@ -111,6 +125,19 @@ Cubre Cuatro Pilares, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei H
 Tres mecanismos clave: emoción (estado con inercia), memoria (cadena de once eslabones), contexto (prefijo congelado + inyección incremental + presupuesto). La página de complementos fusiona 18 entradas incluidas y 75 de la capa de ensamblaje, 93 en total.
 
 **Por qué vale la pena**: descompone el acompañamiento en mecanismos que se pueden ingenierizar por separado, y un parche de orden de arranque redujo de 55 a 0 las degradaciones silenciosas de 18 complementos.
+
+#### Wacmin · Disponible
+
+| | |
+|---|---|
+| Qué es | Suite de interoperabilidad bidireccional entre macOS y Windows |
+| Tecnologías | Node.js · Python · Rust |
+| Licencia | MIT |
+| Repositorio | <https://github.com/ntars/Wacmin> |
+
+Completa cuatro direcciones cruzando «anfitrión» con «acción»: producir un instalador de Windows en Mac, ejecutar un programa de Windows en Mac, producir un paquete de macOS en Windows, ejecutar un programa de mac en Windows. Las cuatro comparten una capa de contrato con códigos de salida y segmentos de error unificados.
+
+**Por qué vale la pena**: ordena el desarrollo por certeza, deja el fallo más probable para el final y define de antemano una ruta de degradación — incluso si falla, las tres primeras se sostienen.
 
 #### Webroit · En línea
 
@@ -129,47 +156,20 @@ Lleva al navegador todo lo necesario para trastear con Android. El protocolo ADB
 
 **Dos detalles más**: el producto es un `dist/` estático y `grep -r "http" dist/` no encuentra ninguna dirección de backend propia: «los datos no salen de tu equipo» es un hecho verificable, no una promesa. Además clasifica cada operación por riesgo, de modo que un comando copiado de cualquier sitio indica qué va a cambiar y si se puede deshacer.
 
-#### Wacmin · Disponible
+#### Xael (玄玖灵犀) · Publicado
 
 | | |
 |---|---|
-| Qué es | Suite de interoperabilidad bidireccional entre macOS y Windows |
-| Tecnologías | Node.js · Python · Rust |
-| Licencia | MIT |
-| Repositorio | <https://github.com/ntars/Wacmin> |
+| Qué es | Corpus sin conexión de metafísica china: 22 funciones calculadas desde los principios primeros, sin tablas de consulta, sin red |
+| Tecnologías | JavaScript (sin dependencias) · PWA · miniprograma de WeChat · uni-app |
+| Versión | 5.0.0 |
+| Licencia | Apache-2.0 / MIT |
+| Entrada | <https://x.ntars.cn/> |
+| Repositorio | <https://github.com/ntars/Xael> |
 
-Completa cuatro direcciones cruzando «anfitrión» con «acción»: producir un instalador de Windows en Mac, ejecutar un programa de Windows en Mac, producir un paquete de macOS en Windows, ejecutar un programa de mac en Windows. Las cuatro comparten una capa de contrato con códigos de salida y segmentos de error unificados.
+Cubre Cuatro Pilares, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, Estrellas Voladoras Xuan Kong y selección de fechas del almanaque. La base calendárica deriva las lunas nuevas de series astronómicas en tiempo real en lugar de incluir una tabla; veinte clásicos de dominio público sirven como textos base, con cada regla corregida elemento por elemento y su nivel de evidencia indicado. El miniprograma y la cuenta oficial se buscan con el mismo nombre.
 
-**Por qué vale la pena**: ordena el desarrollo por certeza, deja el fallo más probable para el final y define de antemano una ruta de degradación — incluso si falla, las tres primeras se sostienen.
-
-#### Gitrule-skill · Entregado
-
-| | |
-|---|---|
-| Qué es | Un conjunto de especificaciones genéricas que cubre todo el ciclo de vida: definición, requisitos, arquitectura, desarrollo, pruebas, despliegue, operación, iteración, además de documentación, cumplimiento y acceso programático por IA |
-| Tecnologías | Markdown (sin dependencias de terceros) · CLI en Python · servidor MCP |
-| Volumen | 66 especificaciones en chino simplificado e inglés, una a una |
-| Estado | Entregado: el CLI no informa problemas; Skill, paquete de experto y servidor MCP están disponibles |
-| Licencia | MIT |
-| Repositorio | <https://github.com/ntars/Gitrule-skill> |
-
-Una especificación por archivo, independiente y consultada según necesidad. Un CLI sin dependencias comprueba enlaces rotos, archivos huérfanos, frases de responsabilidad, bloques de código, recuentos de índice y registro de marcadores.
-
-**Por qué vale la pena**: convierte convenciones —qué 20 capítulos necesita un README, cómo se nombra un repositorio, cómo se redactan descripción y temas— en archivos y comandos verificables. La alineación de los diez repositorios se apoyó en esta base única.
-
-#### Apex · En línea
-
-| | |
-|---|---|
-| Qué es | El sitio que estás leyendo — la placa del estudio y el índice de proyectos |
-| Tecnologías | HTML · CSS · Vanilla JS |
-| Licencia | MIT (Apache-2.0 para las partes derivadas) |
-| Entrada | <https://www.ntars.cn/> |
-| Repositorio | <https://github.com/ntars/Apex> |
-
-Un archivo HTML, una hoja de estilos, unos pocos scripts nativos. Sin framework, sin compilación, sin backend. Cero dependencias significa que seguirá funcionando dentro de tres años.
-
-**Por qué vale la pena**: es una muestra de front-end sin compilación — cómo un solo archivo HTML organiza todo un sitio y sobrevive seis años sin actualizaciones.
+**Por qué vale la pena**: lleva «calcular en lugar de consultar» hasta el final y anota cada conclusión con su base textual y la incertidumbre restante.
 
 #### Flutter-IDE · Etapa de esqueleto
 
@@ -186,21 +186,6 @@ El único criterio de viabilidad: elimine el IDE y el proyecto debe seguir pasan
 
 **Por qué vale la pena**: «no quedar atado a una herramienta» está escrito como tres criterios de aceptación —sin Schema privado, un cambio produce un solo diff, la misma entrada genera dos veces el mismo resultado— y no como un eslogan.
 
-#### TapMC · Etapa de esqueleto
-
-| | |
-|---|---|
-| Qué es | Esqueleto de juego sandbox multijugador modular: un front Flutter en siete plataformas y un servidor Java, unidos por un único contrato JSON-RPC 2.0 |
-| Tecnologías | Flutter (front) · Java 21 (servidor) |
-| Estado | Esqueleto: el camino funciona, 61 pruebas de servidor y 18 de front pasan; sin versión publicada |
-| Plataformas | Web y Android compilan; las otras cinco quedan por verificar |
-| Licencia | Apache-2.0 / MIT |
-| Repositorio | <https://github.com/ntars/TapMC> |
-
-El servidor es la única fuente de verdad; el front solo muestra y recoge entrada. Mundo en rejilla 24×16, cinco tipos de bloque. Los mods solo reciben `ModContext`, nunca `WorldGrid`: las reglas no se pueden saltar.
-
-**Por qué vale la pena**: la pregunta «dónde se calculan las reglas» queda fijada por una restricción de compilación, no por disciplina en la revisión. El núcleo no depende de la red, así que toda la lógica se prueba sin abrir un puerto (22 casos).
-
 #### Serica（行简）· Etapa de esqueleto
 
 | | |
@@ -216,6 +201,21 @@ El servidor es la única fuente de verdad; el front solo muestra y recoge entrad
 El compilador semilla no genera C ni llama a LLVM, ensamblador o enlazador: escribe el Mach-O él mismo. La puntuación china es gramática en la capa léxica, no tipografía; los diagnósticos dan a la vez la columna en puntos de código y la columna mostrada (`línea 3, columna 38 (visual 55)`), y reconstruir la misma fuente produce bytes idénticos. Hoy funcionan las constantes de compilación, los cortes por puntos de código, la aritmética entera, las operaciones de bits, los arreglos constantes y una ventana declarativa — **insuficiente para escribir software de producción**.
 
 **Por qué vale la pena** : «el chino no es solo traducir palabras clave» se convierte en restricciones de ingeniería verificables — techo de 5000 líneas, tabla de atribución línea por línea, borrado de la semilla tras el autoalojamiento y un tipo de salida que un solo `file` confirma.
+
+#### TapMC · Etapa de esqueleto
+
+| | |
+|---|---|
+| Qué es | Esqueleto de juego sandbox multijugador modular: un front Flutter en siete plataformas y un servidor Java, unidos por un único contrato JSON-RPC 2.0 |
+| Tecnologías | Flutter (front) · Java 21 (servidor) |
+| Estado | Esqueleto: el camino funciona, 61 pruebas de servidor y 18 de front pasan; sin versión publicada |
+| Plataformas | Web y Android compilan; las otras cinco quedan por verificar |
+| Licencia | Apache-2.0 / MIT |
+| Repositorio | <https://github.com/ntars/TapMC> |
+
+El servidor es la única fuente de verdad; el front solo muestra y recoge entrada. Mundo en rejilla 24×16, cinco tipos de bloque. Los mods solo reciben `ModContext`, nunca `WorldGrid`: las reglas no se pueden saltar.
+
+**Por qué vale la pena**: la pregunta «dónde se calculan las reglas» queda fijada por una restricción de compilación, no por disciplina en la revisión. El núcleo no depende de la red, así que toda la lógica se prueba sin abrir un puerto (22 casos).
 
 ### 3.2 Planificados
 
@@ -241,15 +241,15 @@ Cero cambios en el sistema, modo usuario puro, desinstalar lo restaura todo. Los
 
 | Proyecto | Estado | Significado |
 |---|---|---|
-| Xael | Publicado | Existe una versión estable, descargable y usable |
-| Ondra | Beta interna | `2.0.0-alpha`: macOS ejecutable, web compilable; las demás solo generadas |
-| Webroit | En línea | Sitio estático en servicio en adb.ntars.cn, 26 funciones utilizables, código público |
-| Wacmin | Disponible | Las cuatro direcciones terminadas y probadas, con acceso CLI y MCP |
-| Gitrule-skill | Entregado | 66 especificaciones en chino e inglés, el CLI no informa problemas; sin número de versión, se entrega desde la rama principal |
 | Apex | En línea | El sitio funciona y el código es público |
+| Gitrule-skill | Entregado | 66 especificaciones en chino e inglés, el CLI no informa problemas; sin número de versión, se entrega desde la rama principal |
+| Ondra | Beta interna | `2.0.0-alpha`: macOS ejecutable, web compilable; las demás solo generadas |
+| Wacmin | Disponible | Las cuatro direcciones terminadas y probadas, con acceso CLI y MCP |
+| Webroit | En línea | Sitio estático en servicio en adb.ntars.cn, 26 funciones utilizables, código público |
+| Xael | Publicado | Existe una versión estable, descargable y usable |
 | Flutter-IDE | Etapa de esqueleto | Contratos, tokens y cinco reglas de validación utilizables; codegen, escritura AST y selección sin implementar; sin versión publicada |
-| TapMC | Etapa de esqueleto | El camino funciona y 79 pruebas pasan; sin versión publicada |
 | Serica | Etapa de esqueleto | El compilador semilla convierte el subconjunto P0b/P1b en Mach-O, y P0b superó la aceptación en macOS arm64; sin versión publicada e inservible para software de producción |
+| TapMC | Etapa de esqueleto | El camino funciona y 79 pruebas pasan; sin versión publicada |
 | Desop | Planificado | Solo documentación, sin código ejecutable |
 
 **Por qué los proyectos planificados aparecen en el sitio**: el sitio es la placa del estudio, muestra «lo que se está construyendo», no solo «lo que ya está hecho». Indicar el estado con claridad basta — quien lee «Planificado» sabe que no hay nada que descargar, lo cual es más honesto que ocultarlo.
@@ -347,7 +347,7 @@ Cada archivo hace una cosa y puede retirarse por separado. La única dependencia
 
 ### 5.6 El número de versión de la caché es el paso más fácil de olvidar
 
-**`CACHE_NAME` es actualmente `ntarstudio-v9`.** Cambiar cualquier cosa de la lista de precaché — incluido Typed.js desde CDN — obliga a incrementar la versión, o los visitantes recurrentes se quedarán en la caché antigua.
+**`CACHE_NAME` es actualmente `ntarstudio-v10`.** Cambiar cualquier cosa de la lista de precaché — incluido Typed.js desde CDN — obliga a incrementar la versión, o los visitantes recurrentes se quedarán en la caché antigua.
 
 ### 5.7 Los límites honestos de las medidas de seguridad
 

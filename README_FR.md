@@ -75,26 +75,40 @@ Le site a exactement trois responsabilités :
 
 ## 3. Fonctionnalités clés : les dix projets
 
-La section « 星玖工作室出品 » de la page d'accueil présente dix projets, classés par état : publiés d'abord, planifiés ensuite.
+La section « 星玖工作室出品 » de la page d'accueil présente dix projets, répartis par état — publiés ou livrés d'abord, en développement au milieu, planifiés en dernier — et triés par nom latin à l'intérieur de chaque groupe.
 
-**Les dix projets sont Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC, Serica et Desop.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
+**Les dix projets sont Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC et Desop.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
 
 ### 3.1 Publiés, livrés et en développement
 
-#### Xael (玄玖灵犀) · Publié
+#### Apex · En ligne
 
 | | |
 |---|---|
-| Ce que c'est | Corpus hors ligne de métaphysique chinoise : 22 fonctions calculées depuis les principes premiers, sans tables de correspondance, sans réseau |
-| Technologies | JavaScript (aucune dépendance) · PWA · mini-programme WeChat · uni-app |
-| Version | 5.0.0 |
-| Licence | Apache-2.0 / MIT |
-| Entrée | <https://x.ntars.cn/> |
-| Dépôt | <https://github.com/ntars/Xael> |
+| Ce que c'est | Le site que vous lisez — la plaque du studio et l'index des projets |
+| Technologies | HTML · CSS · Vanilla JS |
+| Licence | MIT (Apache-2.0 pour les parties dérivées) |
+| Entrée | <https://www.ntars.cn/> |
+| Dépôt | <https://github.com/ntars/Apex> |
 
-Couvre les Quatre Piliers, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, les Étoiles Volantes Xuan Kong et la sélection de dates du almanach. La base calendaire dérive les nouvelles lunes de séries astronomiques en temps réel plutôt que d'embarquer une table ; vingt classiques du domaine public servent de textes de référence, chaque règle étant corrigée élément par élément avec son niveau de preuve indiqué. Le mini-programme et le compte officiel sont recherchables sous le même nom.
+Un fichier HTML, une feuille de style, quelques scripts natifs. Pas de framework, pas de build, pas de backend. Zéro dépendance signifie qu'il fonctionnera encore dans trois ans.
 
-**Pourquoi y jeter un œil** : il pousse « calculer plutôt que consulter » jusqu'au bout, et annote chaque conclusion avec sa base textuelle et l'incertitude restante.
+**Pourquoi y jeter un œil** : c'est un exemple de front-end sans build — comment un seul fichier HTML organise tout un site, et survit six ans sans mise à jour.
+
+#### Gitrule-skill · Livré
+
+| | |
+|---|---|
+| Ce que c'est | Un jeu de spécifications génériques couvrant tout le cycle de vie : cadrage, exigences, architecture, développement, tests, déploiement, exploitation, itération, ainsi que documentation, conformité et accès programmatique par IA |
+| Technologies | Markdown (aucune dépendance tierce) · CLI Python · serveur MCP |
+| Volume | 66 spécifications en chinois simplifié et en anglais, en correspondance un à un |
+| État | Livré : le CLI ne signale aucun problème ; Skill, paquet expert et serveur MCP sont disponibles |
+| Licence | MIT |
+| Dépôt | <https://github.com/ntars/Gitrule-skill> |
+
+Une spécification par fichier, indépendante et consultée à la demande. Un CLI sans dépendance vérifie les liens morts, les fichiers orphelins, les phrases de responsabilité, les blocs de code, les comptes d'index et l'enregistrement des espaces réservés.
+
+**Pourquoi y jeter un œil** : les conventions — les 20 chapitres d'un README, le nom d'un dépôt, la rédaction de la description et des topics — deviennent des fichiers et des commandes vérifiables. L'alignement des dix dépôts s'est appuyé sur cette base unique.
 
 #### Ondra (空谷) · Bêta interne
 
@@ -111,6 +125,19 @@ Couvre les Quatre Piliers, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, 
 Trois mécanismes clés : émotion (état à inertie), mémoire (chaîne de onze maillons), contexte (préfixe figé + injection incrémentale + budget). La page des plugins fusionne 18 entrées embarquées et 75 entrées d'assemblage, soit 93.
 
 **Pourquoi y jeter un œil** : l'accompagnement y est décomposé en mécanismes ingénierables séparément, et un correctif d'ordre de démarrage a ramené de 55 à 0 les dégradations silencieuses de 18 plugins.
+
+#### Wacmin · Disponible
+
+| | |
+|---|---|
+| Ce que c'est | Suite d'interopérabilité bidirectionnelle entre macOS et Windows |
+| Technologies | Node.js · Python · Rust |
+| Licence | MIT |
+| Dépôt | <https://github.com/ntars/Wacmin> |
+
+Remplit quatre directions en croisant « hôte » et « action » : produire un installeur Windows sur Mac, exécuter un programme Windows sur Mac, produire un bundle macOS sur Windows, exécuter un programme mac sur Windows. Les quatre partagent une couche de contrat avec des codes de sortie et des segments d'erreur unifiés.
+
+**Pourquoi y jeter un œil** : il ordonne le développement par certitude, laisse l'échec le plus probable pour la fin et définit à l'avance un chemin de dégradation — même en cas d'échec, les trois premiers tiennent.
 
 #### Webroit · En ligne
 
@@ -129,47 +156,20 @@ Tout ce qu'il faut pour bricoler un Android, ramené dans le navigateur. Le prot
 
 **Deux points à retenir** : le produit est un `dist/` statique, et `grep -r "http" dist/` ne trouve aucune adresse de backend propre — « les données ne quittent pas votre machine » est un fait vérifiable, pas une promesse. Il classe aussi chaque opération par risque : une commande copiée quelque part indique ce qu'elle va changer et si c'est réversible.
 
-#### Wacmin · Disponible
+#### Xael (玄玖灵犀) · Publié
 
 | | |
 |---|---|
-| Ce que c'est | Suite d'interopérabilité bidirectionnelle entre macOS et Windows |
-| Technologies | Node.js · Python · Rust |
-| Licence | MIT |
-| Dépôt | <https://github.com/ntars/Wacmin> |
+| Ce que c'est | Corpus hors ligne de métaphysique chinoise : 22 fonctions calculées depuis les principes premiers, sans tables de correspondance, sans réseau |
+| Technologies | JavaScript (aucune dépendance) · PWA · mini-programme WeChat · uni-app |
+| Version | 5.0.0 |
+| Licence | Apache-2.0 / MIT |
+| Entrée | <https://x.ntars.cn/> |
+| Dépôt | <https://github.com/ntars/Xael> |
 
-Remplit quatre directions en croisant « hôte » et « action » : produire un installeur Windows sur Mac, exécuter un programme Windows sur Mac, produire un bundle macOS sur Windows, exécuter un programme mac sur Windows. Les quatre partagent une couche de contrat avec des codes de sortie et des segments d'erreur unifiés.
+Couvre les Quatre Piliers, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, les Étoiles Volantes Xuan Kong et la sélection de dates du almanach. La base calendaire dérive les nouvelles lunes de séries astronomiques en temps réel plutôt que d'embarquer une table ; vingt classiques du domaine public servent de textes de référence, chaque règle étant corrigée élément par élément avec son niveau de preuve indiqué. Le mini-programme et le compte officiel sont recherchables sous le même nom.
 
-**Pourquoi y jeter un œil** : il ordonne le développement par certitude, laisse l'échec le plus probable pour la fin et définit à l'avance un chemin de dégradation — même en cas d'échec, les trois premiers tiennent.
-
-#### Gitrule-skill · Livré
-
-| | |
-|---|---|
-| Ce que c'est | Un jeu de spécifications génériques couvrant tout le cycle de vie : cadrage, exigences, architecture, développement, tests, déploiement, exploitation, itération, ainsi que documentation, conformité et accès programmatique par IA |
-| Technologies | Markdown (aucune dépendance tierce) · CLI Python · serveur MCP |
-| Volume | 66 spécifications en chinois simplifié et en anglais, en correspondance un à un |
-| État | Livré : le CLI ne signale aucun problème ; Skill, paquet expert et serveur MCP sont disponibles |
-| Licence | MIT |
-| Dépôt | <https://github.com/ntars/Gitrule-skill> |
-
-Une spécification par fichier, indépendante et consultée à la demande. Un CLI sans dépendance vérifie les liens morts, les fichiers orphelins, les phrases de responsabilité, les blocs de code, les comptes d'index et l'enregistrement des espaces réservés.
-
-**Pourquoi y jeter un œil** : les conventions — les 20 chapitres d'un README, le nom d'un dépôt, la rédaction de la description et des topics — deviennent des fichiers et des commandes vérifiables. L'alignement des dix dépôts s'est appuyé sur cette base unique.
-
-#### Apex · En ligne
-
-| | |
-|---|---|
-| Ce que c'est | Le site que vous lisez — la plaque du studio et l'index des projets |
-| Technologies | HTML · CSS · Vanilla JS |
-| Licence | MIT (Apache-2.0 pour les parties dérivées) |
-| Entrée | <https://www.ntars.cn/> |
-| Dépôt | <https://github.com/ntars/Apex> |
-
-Un fichier HTML, une feuille de style, quelques scripts natifs. Pas de framework, pas de build, pas de backend. Zéro dépendance signifie qu'il fonctionnera encore dans trois ans.
-
-**Pourquoi y jeter un œil** : c'est un exemple de front-end sans build — comment un seul fichier HTML organise tout un site, et survit six ans sans mise à jour.
+**Pourquoi y jeter un œil** : il pousse « calculer plutôt que consulter » jusqu'au bout, et annote chaque conclusion avec sa base textuelle et l'incertitude restante.
 
 #### Flutter-IDE · Étape de squelette
 
@@ -186,21 +186,6 @@ Le seul critère d'existence du projet : supprimez l'IDE, le projet doit toujour
 
 **Pourquoi y jeter un œil** : « ne pas être prisonnier d'un outil » y est écrit comme trois critères d'acceptation — pas de Schema privé, une modification donne un seul diff, la même entrée produit deux fois le même résultat — et non comme un slogan.
 
-#### TapMC · Étape de squelette
-
-| | |
-|---|---|
-| Ce que c'est | Squelette de jeu sandbox multijoueur modulaire : un front Flutter sur sept cibles et un serveur Java, reliés par un seul contrat JSON-RPC 2.0 |
-| Technologies | Flutter (front) · Java 21 (serveur) |
-| État | Squelette : le chemin fonctionne, 61 tests serveur et 18 tests front passent ; aucune version publiée |
-| Plateformes | Web et Android compilent ; les cinq autres cibles restent à vérifier |
-| Licence | Apache-2.0 / MIT |
-| Dépôt | <https://github.com/ntars/TapMC> |
-
-Le serveur est l'unique source de vérité ; le front se contente d'afficher et de capter les entrées. Monde en grille 24×16, cinq types de blocs. Les mods ne reçoivent que `ModContext`, jamais `WorldGrid` : les règles ne peuvent pas être contournées.
-
-**Pourquoi y jeter un œil** : la question « où les règles sont-elles calculées » est fixée par une contrainte de compilation, pas par la discipline en revue. Le noyau n'a aucune dépendance réseau, donc toute la logique se teste sans ouvrir de port (22 cas).
-
 #### Serica（行简）· Étape de squelette
 
 | | |
@@ -216,6 +201,21 @@ Le serveur est l'unique source de vérité ; le front se contente d'afficher et 
 Le compilateur germe ne produit pas de C et n'appelle ni LLVM, ni assembleur, ni éditeur de liens : il écrit le Mach-O lui-même. La ponctuation chinoise est une grammaire au niveau lexical, pas de la typographie ; les diagnostics donnent à la fois la colonne en points de code et la colonne affichée (`ligne 3, colonne 38 (affichage 55)`), et reconstruire la même source donne des octets identiques. Ce qui fonctionne aujourd'hui : constantes de compilation, tranches en points de code, arithmétique entière, opérations bit à bit, tableaux constants et une fenêtre déclarative — **insuffisant pour écrire un logiciel de production**.
 
 **Pourquoi cela vaut le détour** : « le chinois n'est pas qu'une traduction de mots-clés » y devient des contraintes d'ingénierie vérifiables — plafond de 5 000 lignes, table d'attribution ligne par ligne, suppression du germe après auto-hébergement, et un type de sortie qu'une seule commande `file` confirme.
+
+#### TapMC · Étape de squelette
+
+| | |
+|---|---|
+| Ce que c'est | Squelette de jeu sandbox multijoueur modulaire : un front Flutter sur sept cibles et un serveur Java, reliés par un seul contrat JSON-RPC 2.0 |
+| Technologies | Flutter (front) · Java 21 (serveur) |
+| État | Squelette : le chemin fonctionne, 61 tests serveur et 18 tests front passent ; aucune version publiée |
+| Plateformes | Web et Android compilent ; les cinq autres cibles restent à vérifier |
+| Licence | Apache-2.0 / MIT |
+| Dépôt | <https://github.com/ntars/TapMC> |
+
+Le serveur est l'unique source de vérité ; le front se contente d'afficher et de capter les entrées. Monde en grille 24×16, cinq types de blocs. Les mods ne reçoivent que `ModContext`, jamais `WorldGrid` : les règles ne peuvent pas être contournées.
+
+**Pourquoi y jeter un œil** : la question « où les règles sont-elles calculées » est fixée par une contrainte de compilation, pas par la discipline en revue. Le noyau n'a aucune dépendance réseau, donc toute la logique se teste sans ouvrir de port (22 cas).
 
 ### 3.2 Planifiés
 
@@ -241,15 +241,15 @@ Aucune modification système, mode utilisateur pur, la désinstallation restaure
 
 | Projet | État | Signification |
 |---|---|---|
-| Xael | Publié | Une version stable existe, téléchargeable et utilisable |
-| Ondra | Bêta interne | `2.0.0-alpha` : macOS exécutable, web compilable ; les autres cibles ne sont que générées |
-| Webroit | En ligne | Site statique en service sur adb.ntars.cn, 26 fonctions utilisables, source publique |
-| Wacmin | Disponible | Les quatre directions terminées et testées, avec accès CLI et MCP |
-| Gitrule-skill | Livré | 66 spécifications en chinois et en anglais, CLI sans problème ; pas de numéro de version, livré depuis la branche main |
 | Apex | En ligne | Le site tourne et la source est publique |
+| Gitrule-skill | Livré | 66 spécifications en chinois et en anglais, CLI sans problème ; pas de numéro de version, livré depuis la branche main |
+| Ondra | Bêta interne | `2.0.0-alpha` : macOS exécutable, web compilable ; les autres cibles ne sont que générées |
+| Wacmin | Disponible | Les quatre directions terminées et testées, avec accès CLI et MCP |
+| Webroit | En ligne | Site statique en service sur adb.ntars.cn, 26 fonctions utilisables, source publique |
+| Xael | Publié | Une version stable existe, téléchargeable et utilisable |
 | Flutter-IDE | Étape de squelette | Contrats, jetons et cinq règles de validation utilisables ; codegen, écriture AST et sélection non implémentés ; aucune version publiée |
-| TapMC | Étape de squelette | Le chemin fonctionne et 79 tests passent, sans version publiée |
 | Serica | Étape de squelette | Le compilateur germe transforme le sous-ensemble P0b/P1b en Mach-O, et P0b a passé l'acceptation sur macOS arm64 ; aucune version publiée, inutilisable pour un logiciel de production |
+| TapMC | Étape de squelette | Le chemin fonctionne et 79 tests passent, sans version publiée |
 | Desop | Planifié | Documentation seulement, aucun code exécutable |
 
 **Pourquoi les projets planifiés figurent quand même sur le site** : le site est la plaque du studio, montrant « ce qui est en construction », pas seulement « ce qui est terminé ». Indiquer clairement l'état suffit — un visiteur qui lit « Planifié » sait qu'il n'y a rien à télécharger, ce qui est plus honnête que de le cacher.
@@ -347,7 +347,7 @@ Chaque fichier fait une chose et peut être retiré seul. La seule dépendance d
 
 ### 5.6 Le numéro de version du cache est l'étape la plus facile à oublier
 
-**`CACHE_NAME` vaut actuellement `ntarstudio-v9`.** Modifier quoi que ce soit dans la liste de pré-cache — y compris Typed.js chargé par CDN — impose d'incrémenter la version, sinon les visiteurs récurrents restent sur l'ancien cache.
+**`CACHE_NAME` vaut actuellement `ntarstudio-v10`.** Modifier quoi que ce soit dans la liste de pré-cache — y compris Typed.js chargé par CDN — impose d'incrémenter la version, sinon les visiteurs récurrents restent sur l'ancien cache.
 
 ### 5.7 Les limites honnêtes des mesures de sécurité
 
