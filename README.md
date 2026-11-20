@@ -177,7 +177,7 @@ The official site of Ntarstudio — and the index to nine projects.
 |---|---|
 | 是什么 | 你正在看的这个站点，工作室门牌与项目总索引 |
 | 技术 | HTML · CSS · Vanilla JS |
-| 许可 | MIT（派生部分 Apache-2.0） |
+| 许可 | MIT（`assets/css/base*.css` 含 Apache-2.0 派生规则，见 [LICENSING.md](LICENSING.md)） |
 | 入口 | <https://www.ntars.cn/> |
 | 仓库 | <https://github.com/ntars/Apex> |
 
@@ -589,8 +589,12 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 | 范围 | 许可 |
 |---|---|
 | 自研代码（结构、样式、脚本及后续改动） | MIT，见 [`LICENSE`](LICENSE) |
-| 派生自 asorn/asorn-open 的部分 | Apache-2.0，见 [`LICENSE-Apache-2.0.txt`](LICENSE-Apache-2.0.txt) |
+| `assets/css/base.css` 与 `base.min.css` 中派生自 asorn/asorn-open 的规则 | Apache-2.0，见 [`LICENSE-Apache-2.0.txt`](LICENSE-Apache-2.0.txt) |
 | 品牌名称、Logo、界面设计 | 保留所有权利，见 [`NOTICE`](NOTICE) |
+
+**默认归属**：上表未列出的本项目自研文件，一律适用根 `LICENSE`（MIT）。
+
+**这两个文件是「单文件内混合」**：派生规则受 Apache-2.0，其余规则受 MIT。拿到文件的人不必把整份文件当 Apache-2.0 处理，但也不能因为整仓是 MIT 就把 `LICENSE-Apache-2.0.txt` 删掉——第 4 条 a/b/d 项的义务随派生部分走，与仓库主许可无关。逐路径路由见 [LICENSING.md](LICENSING.md)。
 
 再分发须一并保留：`NOTICE`、`LICENSE`、`LICENSE-Apache-2.0.txt`、`assets/js/anime.js` 文件头的版权与许可声明。
 
