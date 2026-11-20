@@ -2,9 +2,9 @@
 
 # Apex
 
-**Le site officiel de Ntarstudio (星玖工作室) — et l'index des neuf projets.**
+**Le site officiel de Ntarstudio (星玖工作室) — et l'index des dix projets.**
 
-> **Ce dépôt a deux rôles** : il est la source du site du studio (un fichier HTML, une feuille de style, quelques scripts natifs) et il est **l'index des neuf projets**. Ce document porte sur le second : ce qu'est chaque projet, où il en est, où regarder. La mise en œuvre du site est comprimée au chapitre 5 et volontairement brève.
+> **Ce dépôt a deux rôles** : il est la source du site du studio (un fichier HTML, une feuille de style, quelques scripts natifs) et il est **l'index des dix projets**. Ce document porte sur le second : ce qu'est chaque projet, où il en est, où regarder. La mise en œuvre du site est comprimée au chapitre 5 et volontairement brève.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -20,7 +20,7 @@
 
 ## 1. Nom et positionnement
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与九个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its nine projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its ten projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **Ce sont des fichiers statiques, pas une application.** Pas de backend, pas de base de données, pas de comptes. Tout le contenu est écrit dans `index.html` ; changer une ligne de texte, c'est un commit.
 3. **C'est un index, pas une source de contenu.** L'information réelle d'un projet vit dans son propre dépôt et son propre site. Cette page résume et renvoie ; elle ne duplique pas.
 
-**Pourquoi ce README met les projets au premier plan** : la section « 星玖工作室出品 » de la page d'accueil liste les neuf projets. Cette liste, le chapitre 3 de ce document et le README de profil GitHub sont trois rendus d'une même source. **Quiconque veut un aperçu rapide de ce que construit le studio n'a besoin que de cette page** — inutile d'ouvrir neuf dépôts.
+**Pourquoi ce README met les projets au premier plan** : la section « 星玖工作室出品 » de la page d'accueil liste les dix projets. Cette liste, le chapitre 3 de ce document et le README de profil GitHub sont trois rendus d'une même source. **Quiconque veut un aperçu rapide de ce que construit le studio n'a besoin que de cette page** — inutile d'ouvrir dix dépôts.
 
 ---
 
@@ -73,11 +73,11 @@ Le site a exactement trois responsabilités :
 
 ---
 
-## 3. Fonctionnalités clés : les neuf projets
+## 3. Fonctionnalités clés : les dix projets
 
-La section « 星玖工作室出品 » de la page d'accueil présente neuf projets, classés par état : publiés d'abord, planifiés ensuite.
+La section « 星玖工作室出品 » de la page d'accueil présente dix projets, classés par état : publiés d'abord, planifiés ensuite.
 
-**Les neuf projets sont Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC et Desop.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
+**Les dix projets sont Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC, Serica et Desop.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
 
 ### 3.1 Publiés, livrés et en développement
 
@@ -201,6 +201,22 @@ Le serveur est l'unique source de vérité ; le front se contente d'afficher et 
 
 **Pourquoi y jeter un œil** : la question « où les règles sont-elles calculées » est fixée par une contrainte de compilation, pas par la discipline en revue. Le noyau n'a aucune dépendance réseau, donc toute la logique se teste sans ouvrir de port (22 cas).
 
+#### Serica（行简）· Étape de squelette
+
+| | |
+|---|---|
+| Ce que c'est | Un langage de programmation pour applications synchronisées multi-appareils : tout en chinois, sources `.serica`, commande `serica`, exécutables natifs en sortie |
+| Technologies | Go (compilateur germe stage0) · voie de l'auto-hébergement · écrit directement le Mach-O |
+| Version | Étape `P1b` pre-alpha ; P0b a passé l'acceptation stricte sur macOS arm64 le 2026-11-20 |
+| Taille | 1 928 lignes de germe pour un plafond de 5 000, avec table d'attribution ligne par ligne ; le répertoire germe est supprimé après l'auto-hébergement |
+| Licence | Apache-2.0 (noyau et germe) / MIT (spécifications et écosystème) |
+| Plateformes | Vérifié sur macOS arm64 uniquement, le reste non testé |
+| Dépôt | <https://github.com/ntars/Serica> |
+
+Le compilateur germe ne produit pas de C et n'appelle ni LLVM, ni assembleur, ni éditeur de liens : il écrit le Mach-O lui-même. La ponctuation chinoise est une grammaire au niveau lexical, pas de la typographie ; les diagnostics donnent à la fois la colonne en points de code et la colonne affichée (`ligne 3, colonne 38 (affichage 55)`), et reconstruire la même source donne des octets identiques. Ce qui fonctionne aujourd'hui : constantes de compilation, tranches en points de code, arithmétique entière, opérations bit à bit, tableaux constants et une fenêtre déclarative — **insuffisant pour écrire un logiciel de production**.
+
+**Pourquoi cela vaut le détour** : « le chinois n'est pas qu'une traduction de mots-clés » y devient des contraintes d'ingénierie vérifiables — plafond de 5 000 lignes, table d'attribution ligne par ligne, suppression du germe après auto-hébergement, et un type de sortie qu'une seule commande `file` confirme.
+
 ### 3.2 Planifiés
 
 **Le projet ci-dessous n'a que de la documentation — aucun code exécutable.** Le libellé d'état sépare strictement « publié » et « planifié ».
@@ -233,6 +249,7 @@ Aucune modification système, mode utilisateur pur, la désinstallation restaure
 | Apex | En ligne | Le site tourne et la source est publique |
 | Flutter-IDE | Étape de squelette | Contrats, jetons et cinq règles de validation utilisables ; codegen, écriture AST et sélection non implémentés ; aucune version publiée |
 | TapMC | Étape de squelette | Le chemin fonctionne et 79 tests passent, sans version publiée |
+| Serica | Étape de squelette | Le compilateur germe transforme le sous-ensemble P0b/P1b en Mach-O, et P0b a passé l'acceptation sur macOS arm64 ; aucune version publiée, inutilisable pour un logiciel de production |
 | Desop | Planifié | Documentation seulement, aucun code exécutable |
 
 **Pourquoi les projets planifiés figurent quand même sur le site** : le site est la plaque du studio, montrant « ce qui est en construction », pas seulement « ce qui est terminé ». Indiquer clairement l'état suffit — un visiteur qui lit « Planifié » sait qu'il n'y a rien à télécharger, ce qui est plus honnête que de le cacher.
@@ -241,7 +258,7 @@ Aucune modification système, mode utilisateur pur, la désinstallation restaure
 
 ## 4. Caractéristiques clés
 
-### Point fort 1 : neuf projets sur une page, trois sources synchronisées
+### Point fort 1 : dix projets sur une page, trois sources synchronisées
 
 - **Nom** : index unique.
 - **Valeur** : résout « pour savoir ce que construit ce studio il faut ouvrir six dépôts ».
@@ -330,7 +347,7 @@ Chaque fichier fait une chose et peut être retiré seul. La seule dépendance d
 
 ### 5.6 Le numéro de version du cache est l'étape la plus facile à oublier
 
-**`CACHE_NAME` vaut actuellement `ntarstudio-v6`.** Modifier quoi que ce soit dans la liste de pré-cache — y compris Typed.js chargé par CDN — impose d'incrémenter la version, sinon les visiteurs récurrents restent sur l'ancien cache.
+**`CACHE_NAME` vaut actuellement `ntarstudio-v9`.** Modifier quoi que ce soit dans la liste de pré-cache — y compris Typed.js chargé par CDN — impose d'incrémenter la version, sinon les visiteurs récurrents restent sur l'ancien cache.
 
 ### 5.7 Les limites honnêtes des mesures de sécurité
 
@@ -534,7 +551,7 @@ Le README décrit l'état actuel du site ; les releases enregistrent ce qui a ch
 ## 17. Feuille de route
 
 1. **Automatiser la version du cache** : remplacer le `CACHE_NAME` écrit à la main par un hachage d'actifs à la compilation.
-2. **Icônes des cartes** : monter les icônes des neuf projets dès qu'elles existent ; toutes sont actuellement `icon: null`.
+2. **Icônes des cartes** : monter les icônes des dix projets dès qu'elles existent ; toutes sont actuellement `icon: null`.
 3. **Audit d'accessibilité** : `role`, `tabindex` et `aria-*` sont présents, mais un parcours clavier complet et un test de lecteur d'écran n'ont pas été faits.
 4. **Réduire les dépendances tierces** : Typed.js est assez simple pour être remplacé par une quarantaine de lignes natives.
 5. **Image d'aperçu Open Graph** : il n'y a actuellement pas d'`og:image`.
@@ -581,7 +598,7 @@ Le README décrit l'état actuel du site ; les releases enregistrent ce qui a ch
 
 La redistribution doit conserver `NOTICE`, `LICENSE`, `LICENSE-Apache-2.0.txt` et les mentions de copyright et de licence dans l'en-tête de `assets/js/anime.js`.
 
-**Noms et marques.** Les noms et marques 「星玖工作室」, 「Ntarstudio」, 「玄玖灵犀」, 「Xael」, 「NT-Xhex」, 「空谷」, 「Ondra」, 「Wacmin」, 「TapMC」 et 「Desop」 appartiennent à Ntarstudio. MIT et Apache-2.0 n'accordent que des droits d'auteur, pas de droits de marque.
+**Noms et marques.** Les noms et marques 「星玖工作室」, 「Ntarstudio」, 「玄玖灵犀」, 「Xael」, 「NT-Xhex」, 「空谷」, 「Ondra」, 「Wacmin」, 「TapMC」, 「Desop」, 「行简」 et 「Serica」 appartiennent à Ntarstudio. MIT et Apache-2.0 n'accordent que des droits d'auteur, pas de droits de marque.
 
 Copyright (c) 2024–2026 星玖工作室 Ntarstudio
 

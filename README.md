@@ -2,11 +2,11 @@
 
 # Apex
 
-**星玖工作室（Ntarstudio）的官网，以及九个项目的总索引。**
+**星玖工作室（Ntarstudio）的官网，以及十个项目的总索引。**
 
-The official site of Ntarstudio — and the index to nine projects.
+The official site of Ntarstudio — and the index to ten projects.
 
-> **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**九个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
+> **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**十个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -22,7 +22,7 @@ The official site of Ntarstudio — and the index to nine projects.
 
 ## 一、项目名称与定位
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与九个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its nine projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its ten projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -37,7 +37,7 @@ The official site of Ntarstudio — and the index to nine projects.
 2. **它是静态文件，不是应用**。没有后端、没有数据库、没有账号体系。所有内容硬编码在 `index.html`，改一行文字就是一次提交。
 3. **它是索引，不是内容源**。项目的真实信息在各项目自己的仓库与站点，本页只做汇总与跳转，不重复建设。
 
-**为什么这个仓库的 README 要重点介绍项目**：官网首页的「星玖工作室出品」区块列出了全部九个项目。这个列表与本文第三章、与 GitHub 自述文件三处同源。**任何想快速了解工作室在做什么的人，看这一页就够了**，不必逐个仓库翻。
+**为什么这个仓库的 README 要重点介绍项目**：官网首页的「星玖工作室出品」区块列出了全部十个项目。这个列表与本文第三章、与 GitHub 自述文件三处同源。**任何想快速了解工作室在做什么的人，看这一页就够了**，不必逐个仓库翻。
 
 ---
 
@@ -58,7 +58,7 @@ The official site of Ntarstudio — and the index to nine projects.
 | 职责 | 做法 |
 |---|---|
 | 建立品牌识别 | 首屏把「星玖工作室 / Ntarstudio / Ntars」三个称呼对应起来 |
-| 导向开源项目 | 九张卡片直连正式地址 |
+| 导向开源项目 | 十张卡片直连正式地址 |
 | 信息如实 | 未上线、已下线的信息一律不出现在页面、关键词、结构化数据里 |
 
 ### 2.4 适用场景
@@ -79,9 +79,9 @@ The official site of Ntarstudio — and the index to nine projects.
 
 ## 三、核心功能
 
-首页「星玖工作室出品」区块展示九个项目，按状态排序：已上线或已交付在前，开发中居中，排期开发在后。
+首页「星玖工作室出品」区块展示十个项目，按状态排序：已上线或已交付在前，开发中居中，排期开发在后。
 
-**九个项目 = Xael、Ondra、Webroit、Wacmin、Gitrule-skill、Apex、Flutter-IDE、TapMC、Desop。** GitHub 是承载这些项目的平台，不算项目；Wacmin 内部的四个方向是它的实现细节，不单独列。
+**十个项目 = Xael、Ondra、Webroit、Wacmin、Gitrule-skill、Apex、Flutter-IDE、TapMC、行简 Serica、Desop。** GitHub 是承载这些项目的平台，不算项目；Wacmin 内部的四个方向是它的实现细节，不单独列。
 
 ### 3.1 已发布、已交付与开发中
 
@@ -215,6 +215,22 @@ The official site of Ntarstudio — and the index to nine projects.
 
 **为什么值得看**：它把「规则在哪算」用编译期约束钉死，而不是靠评审纪律；内核零网络依赖，整局逻辑可不起端口跑单测（22 个用例）。
 
+#### 行简 Serica · 骨架阶段
+
+| | |
+|---|---|
+| 是什么 | 面向多端同步应用的编程语言：全中文表达，源码扩展名 `.serica`，命令行入口 `serica`，产物是原生可执行文件 |
+| 技术 | Go（种子编译器 stage0）· 自举路线 · 直接写出 Mach-O |
+| 版本 | 阶段 `P1b` pre-alpha；P0b 已于 2026-11-20 在 macOS arm64 通过硬验收 |
+| 规模 | 种子 1928 行，上限 5000 行，逐行归因，自举后整目录删除 |
+| 许可 | Apache-2.0（核心层与种子层）/ MIT（规范层与生态层） |
+| 平台 | 已验证 macOS arm64，其余平台未验 |
+| 仓库 | <https://github.com/ntars/Serica> |
+
+种子编译器不生成 C，不调用 LLVM、汇编器或链接器，直接写出 Mach-O；中文标点在词法层是语法而不是排版，诊断同时给出码位列与显示列（`第 3 行第 38 列（显示第 55 格）`）；同一份源码重复构建字节一致。当前能用的只有编译期常量、码位切片、整数四则、位运算、编译期常量数组与一个声明式窗口，**不能用来写生产软件**。
+
+**为什么值得看**：它把「中文不只是关键字翻译」落成可复核的工程约束——5000 行种子上限、逐行归因表、自举后删除种子，以及一条 `file` 就能验的产物类型，而不是一份愿景文档。
+
 ### 3.2 排期开发 / Planned
 
 **Desop 只有资料，没有可运行代码。** 状态口径严格区分「已发布」「开发初期」与「排期」，不把规划说成已实现。
@@ -246,6 +262,7 @@ The official site of Ntarstudio — and the index to nine projects.
 | Apex | 已上线 | 站点在跑，源码公开 |
 | Flutter-IDE | 骨架阶段 | 契约、令牌与五条校验规则可用；codegen、AST 写回与点选未实现，无发行版 |
 | TapMC | 骨架阶段 | 链路已通、79 个测试通过，但没有发行版 |
+| 行简 Serica | 骨架阶段 | 种子编译器能编译 P0b/P1b 子集并直出 Mach-O，P0b 已在 macOS arm64 通过验收；无发行版，不能写生产软件 |
 | Desop | 排期开发 | 只有文档，没有可运行代码 |
 
 **为什么排期项目也进官网卡片**：官网是工作室的门牌，展示的是「在做什么」，不只是「已经做成了什么」。排期项目标注清楚状态即可，访客看到「排期开发」四个字就知道点进去没有可下载内容——这比藏着不展示更诚实。
@@ -254,7 +271,7 @@ The official site of Ntarstudio — and the index to nine projects.
 
 ## 四、核心特性
 
-### 亮点一：九个项目集中呈现，三处口径同源
+### 亮点一：十个项目集中呈现，三处口径同源
 
 - **亮点名称**：单页总索引。
 - **价值**：解决「想知道这个工作室在做什么，得逐个仓库翻」的问题。
@@ -324,7 +341,7 @@ The official site of Ntarstudio — and the index to nine projects.
 
 ### 5.4 项目卡片：配置驱动
 
-卡片由 `PROJECTS` 数组渲染，七个条目各含标题、描述、链接、可选图标四个字段。`grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))`，间距 16px，桌面三列、窄屏一列，不需要写媒体查询。
+卡片由 `PROJECTS` 数组渲染，十个条目各含标题、描述、链接、可选图标四个字段。`grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))`，间距 16px，桌面三列、窄屏一列，不需要写媒体查询。
 
 改项目状态是改一行数据，不是改一段 HTML——避免「改了卡片忘了改元信息」和「卡片结构漂移」两类历史问题。
 
@@ -343,7 +360,7 @@ The official site of Ntarstudio — and the index to nine projects.
 
 ### 5.6 缓存版本号是最容易忘的一步
 
-**`CACHE_NAME` 当前为 `ntarstudio-v6`。** 只要动了预缓存清单里的任何资源（包括通过 CDN 引入的 Typed.js），就必须升版本号，否则回访用户会长期停在旧缓存上。
+**`CACHE_NAME` 当前为 `ntarstudio-v9`。** 只要动了预缓存清单里的任何资源（包括通过 CDN 引入的 Typed.js），就必须升版本号，否则回访用户会长期停在旧缓存上。
 
 ### 5.7 安全防护的诚实边界
 
@@ -367,7 +384,7 @@ The official site of Ntarstudio — and the index to nine projects.
 项目状态变化（上线、下线、换域名）时，以下三处必须同时更新：
 
 1. `index.html` 的 `PROJECTS` 数组；
-2. 本文第三章「九个项目」；
+2. 本文第三章「十个项目」；
 3. GitHub 自述文件 `ntars/ntars` 的项目表。
 
 **已下线项目不得以任何形式回流**——不出现在页面、关键词或结构化数据里。
@@ -425,7 +442,7 @@ python3 -m http.server 8000
 
 ### 8.1 看项目
 
-直接读本文第三章「九个项目」，或访问首页 <https://www.ntars.cn/>。
+直接读本文第三章「十个项目」，或访问首页 <https://www.ntars.cn/>。
 
 ### 8.2 本地跑网站
 
@@ -547,7 +564,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 ## 十七、后续路线图
 
 1. **缓存版本自动化**：用构建时的资源哈希替代手写 `CACHE_NAME`。
-2. **卡片图标**：九个项目的图标备好后挂载，当前均为 `icon: null`。
+2. **卡片图标**：十个项目的图标备好后挂载，当前均为 `icon: null`。
 3. **无障碍审计**：已有 `role`、`tabindex`、`aria-*`，但未做完整的键盘走查与读屏测试。
 4. **减少第三方依赖**：Typed.js 功能简单，可用约 40 行原生代码替代。
 5. **OG 预览图**：当前无 `og:image`，社交平台分享时无缩略图。
@@ -558,7 +575,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 
 ### 18.1 改动前自查
 
-1. 九张卡片的标题、描述、链接与项目真实状态一致；
+1. 十张卡片的标题、描述、链接与项目真实状态一致；
 2. `description`、`keywords`、`og:*`、JSON-LD、`canonical` 与正文口径同步；
 3. 动了预缓存里的资源，`sw.js` 的 `CACHE_NAME` 已升版；
 4. 亮色与暗色两套主题都看过；
@@ -598,7 +615,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 
 再分发须一并保留：`NOTICE`、`LICENSE`、`LICENSE-Apache-2.0.txt`、`assets/js/anime.js` 文件头的版权与许可声明。
 
-**名称与商标**。「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「空谷」「Ondra」「Wacmin」「TapMC」「Desop」等名称与标识归星玖工作室所有。MIT 与 Apache-2.0 只给代码权利，不给商标权。
+**名称与商标**。「星玖工作室」「Ntarstudio」「玄玖灵犀」「Xael」「NT-Xhex」「空谷」「Ondra」「Wacmin」「TapMC」「Desop」「行简」「Serica」等名称与标识归星玖工作室所有。MIT 与 Apache-2.0 只给代码权利，不给商标权。
 
 Copyright (c) 2024–2026 星玖工作室 Ntarstudio
 

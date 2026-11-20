@@ -2,9 +2,9 @@
 
 # Apex
 
-**The official site of Ntarstudio — and the index to nine projects.**
+**The official site of Ntarstudio — and the index to ten projects.**
 
-> **This repository has two roles**: it is the source of the studio's homepage (one HTML file, one stylesheet, a handful of plain scripts), and it is **the index to nine projects**. This document focuses on the latter: what each project is, how far it has got, and where to look. The site's own implementation is compressed into Chapter 5 and deliberately kept short.
+> **This repository has two roles**: it is the source of the studio's homepage (one HTML file, one stylesheet, a handful of plain scripts), and it is **the index to ten projects**. This document focuses on the latter: what each project is, how far it has got, and where to look. The site's own implementation is compressed into Chapter 5 and deliberately kept short.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -20,7 +20,7 @@
 
 ## 1. Name and Positioning
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与九个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its nine projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its ten projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **It is static files, not an application.** No backend, no database, no accounts. All content is hard-coded in `index.html`; changing one line of text is one commit.
 3. **It is an index, not a content source.** A project's real information lives in its own repository and site. This page summarises and links; it does not duplicate.
 
-**Why this README focuses on the projects**: the "星玖工作室出品" section on the homepage lists all nine projects. That list, Chapter 3 of this document, and the GitHub profile README are three renderings of one source. **Anyone who wants a quick picture of what the studio is building only needs this page** — no need to open seven repositories.
+**Why this README focuses on the projects**: the "星玖工作室出品" section on the homepage lists all ten projects. That list, Chapter 3 of this document, and the GitHub profile README are three renderings of one source. **Anyone who wants a quick picture of what the studio is building only needs this page** — no need to open ten repositories.
 
 ---
 
@@ -75,9 +75,9 @@ The site has exactly three responsibilities:
 
 ## 3. Core Features
 
-The homepage's "星玖工作室出品" section shows nine projects, ordered by status: released or delivered first, in development in the middle, planned last.
+The homepage's "星玖工作室出品" section shows ten projects, ordered by status: released or delivered first, in development in the middle, planned last.
 
-**The nine projects are Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
+**The ten projects are Xael, Ondra, Webroit, Wacmin, Gitrule-skill, Apex, Flutter-IDE, TapMC, Serica and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
 
 ### 3.1 Released, delivered and in development
 
@@ -211,6 +211,22 @@ The back end is the single source of truth; the front end only renders and colle
 
 **Why it is worth a look**: "where the rules are computed" is fixed by a compile-time constraint rather than review discipline, and the network-free core lets the whole logic run in unit tests without a port (22 cases).
 
+#### Serica (行简) · Skeleton stage
+
+| | |
+|---|---|
+| What it is | A programming language for multi-device sync apps: Chinese throughout, `.serica` sources, the `serica` command, native executables as output |
+| Stack | Go (seed compiler stage0) · self-hosting path · writes Mach-O directly |
+| Version | Stage `P1b` pre-alpha; P0b passed hard acceptance on macOS arm64 on 2026-11-20 |
+| Size | 1,928 seed lines against a 5,000-line cap, with a per-line attribution table; the seed directory is deleted once self-hosting lands |
+| License | Apache-2.0 (core and seed layers) / MIT (spec and ecosystem layers) |
+| Platforms | Verified on macOS arm64 only |
+| Repository | <https://github.com/ntars/Serica> |
+
+The seed compiler emits no C and calls neither LLVM nor an assembler or linker: it writes Mach-O itself. Chinese punctuation is grammar at the lexical layer rather than typography, diagnostics report both the code-point column and the display column (`line 3, column 38 (display 55)`), and rebuilding the same source yields identical bytes. What works today is compile-time constants, code-point slicing, integer arithmetic, bitwise operations, compile-time constant arrays and one declarative window — **not enough to write production software**.
+
+**Why it is worth a look**: it turns "Chinese is not just translated keywords" into checkable engineering constraints — a 5,000-line seed cap, a per-line attribution table, deleting the seed after self-hosting, and an output type that a single `file` command verifies — rather than a vision document.
+
 ### 3.2 Planned
 
 **Desop has documentation only — no runnable code.** The status wording keeps "released", "early development" and "planned" strictly apart.
@@ -242,6 +258,7 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 | Apex | Live | The site runs and the source is public |
 | Flutter-IDE | Skeleton stage | Contracts, tokens and five validation rules usable; codegen, AST write-back and point-and-click unimplemented; no release |
 | TapMC | Skeleton stage | The path works and 79 tests pass, but there is no release |
+| Serica | Skeleton stage | The seed compiler builds the P0b/P1b subset into a Mach-O binary, and P0b passed acceptance on macOS arm64; no release, not usable for production software |
 | Desop | Planned | Documentation only, no runnable code |
 
 **Why planned projects appear on the site at all**: the site is the studio's nameplate, showing "what is being built", not only "what has been finished". Labelling the status clearly is enough — a visitor who reads "Planned" knows there is nothing to download, which is more honest than hiding it.
@@ -250,10 +267,10 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 
 ## 4. Core Characteristics
 
-### Highlight 1: Nine projects on one page, three sources in step
+### Highlight 1: Ten projects on one page, three sources in step
 
 - **Name**: Single-page index.
-- **Value**: Solves "to learn what this studio builds you must open nine repositories".
+- **Value**: Solves "to learn what this studio builds you must open ten repositories".
 - **Implementation**: The homepage cards, Chapter 3 of this document and the GitHub profile README list the same set with consistent status wording.
 - **Differentiation**: Most personal pages list released projects only, or scatter the information across repository READMEs.
 - **Evidence**: The three lists match item by item; see the status table in 5.9.
@@ -339,7 +356,7 @@ Each file does one thing and can be removed alone. The only hard dependency is `
 
 ### 5.6 The cache version number is the easiest step to forget
 
-**`CACHE_NAME` is currently `ntarstudio-v6`.** Changing anything in the pre-cache list — including Typed.js from CDN — requires bumping the version, or returning visitors stay on the old cache.
+**`CACHE_NAME` is currently `ntarstudio-v9`.** Changing anything in the pre-cache list — including Typed.js from CDN — requires bumping the version, or returning visitors stay on the old cache.
 
 ### 5.7 The honest limits of the security measures
 
@@ -543,7 +560,7 @@ The README describes the site's current state; releases record what changed each
 ## 17. Roadmap
 
 1. **Automate the cache version**: replace the hand-written `CACHE_NAME` with a build-time asset hash.
-2. **Card icons**: mount icons for all nine projects once available; all are currently `icon: null`.
+2. **Card icons**: mount icons for all ten projects once available; all are currently `icon: null`.
 3. **Accessibility audit**: `role`, `tabindex` and `aria-*` are present, but a full keyboard walkthrough and screen-reader test have not been done.
 4. **Reduce third-party dependencies**: Typed.js is simple enough to replace with roughly 40 lines of native code.
 5. **Open Graph preview image**: there is currently no `og:image`.
@@ -554,7 +571,7 @@ The README describes the site's current state; releases record what changed each
 
 ### 18.1 Self-check before changing anything
 
-1. All nine cards' titles, descriptions and links match the projects' real status;
+1. All ten cards' titles, descriptions and links match the projects' real status;
 2. `description`, `keywords`, `og:*`, JSON-LD and `canonical` stay in sync with the body copy;
 3. If any pre-cached asset changed, `CACHE_NAME` has been bumped;
 4. Both light and dark themes have been reviewed;
@@ -590,7 +607,7 @@ The README describes the site's current state; releases record what changed each
 
 Redistribution must retain `NOTICE`, `LICENSE`, `LICENSE-Apache-2.0.txt` and the copyright and licence headers in `assets/js/anime.js`.
 
-**Names and trademarks.** The names and marks 「星玖工作室」, 「Ntarstudio」, 「玄玖灵犀」, 「Xael」, 「NT-Xhex」, 「空谷」, 「Ondra」, 「Wacmin」, 「TapMC」 and 「Desop」 belong to Ntarstudio. MIT and Apache-2.0 grant copyright permissions only, not trademark rights.
+**Names and trademarks.** The names and marks 「星玖工作室」, 「Ntarstudio」, 「玄玖灵犀」, 「Xael」, 「NT-Xhex」, 「空谷」, 「Ondra」, 「Wacmin」, 「TapMC」, 「Desop」, 「行简」 and 「Serica」 belong to Ntarstudio. MIT and Apache-2.0 grant copyright permissions only, not trademark rights.
 
 Copyright (c) 2024–2026 Ntarstudio
 
