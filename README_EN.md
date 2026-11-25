@@ -2,9 +2,9 @@
 
 # Apex
 
-**The official site of Ntarstudio — and the index to ten projects.**
+**The official site of Ntarstudio — and the index to thirteen projects.**
 
-> **This repository has two roles**: it is the source of the studio's homepage (one HTML file, one stylesheet, a handful of plain scripts), and it is **the index to ten projects**. This document focuses on the latter: what each project is, how far it has got, and where to look. The site's own implementation is compressed into Chapter 5 and deliberately kept short.
+> **This repository has two roles**: it is the source of the studio's homepage (one HTML file, one stylesheet, a handful of plain scripts), and it is **the index to thirteen projects**. This document focuses on the latter: what each project is, how far it has got, and where to look. The site's own implementation is compressed into Chapter 5 and deliberately kept short.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -13,14 +13,14 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-9-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-13-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Name and Positioning
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its ten projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十三个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its thirteen projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **It is static files, not an application.** No backend, no database, no accounts. All content is hard-coded in `index.html`; changing one line of text is one commit.
 3. **It is an index, not a content source.** A project's real information lives in its own repository and site. This page summarises and links; it does not duplicate.
 
-**Why this README focuses on the projects**: the "星玖工作室出品" section on the homepage lists all ten projects. That list, Chapter 3 of this document, and the GitHub profile README are three renderings of one source. **Anyone who wants a quick picture of what the studio is building only needs this page** — no need to open ten repositories.
+**Why this README focuses on the projects**: the "星玖工作室出品" section on the homepage lists all thirteen projects. That list, Chapter 3 of this document, and the GitHub profile README are three renderings of one source. **Anyone who wants a quick picture of what the studio is building only needs this page** — no need to open thirteen repositories.
 
 ---
 
@@ -75,9 +75,9 @@ The site has exactly three responsibilities:
 
 ## 3. Core Features
 
-The homepage's "星玖工作室出品" section shows ten projects, grouped by status — released or delivered first, in development in the middle, planned last — and sorted by Latin name within each group.
+The homepage's "星玖工作室出品" section shows thirteen projects, grouped by status — released or delivered first, in development in the middle, planned last — and sorted by Latin name within each group.
 
-**The ten projects are Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
+**The thirteen projects are Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Amphoreus, Flutter-IDE, NovaKit, Relax, Serica, TapMC and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
 
 ### 3.1 Released, delivered and in development
 
@@ -181,6 +181,21 @@ Covers Four Pillars, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hu
 
 **Why it is worth a look**: it takes "compute it, do not look it up" all the way down, and annotates every conclusion with its textual basis and remaining uncertainty.
 
+#### Amphoreus · In development
+
+| | |
+|---|---|
+| What it is | A watch-only Amphoreus world simulator: twelve Titans, thirteen Chrysos Heirs and twelve Kindling computed by code, plus a pure-CSS recreation of the in-game Tarot Book |
+| Stack | Python 3.11+ (stdlib only) · SQLite · HTML / CSS / Vanilla JS |
+| Status | In development: the simulator runs and `/book` works; official baselines are missing, so no pixel-level claim is made |
+| Platform | macOS / Linux / Windows (standard library only) |
+| License | MIT |
+| Repository | <https://github.com/ntars/Amphoreus> |
+
+The same seed always yields the same history; a new seed yields a new Amphoreus. The engine decides *what happened* and the local model only decides *how to tell it*. At runtime the web UI loads no bitmap or SVG; every shape comes from gradients, borders and `clip-path`.
+
+**Why it is worth a look**: it turns both "deterministic narrative" and "zero-image UI" into checkable engineering constraints rather than a concept demo.
+
 #### Flutter-IDE · Skeleton stage
 
 | | |
@@ -195,6 +210,36 @@ Covers Four Pillars, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hu
 The single test of whether the project should exist: delete the IDE and see whether the project still runs `flutter run`. Intent outlines, overlays and design tokens are therefore plain files in git; no project structure lives only inside the tool.
 
 **Why it is worth a look**: "not locked into a tool" is written as three acceptance criteria — no private Schema, one change yields one diff, the same input generates the same output twice — rather than a slogan.
+
+#### NovaKit · Skeleton stage
+
+| | |
+|---|---|
+| What it is | The one offline desktop toolkit to install on a fresh machine: file, image, text and system utilities, with no network and no account |
+| Stack | Rust (edition 2024) · Tauri 2 |
+| Status | Skeleton: the project and the list of 36 tools are set, business code is being built, no release |
+| Platform | macOS first; Windows / Linux planned |
+| License | Apache-2.0 / MIT |
+| Repository | <https://github.com/ntars/NovaKit> |
+
+Tools are organized in four tiers — pure Rust, system capability, external component and process plugin — each with its own implementation and acceptance method. Plugins speak JSON-RPC 2.0 over stdio, with all permissions denied by default.
+
+**Why it is worth a look**: it derives the tool list from "what week one actually needs" and pins the security boundary by tier instead of growing into an all-in-one suite.
+
+#### Relax (悠然) · Skeleton stage
+
+| | |
+|---|---|
+| What it is | A self-hosted family hub for chat, schedules, files and photos: one single-process server, Android clients, data never leaves the house |
+| Stack | Rust · Tauri 2 · axum · SQLite · React + TypeScript |
+| Status | Skeleton: workspace, contracts and frontend skeleton are in place; business logic is not implemented |
+| Platform | Server on macOS / Linux; client on Android API 24+ |
+| License | Apache-2.0 / MIT |
+| Repository | <https://github.com/ntars/Relax> |
+
+All business logic lives in Rust: the frontend only renders and `invoke()`s, never makes network calls, never touches SQLite directly and never persists tokens. Messages enter an outbox and submit idempotently by `opId` after reconnection.
+
+**Why it is worth a look**: it turns "data sovereignty" into five machine-checkable architectural locks rather than a privacy slogan.
 
 #### Serica (行简) · Skeleton stage
 
@@ -256,7 +301,10 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 | Wacmin | Available | All four directions complete and tested, with CLI and MCP access; neither "beta" nor "stable release" applies — it ships as a CLI |
 | Webroit | Live | The static site runs at `adb.ntars.cn`, 26 features usable, source public |
 | Xael | Released | A stable version (`5.0.0`) exists, downloadable and usable |
+| Amphoreus | In development | Simulator and booklet run locally; official baselines missing, no pixel-level claim |
 | Flutter-IDE | Skeleton stage | Contracts, tokens and five validation rules usable; codegen, AST write-back and point-and-click unimplemented; no release |
+| NovaKit | Skeleton stage | Tauri 2 project and the 36-tool list are set; business code not started |
+| Relax | Skeleton stage | Workspace, contracts and frontend skeleton are in place; business logic unimplemented |
 | Serica | Skeleton stage | The seed compiler builds the P0b/P1b subset into a Mach-O binary, and P0b passed acceptance on macOS arm64; no release, not usable for production software |
 | TapMC | Skeleton stage | The path works and 79 tests pass, but there is no release |
 | Desop | Planned | Documentation only, no runnable code |
@@ -267,7 +315,7 @@ Zero system changes, pure user mode, uninstalling restores everything. The four 
 
 ## 4. Core Characteristics
 
-### Highlight 1: Ten projects on one page, three sources in step
+### Highlight 1: Thirteen projects on one page, three sources in step
 
 - **Name**: Single-page index.
 - **Value**: Solves "to learn what this studio builds you must open ten repositories".
@@ -560,7 +608,7 @@ The README describes the site's current state; releases record what changed each
 ## 17. Roadmap
 
 1. **Automate the cache version**: replace the hand-written `CACHE_NAME` with a build-time asset hash.
-2. **Card icons**: mount icons for all ten projects once available; all are currently `icon: null`.
+2. **Card icons**: mount icons for all thirteen projects once available; all are currently `icon: null`.
 3. **Accessibility audit**: `role`, `tabindex` and `aria-*` are present, but a full keyboard walkthrough and screen-reader test have not been done.
 4. **Reduce third-party dependencies**: Typed.js is simple enough to replace with roughly 40 lines of native code.
 5. **Open Graph preview image**: there is currently no `og:image`.
@@ -571,7 +619,7 @@ The README describes the site's current state; releases record what changed each
 
 ### 18.1 Self-check before changing anything
 
-1. All ten cards' titles, descriptions and links match the projects' real status;
+1. All thirteen cards' titles, descriptions and links match the projects' real status;
 2. `description`, `keywords`, `og:*`, JSON-LD and `canonical` stay in sync with the body copy;
 3. If any pre-cached asset changed, `CACHE_NAME` has been bumped;
 4. Both light and dark themes have been reviewed;

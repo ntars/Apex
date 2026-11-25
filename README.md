@@ -2,11 +2,11 @@
 
 # Apex
 
-**星玖工作室（Ntarstudio）的官网，以及十个项目的总索引。**
+**星玖工作室（Ntarstudio）的官网，以及十三个项目的总索引。**
 
-The official site of Ntarstudio — and the index to ten projects.
+The official site of Ntarstudio — and the index to thirteen projects.
 
-> **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**十个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
+> **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**十三个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -15,14 +15,14 @@ The official site of Ntarstudio — and the index to ten projects.
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-9-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-13-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 一、项目名称与定位
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its ten projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十三个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its thirteen projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -37,7 +37,7 @@ The official site of Ntarstudio — and the index to ten projects.
 2. **它是静态文件，不是应用**。没有后端、没有数据库、没有账号体系。所有内容硬编码在 `index.html`，改一行文字就是一次提交。
 3. **它是索引，不是内容源**。项目的真实信息在各项目自己的仓库与站点，本页只做汇总与跳转，不重复建设。
 
-**为什么这个仓库的 README 要重点介绍项目**：官网首页的「星玖工作室出品」区块列出了全部十个项目。这个列表与本文第三章、与 GitHub 自述文件三处同源。**任何想快速了解工作室在做什么的人，看这一页就够了**，不必逐个仓库翻。
+**为什么这个仓库的 README 要重点介绍项目**：官网首页的「星玖工作室出品」区块列出了全部十三个项目。这个列表与本文第三章、与 GitHub 自述文件三处同源。**任何想快速了解工作室在做什么的人，看这一页就够了**，不必逐个仓库翻。
 
 ---
 
@@ -58,7 +58,7 @@ The official site of Ntarstudio — and the index to ten projects.
 | 职责 | 做法 |
 |---|---|
 | 建立品牌识别 | 首屏把「星玖工作室 / Ntarstudio / Ntars」三个称呼对应起来 |
-| 导向开源项目 | 十张卡片直连正式地址 |
+| 导向开源项目 | 十三张卡片直连正式地址 |
 | 信息如实 | 未上线、已下线的信息一律不出现在页面、关键词、结构化数据里 |
 
 ### 2.4 适用场景
@@ -79,9 +79,9 @@ The official site of Ntarstudio — and the index to ten projects.
 
 ## 三、核心功能
 
-首页「星玖工作室出品」区块展示十个项目，按状态分三组：已上线或已交付在前，开发中居中，排期开发在后；组内按项目名的拉丁字母升序排列。
+首页「星玖工作室出品」区块展示十三个项目，按状态分三组：已上线或已交付在前，开发中居中，排期开发在后；组内按项目名的拉丁字母升序排列。
 
-**十个项目 = Apex、Gitrule-skill、Ondra、Wacmin、Webroit、Xael、Flutter-IDE、Serica、TapMC、Desop。** GitHub 是承载这些项目的平台，不算项目；Wacmin 内部的四个方向是它的实现细节，不单独列。
+**十三个项目 = Apex、Gitrule-skill、Ondra、Wacmin、Webroit、Xael、Amphoreus、Flutter-IDE、NovaKit、Relax、Serica、TapMC、Desop。** GitHub 是承载这些项目的平台，不算项目；Wacmin 内部的四个方向是它的实现细节，不单独列。
 
 ### 3.1 已发布、已交付与开发中
 
@@ -112,7 +112,7 @@ The official site of Ntarstudio — and the index to ten projects.
 
 一份规范一个文件，各自独立、按需取用。配套零依赖 CLI 检查断链、孤岛、职责句、代码围栏、索引计数与占位符登记，`optimize` 只做可安全自动修复的项。
 
-**为什么值得看**：它把「README 写哪 20 章、仓库怎么命名、简介与话题怎么设」这类口头约定变成可校验的文件与命令。本次十个仓库的文档对齐即以它为唯一基准。
+**为什么值得看**：它把「README 写哪 20 章、仓库怎么命名、简介与话题怎么设」这类口头约定变成可校验的文件与命令。本次十三个仓库的文档对齐即以它为唯一基准。
 
 #### 空谷 Ondra · 产品内测中
 
@@ -185,6 +185,21 @@ The official site of Ntarstudio — and the index to ten projects.
 
 **为什么值得看**：它把「不查表、能算就算」这条原则贯彻到了底，且对每条结论都标注了文献依据与不确定处。
 
+#### Amphoreus · 开发中
+
+| | |
+|---|---|
+| 是什么 | 只看不操控的翁法罗斯世界模拟器：十二位泰坦、十三位黄金裔、十二枚火种由代码演算，附纯 CSS 复刻的「如我所书」书册 |
+| 技术 | Python 3.11+（仅标准库）· SQLite · HTML / CSS / Vanilla JS |
+| 状态 | 开发中：模拟器可运行、`/book` 书册可用；官方基准截图未齐，不宣称逐像素一致 |
+| 平台 | macOS / Linux / Windows（依赖仅 Python 标准库） |
+| 许可 | MIT |
+| 仓库 | <https://github.com/ntars/Amphoreus> |
+
+同一种子必得同一段历史，换种子即换一个翁法罗斯；规则引擎决定「发生了什么」，本地模型只决定「怎么讲」。网页端运行时不加载任何位图或 SVG，图案全部由渐变、边框与 `clip-path` 绘制。
+
+**为什么值得看**：它把「确定性叙事」与「零图片界面」同时做成了可复核的工程约束，而不是概念演示。
+
 #### Flutter-IDE · 骨架阶段
 
 | | |
@@ -199,6 +214,36 @@ The official site of Ntarstudio — and the index to ten projects.
 判定项目是否成立的唯一标准：删掉 IDE，项目还能否正常 `flutter run`。因此意图大纲、覆盖层与设计令牌全部是进 git 的明文文件，不存在只活在工具里的项目结构。
 
 **为什么值得看**：它把「不被工具锁定」写成三条可验收的标准——无私有 Schema、改一处只有一处 diff、同一输入两次生成结果一致，而不是一句口号。
+
+#### NovaKit · 骨架阶段
+
+| | |
+|---|---|
+| 是什么 | 装完系统只装这一套的离线桌面工具箱：文件、图片、文本与系统小工具，不联网、不要账号 |
+| 技术 | Rust（edition 2024）· Tauri 2 |
+| 状态 | 骨架阶段：工程与 36 个工具的清单已定，业务代码在搭建，无发行版 |
+| 平台 | 首发 macOS，Windows / Linux 计划中 |
+| 许可 | Apache-2.0 / MIT |
+| 仓库 | <https://github.com/ntars/NovaKit> |
+
+工具按四层组织——纯 Rust、系统能力、外部组件、进程插件——每层对应不同的实现与验收方式。插件走 JSON-RPC 2.0 over stdio，权限默认全拒。
+
+**为什么值得看**：它用「装完系统第一周会用到什么」反推工具清单，并用分层把安全边界写死，而不是堆成全能软件。
+
+#### 悠然 Relax · 骨架阶段
+
+| | |
+|---|---|
+| 是什么 | 家庭自托管的通讯、日程、文件与相册平台：单机单进程服务端，Android 客户端访问，数据不出家门 |
+| 技术 | Rust · Tauri 2 · axum · SQLite · React + TypeScript |
+| 状态 | 骨架阶段：工作区、契约与前端骨架就位，业务未实现 |
+| 平台 | 服务端 macOS / Linux，客户端 Android API 24+ |
+| 许可 | Apache-2.0 / MIT |
+| 仓库 | <https://github.com/ntars/Relax> |
+
+业务逻辑全在 Rust：前端只渲染、只 `invoke()`，不发起网络请求、不直连 SQLite、不持久化 token。消息进 outbox，恢复后按 `opId` 幂等提交。
+
+**为什么值得看**：它把「数据自主」落成五道可机检的架构锁，而不是一句隐私口号。
 
 #### 行简 Serica · 骨架阶段
 
@@ -260,7 +305,10 @@ The official site of Ntarstudio — and the index to ten projects.
 | Wacmin | 可用 | 四个方向全部完成并通过测试，含 CLI 与 MCP 接入；不是「内测」也不是「正式版」，它本就以 CLI 形态交付 |
 | Webroit | 已上线 | 静态站点在 `adb.ntars.cn` 运行，26 项功能可用，源码公开 |
 | Xael | 产品已上线 | 有正式版本（`5.0.0`），可下载可用 |
+| Amphoreus | 开发中 | 模拟器与书册可本地运行，官方基准未齐，未宣称逐像素一致 |
 | Flutter-IDE | 骨架阶段 | 契约、令牌与五条校验规则可用；codegen、AST 写回与点选未实现，无发行版 |
+| NovaKit | 骨架阶段 | Tauri 2 工程与 36 个工具清单就位，业务代码未开始 |
+| 悠然 Relax | 骨架阶段 | 工作区、契约与前端骨架就位，业务未实现 |
 | 行简 Serica | 骨架阶段 | 种子编译器能编译 P0b/P1b 子集并直出 Mach-O，P0b 已在 macOS arm64 通过验收；无发行版，不能写生产软件 |
 | TapMC | 骨架阶段 | 链路已通、79 个测试通过，但没有发行版 |
 | Desop | 排期开发 | 只有文档，没有可运行代码 |
@@ -271,7 +319,7 @@ The official site of Ntarstudio — and the index to ten projects.
 
 ## 四、核心特性
 
-### 亮点一：十个项目集中呈现，三处口径同源
+### 亮点一：十三个项目集中呈现，三处口径同源
 
 - **亮点名称**：单页总索引。
 - **价值**：解决「想知道这个工作室在做什么，得逐个仓库翻」的问题。
@@ -341,7 +389,7 @@ The official site of Ntarstudio — and the index to ten projects.
 
 ### 5.4 项目卡片：配置驱动
 
-卡片由 `PROJECTS` 数组渲染，十个条目各含标题、描述、链接、可选图标四个字段。`grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))`，间距 16px，桌面三列、窄屏一列，不需要写媒体查询。
+卡片由 `PROJECTS` 数组渲染，十三个条目各含标题、描述、链接、可选图标四个字段。`grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))`，间距 16px，桌面三列、窄屏一列，不需要写媒体查询。
 
 改项目状态是改一行数据，不是改一段 HTML——避免「改了卡片忘了改元信息」和「卡片结构漂移」两类历史问题。
 
@@ -384,7 +432,7 @@ The official site of Ntarstudio — and the index to ten projects.
 项目状态变化（上线、下线、换域名）时，以下三处必须同时更新：
 
 1. `index.html` 的 `PROJECTS` 数组；
-2. 本文第三章「十个项目」；
+2. 本文第三章「十三个项目」；
 3. GitHub 自述文件 `ntars/ntars` 的项目表。
 
 **已下线项目不得以任何形式回流**——不出现在页面、关键词或结构化数据里。
@@ -442,7 +490,7 @@ python3 -m http.server 8000
 
 ### 8.1 看项目
 
-直接读本文第三章「十个项目」，或访问首页 <https://www.ntars.cn/>。
+直接读本文第三章「十三个项目」，或访问首页 <https://www.ntars.cn/>。
 
 ### 8.2 本地跑网站
 
@@ -564,7 +612,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 ## 十七、后续路线图
 
 1. **缓存版本自动化**：用构建时的资源哈希替代手写 `CACHE_NAME`。
-2. **卡片图标**：十个项目的图标备好后挂载，当前均为 `icon: null`。
+2. **卡片图标**：十三个项目的图标备好后挂载，当前均为 `icon: null`。
 3. **无障碍审计**：已有 `role`、`tabindex`、`aria-*`，但未做完整的键盘走查与读屏测试。
 4. **减少第三方依赖**：Typed.js 功能简单，可用约 40 行原生代码替代。
 5. **OG 预览图**：当前无 `og:image`，社交平台分享时无缩略图。
@@ -575,7 +623,7 @@ README 描述站点当前状态，发行版记录每次改了什么，两者不�
 
 ### 18.1 改动前自查
 
-1. 十张卡片的标题、描述、链接与项目真实状态一致；
+1. 十三张卡片的标题、描述、链接与项目真实状态一致；
 2. `description`、`keywords`、`og:*`、JSON-LD、`canonical` 与正文口径同步；
 3. 动了预缓存里的资源，`sw.js` 的 `CACHE_NAME` 已升版；
 4. 亮色与暗色两套主题都看过；

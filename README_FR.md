@@ -2,9 +2,9 @@
 
 # Apex
 
-**Le site officiel de Ntarstudio (星玖工作室) — et l'index des dix projets.**
+**Le site officiel de Ntarstudio (星玖工作室) — et l'index des treize projets.**
 
-> **Ce dépôt a deux rôles** : il est la source du site du studio (un fichier HTML, une feuille de style, quelques scripts natifs) et il est **l'index des dix projets**. Ce document porte sur le second : ce qu'est chaque projet, où il en est, où regarder. La mise en œuvre du site est comprimée au chapitre 5 et volontairement brève.
+> **Ce dépôt a deux rôles** : il est la source du site du studio (un fichier HTML, une feuille de style, quelques scripts natifs) et il est **l'index des treize projets**. Ce document porte sur le second : ce qu'est chaque projet, où il en est, où regarder. La mise en œuvre du site est comprimée au chapitre 5 et volontairement brève.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -13,14 +13,14 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-9-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-13-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Nom et positionnement
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its ten projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十三个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its thirteen projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **Ce sont des fichiers statiques, pas une application.** Pas de backend, pas de base de données, pas de comptes. Tout le contenu est écrit dans `index.html` ; changer une ligne de texte, c'est un commit.
 3. **C'est un index, pas une source de contenu.** L'information réelle d'un projet vit dans son propre dépôt et son propre site. Cette page résume et renvoie ; elle ne duplique pas.
 
-**Pourquoi ce README met les projets au premier plan** : la section « 星玖工作室出品 » de la page d'accueil liste les dix projets. Cette liste, le chapitre 3 de ce document et le README de profil GitHub sont trois rendus d'une même source. **Quiconque veut un aperçu rapide de ce que construit le studio n'a besoin que de cette page** — inutile d'ouvrir dix dépôts.
+**Pourquoi ce README met les projets au premier plan** : la section « 星玖工作室出品 » de la page d'accueil liste les treize projets. Cette liste, le chapitre 3 de ce document et le README de profil GitHub sont trois rendus d'une même source. **Quiconque veut un aperçu rapide de ce que construit le studio n'a besoin que de cette page** — inutile d'ouvrir treize dépôts.
 
 ---
 
@@ -73,11 +73,11 @@ Le site a exactement trois responsabilités :
 
 ---
 
-## 3. Fonctionnalités clés : les dix projets
+## 3. Fonctionnalités clés : les treize projets
 
-La section « 星玖工作室出品 » de la page d'accueil présente dix projets, répartis par état — publiés ou livrés d'abord, en développement au milieu, planifiés en dernier — et triés par nom latin à l'intérieur de chaque groupe.
+La section « 星玖工作室出品 » de la page d'accueil présente treize projets, répartis par état — publiés ou livrés d'abord, en développement au milieu, planifiés en dernier — et triés par nom latin à l'intérieur de chaque groupe.
 
-**Les dix projets sont Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC et Desop.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
+**Les treize projets sont Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC et Desop.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
 
 ### 3.1 Publiés, livrés et en développement
 
@@ -108,7 +108,7 @@ Un fichier HTML, une feuille de style, quelques scripts natifs. Pas de framework
 
 Une spécification par fichier, indépendante et consultée à la demande. Un CLI sans dépendance vérifie les liens morts, les fichiers orphelins, les phrases de responsabilité, les blocs de code, les comptes d'index et l'enregistrement des espaces réservés.
 
-**Pourquoi y jeter un œil** : les conventions — les 20 chapitres d'un README, le nom d'un dépôt, la rédaction de la description et des topics — deviennent des fichiers et des commandes vérifiables. L'alignement des dix dépôts s'est appuyé sur cette base unique.
+**Pourquoi y jeter un œil** : les conventions — les 20 chapitres d'un README, le nom d'un dépôt, la rédaction de la description et des topics — deviennent des fichiers et des commandes vérifiables. L'alignement des treize dépôts s'est appuyé sur cette base unique.
 
 #### Ondra (空谷) · Bêta interne
 
@@ -171,7 +171,55 @@ Couvre les Quatre Piliers, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, 
 
 **Pourquoi y jeter un œil** : il pousse « calculer plutôt que consulter » jusqu'au bout, et annote chaque conclusion avec sa base textuelle et l'incertitude restante.
 
+#### Amphoreus · En développement
+
+| | |
+|---|---|
+| Ce que c'est | Simulateur du monde d'Amphoreus en observation seule : douze Titans, treize Héritiers dorés et douze Braises calculés par le code, avec une recréation en CSS pur du livre « Comme je l'ai écrit » |
+| Technologies | Python 3.11+ (stdlib) · SQLite · HTML / CSS / Vanilla JS |
+| État | En développement : le simulateur et `/book` tournent en local ; les images de référence officielles manquent, aucune correspondance au pixel n'est revendiquée |
+| Plateforme | macOS / Linux / Windows |
+| Licence | MIT |
+| Dépôt | <https://github.com/ntars/Amphoreus> |
+
+Même graine, même histoire ; une autre graine donne un autre Amphoreus. Le moteur décide de ce qui arrive, le modèle local seulement de la manière de le raconter. L'interface web ne charge ni image ni SVG à l'exécution.
+
+**Pourquoi y jeter un œil** : le récit déterministe et l'interface sans image y deviennent des contraintes vérifiables, pas une démonstration de concept.
+
 #### Flutter-IDE · Étape de squelette
+
+#### NovaKit · Étape de squelette
+
+| | |
+|---|---|
+| Ce que c'est | La boîte à outils hors ligne à installer en premier sur une machine neuve : fichiers, images, texte et utilitaires système, sans réseau ni compte |
+| Technologies | Rust (edition 2024) · Tauri 2 |
+| État | Squelette : le projet et la liste des 36 outils sont fixés, le code métier se construit, pas de version |
+| Plateforme | macOS d'abord ; Windows / Linux prévus |
+| Licence | Apache-2.0 / MIT |
+| Dépôt | <https://github.com/ntars/NovaKit> |
+
+Les outils sont répartis en quatre niveaux — Rust pur, capacité système, composant externe, plugin de processus — chacun avec son implémentation et sa validation. Les plugins parlent JSON-RPC 2.0 sur stdio, permissions refusées par défaut.
+
+**Pourquoi y jeter un œil** : la liste découle de « ce dont on a besoin la première semaine » et la frontière de sécurité est fixée par niveau.
+
+
+#### Relax · Étape de squelette
+
+| | |
+|---|---|
+| Ce que c'est | Un hub familial auto-hébergé pour messages, agenda, fichiers et photos : un serveur mono-processus, des clients Android, des données qui ne quittent pas la maison |
+| Technologies | Rust · Tauri 2 · axum · SQLite · React + TypeScript |
+| État | Squelette : espace de travail, contrats et squelette front en place ; logique métier non implémentée |
+| Plateforme | Serveur macOS / Linux ; client Android API 24+ |
+| Licence | Apache-2.0 / MIT |
+| Dépôt | <https://github.com/ntars/Relax> |
+
+Toute la logique métier est en Rust : le front ne fait que rendre et appeler `invoke()`, sans requête réseau, sans accès direct à SQLite et sans token persisté. Les messages passent par un outbox et sont soumis de façon idempotente via `opId`.
+
+**Pourquoi y jeter un œil** : la souveraineté des données y devient cinq verrous architecturaux vérifiables par machine.
+
+
 
 | | |
 |---|---|
@@ -258,7 +306,7 @@ Aucune modification système, mode utilisateur pur, la désinstallation restaure
 
 ## 4. Caractéristiques clés
 
-### Point fort 1 : dix projets sur une page, trois sources synchronisées
+### Point fort 1 : treize projets sur une page, trois sources synchronisées
 
 - **Nom** : index unique.
 - **Valeur** : résout « pour savoir ce que construit ce studio il faut ouvrir six dépôts ».
@@ -551,7 +599,7 @@ Le README décrit l'état actuel du site ; les releases enregistrent ce qui a ch
 ## 17. Feuille de route
 
 1. **Automatiser la version du cache** : remplacer le `CACHE_NAME` écrit à la main par un hachage d'actifs à la compilation.
-2. **Icônes des cartes** : monter les icônes des dix projets dès qu'elles existent ; toutes sont actuellement `icon: null`.
+2. **Icônes des cartes** : monter les icônes des treize projets dès qu'elles existent ; toutes sont actuellement `icon: null`.
 3. **Audit d'accessibilité** : `role`, `tabindex` et `aria-*` sont présents, mais un parcours clavier complet et un test de lecteur d'écran n'ont pas été faits.
 4. **Réduire les dépendances tierces** : Typed.js est assez simple pour être remplacé par une quarantaine de lignes natives.
 5. **Image d'aperçu Open Graph** : il n'y a actuellement pas d'`og:image`.

@@ -2,9 +2,9 @@
 
 # Apex
 
-**스타지우 스튜디오(Ntarstudio)의 공식 사이트이자, 열 프로젝트의 총 색인.**
+**스타지우 스튜디오(Ntarstudio)의 공식 사이트이자, 열세 프로젝트의 총 색인.**
 
-> **이 저장소에는 두 가지 역할이 있습니다**: 스튜디오 공식 사이트의 소스(HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개)이면서, 동시에 **열 프로젝트의 총 색인**입니다. 이 문서의 중심은 후자입니다 — 각 프로젝트가 무엇인지, 어디까지 진행됐는지, 어디를 보면 되는지. 사이트 자체의 구현 세부는 5장으로 압축했고 지면을 할애하지 않았습니다.
+> **이 저장소에는 두 가지 역할이 있습니다**: 스튜디오 공식 사이트의 소스(HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개)이면서, 동시에 **열세 프로젝트의 총 색인**입니다. 이 문서의 중심은 후자입니다 — 각 프로젝트가 무엇인지, 어디까지 진행됐는지, 어디를 보면 되는지. 사이트 자체의 구현 세부는 5장으로 압축했고 지면을 할애하지 않았습니다.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -13,14 +13,14 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-9-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-13-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. 프로젝트 이름과 위치
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its ten projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十三个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its thirteen projects: one HTML file, one stylesheet, a few plain scripts.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **정적 파일이며 애플리케이션이 아닙니다.** 백엔드도 데이터베이스도 계정 체계도 없습니다. 모든 내용은 `index.html`에 직접 적혀 있고, 한 줄 문구 수정이 곧 한 번의 커밋입니다.
 3. **색인이며 정보원이 아닙니다.** 프로젝트의 실제 정보는 각 저장소와 각 사이트에 있습니다. 이 페이지는 집약과 연결만 하고 내용을 중복 보유하지 않습니다.
 
-**왜 이 README가 프로젝트 소개를 중심에 두는가**: 공식 사이트의 「星玖工作室出品」 블록은 열 프로젝트를 모두 나열합니다. 그 목록, 이 문서 3장, GitHub 프로필 README는 같은 원천에서 나옵니다. **스튜디오가 무엇을 만드는지 빠르게 알고 싶은 사람은 이 페이지 한 장이면 충분합니다** — 열 저장소를 열어볼 필요가 없습니다.
+**왜 이 README가 프로젝트 소개를 중심에 두는가**: 공식 사이트의 「星玖工作室出品」 블록은 열세 프로젝트를 모두 나열합니다. 그 목록, 이 문서 3장, GitHub 프로필 README는 같은 원천에서 나옵니다. **스튜디오가 무엇을 만드는지 빠르게 알고 싶은 사람은 이 페이지 한 장이면 충분합니다** — 열세 저장소를 열어볼 필요가 없습니다.
 
 ---
 
@@ -75,11 +75,11 @@
 
 ---
 
-## 3. 핵심 기능: 열 프로젝트
+## 3. 핵심 기능: 열세 프로젝트
 
-공식 사이트의 「星玖工作室出品」 블록은 열 프로젝트를 상태에 따라 세 그룹으로 나눠 배치합니다: 공개·제공 완료가 먼저, 개발 중이 가운데, 계획 중이 마지막. 그룹 안은 프로젝트 이름의 라틴 문자 순서입니다.
+공식 사이트의 「星玖工作室出品」 블록은 열세 프로젝트를 상태에 따라 세 그룹으로 나눠 배치합니다: 공개·제공 완료가 먼저, 개발 중이 가운데, 계획 중이 마지막. 그룹 안은 프로젝트 이름의 라틴 문자 순서입니다.
 
-**열 프로젝트 = Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC, Desop.** GitHub는 이들을 싣는 플랫폼이며 프로젝트가 아닙니다. Wacmin 내부의 네 방향은 구현 세부이며 단독으로 열거하지 않습니다.
+**열세 프로젝트 = Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC, Desop.** GitHub는 이들을 싣는 플랫폼이며 프로젝트가 아닙니다. Wacmin 내부의 네 방향은 구현 세부이며 단독으로 열거하지 않습니다.
 
 ### 3.1 공개·제공 완료·개발 중
 
@@ -110,7 +110,7 @@ HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개. 프레임워
 
 규범 하나를 파일 하나에 두고 각각 독립적으로 필요한 만큼만 참조합니다. 의존 없는 CLI가 끊긴 링크, 고립 파일, 책임 문장, 코드 펜스, 색인 개수, 자리표시자 등록을 검사합니다.
 
-**볼 만한 이유**: README 20장, 저장소 이름, 소개와 토픽 설정 같은 구두 약속을 검증 가능한 파일과 명령으로 바꿨습니다. 이번 열 저장소 정비는 이것을 유일한 기준으로 삼았습니다.
+**볼 만한 이유**: README 20장, 저장소 이름, 소개와 토픽 설정 같은 구두 약속을 검증 가능한 파일과 명령으로 바꿨습니다. 이번 열세 저장소 정비는 이것을 유일한 기준으로 삼았습니다.
 
 #### Ondra(공곡) · 베타
 
@@ -173,7 +173,55 @@ HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개. 프레임워
 
 **볼 만한 이유**: 「표를 찾지 않고 계산할 수 있는 것은 계산한다」는 원칙을 끝까지 관철했고, 각 결론에 문헌 근거와 불확실한 지점을 표기합니다.
 
+#### Amphoreus · 개발 중
+
+| | |
+|---|---|
+| 무엇인가 | 보기만 하는 암포레우스 세계 시뮬레이터. 열두 티탄, 열세 크리소스 후계자, 열두 불씨를 코드로 연산하고 순수 CSS로 「여아소서」 책자를 재현 |
+| 기술 | Python 3.11+(표준 라이브러리만) · SQLite · HTML / CSS / Vanilla JS |
+| 상태 | 개발 중: 시뮬레이터와 `/book`은 로컬에서 동작. 공식 기준 이미지가 없어 픽셀 단위 일치를 주장하지 않음 |
+| 플랫폼 | macOS / Linux / Windows |
+| 라이선스 | MIT |
+| 저장소 | <https://github.com/ntars/Amphoreus> |
+
+같은 시드면 같은 역사, 시드를 바꾸면 다른 암포레우스. 규칙 계층이 '무슨 일이 있었는가'를 정하고 로컬 모델은 '어떻게 말할까'만 맡는다. 웹은 실행 시 이미지도 SVG도 읽지 않는다.
+
+**왜 볼 만한가**: '결정론적 내러티브'와 '이미지 제로 UI'를 개념 시연이 아니라 검증 가능한 제약으로 만든 점.
+
 #### Flutter-IDE · 골격 단계
+
+#### NovaKit · 골격 단계
+
+| | |
+|---|---|
+| 무엇인가 | OS를 설치한 직후 하나만 깔면 되는 오프라인 도구함. 파일, 이미지, 텍스트, 시스템 도구를 담고 통신도 계정도 없다 |
+| 기술 | Rust(edition 2024) · Tauri 2 |
+| 상태 | 골격 단계: 공정과 36개 도구 목록은 확정, 업무 코드는 구축 중, 배포판 없음 |
+| 플랫폼 | 우선 macOS, Windows / Linux는 계획 중 |
+| 라이선스 | Apache-2.0 / MIT |
+| 저장소 | <https://github.com/ntars/NovaKit> |
+
+도구는 네 계층(순수 Rust, 시스템 기능, 외부 컴포넌트, 프로세스 플러그인)으로 나뉘고 계층마다 구현과 검증 방식이 다르다. 플러그인은 JSON-RPC 2.0 over stdio, 권한은 기본 전면 거부.
+
+**왜 볼 만한가**: 'OS 설치 후 첫 주에 무엇을 쓰는가'에서 목록을 역산하고 계층으로 보안 경계를 고정한 점.
+
+
+#### Relax(悠然) · 골격 단계
+
+| | |
+|---|---|
+| 무엇인가 | 가정용 자체 호스팅 메신저·일정·파일·사진 기반. 단일 프로세스 서버와 Android 클라이언트, 데이터는 집 밖으로 나가지 않음 |
+| 기술 | Rust · Tauri 2 · axum · SQLite · React + TypeScript |
+| 상태 | 골격 단계: 워크스페이스, 계약, 프런트 골격은 준비, 업무는 미구현 |
+| 플랫폼 | 서버 macOS / Linux, 클라이언트 Android API 24+ |
+| 라이선스 | Apache-2.0 / MIT |
+| 저장소 | <https://github.com/ntars/Relax> |
+
+업무 로직은 모두 Rust. 프런트는 렌더링과 `invoke()`만 하며 통신도 SQLite 직접 연결도 token 저장도 하지 않는다. 메시지는 outbox에 들어가고 복귀 후 `opId`로 멱등 전송한다.
+
+**왜 볼 만한가**: '데이터 자주'를 다섯 개의 기계 검증 가능한 아키텍처 잠금으로 만든 점.
+
+
 
 | | |
 |---|---|
@@ -260,10 +308,10 @@ HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개. 프레임워
 
 ## 4. 핵심 특성
 
-### 하이라이트 1: 열 프로젝트를 한 페이지에서, 세 곳이 같은 원천
+### 하이라이트 1: 열세 프로젝트를 한 페이지에서, 세 곳이 같은 원천
 
 - **이름**: 단일 페이지 총 색인.
-- **가치**: 「이 스튜디오가 무엇을 만드는지 알려면 열 저장소를 열어야 한다」를 해결.
+- **가치**: 「이 스튜디오가 무엇을 만드는지 알려면 열세 저장소를 열어야 한다」를 해결.
 - **구현**: 사이트 카드, 이 문서 3장, GitHub 프로필 README가 같은 목록을 같은 상태 표현으로 보여줍니다.
 - **차별화**: 많은 개인 페이지는 공개된 것만 나열하거나, 정보를 각 저장소 README에 흩어 놓습니다.
 - **증거**: 세 곳의 프로젝트 이름·상태·링크가 항목별로 대응. 5.9절 상태표 참조.
@@ -373,7 +421,7 @@ HTML 한 장, 스타일시트 한 장, 순수 스크립트 몇 개. 프레임워
 프로젝트 상태 변화(공개·종료·도메인 변경) 시 다음을 동시에 갱신합니다:
 
 1. `index.html`의 `PROJECTS` 배열;
-2. 이 문서 3장 「열 프로젝트」;
+2. 이 문서 3장 「열세 프로젝트」;
 3. GitHub 프로필 README `ntars/ntars`의 프로젝트 표.
 
 **종료된 프로젝트는 어떤 형태로도 되살리지 않습니다** — 페이지·키워드·구조화 데이터 어디에도 넣지 않습니다.
@@ -431,7 +479,7 @@ python3 -m http.server 8000
 
 ### 8.1 프로젝트 알아보기
 
-이 문서 3장 「열 프로젝트」를 읽거나 <https://www.ntars.cn/>를 방문하세요.
+이 문서 3장 「열세 프로젝트」를 읽거나 <https://www.ntars.cn/>를 방문하세요.
 
 ### 8.2 로컬에서 사이트 실행
 
@@ -553,7 +601,7 @@ README는 사이트의 현재 상태를 서술하고, 릴리스는 매번 무엇
 ## 17. 향후 로드맵
 
 1. **캐시 버전 자동화**: 손으로 쓰는 `CACHE_NAME`을 빌드 시 자원 해시로 교체.
-2. **카드 아이콘**: 열 프로젝트 아이콘이 준비되면 마운트. 현재 모두 `icon: null`.
+2. **카드 아이콘**: 열세 프로젝트 아이콘이 준비되면 마운트. 현재 모두 `icon: null`.
 3. **접근성 감사**: `role`, `tabindex`, `aria-*`는 있으나 완전한 키보드 주행과 스크린리더 테스트는 미실시.
 4. **제3자 의존 축소**: Typed.js는 약 40줄 네이티브 코드로 대체 가능.
 5. **OG 미리보기 이미지**: 현재 `og:image`가 없어 SNS 공유 시 썸네일이 나오지 않습니다.
