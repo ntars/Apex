@@ -4,7 +4,7 @@
 
 **星玖工作室（Ntarstudio）的官网，以及十五个项目的总索引。**
 
-The official site of Ntarstudio — and the index to thirteen projects.
+The official site of Ntarstudio — and the index to fifteen projects.
 
 > **本仓库的双重身份**：它既是工作室官网的源码（一个 HTML、一份样式表、几个原生脚本），也是**十五个项目的总索引**。本文的重点是后者：介绍每个项目是什么、做到哪一步、去哪里看。网站自身的实现细节压缩在第五章，不占主要篇幅。
 
