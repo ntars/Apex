@@ -13,14 +13,14 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-13-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-15-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Название и позиционирование
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十三个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its thirteen projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`星玖工作室官网与十五个开源项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of fifteen open-source projects, in one HTML file and a stylesheet.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -77,7 +77,7 @@
 
 Раздел «星玖工作室出品» на главной странице показывает десять проектов, сгруппированных по статусу — выпущенные или поставленные сначала, в разработке в середине, запланированные в конце — и отсортированных по латинскому имени внутри каждой группы.
 
-**Тринадцать проектов — это Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Amphoreus, Flutter-IDE, NovaKit, Relax, Serica, TapMC и Desop.** GitHub — платформа, где они размещены, а не проект; четыре направления внутри Wacmin — деталь реализации и отдельно не перечисляются.
+**Пятнадцать проектов — это Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Amphoreus, Flutter-IDE, NovaKit, Relax, Serica, TapMC и Desop.** GitHub — платформа, где они размещены, а не проект; четыре направления внутри Wacmin — деталь реализации и отдельно не перечисляются.
 
 ### 3.1 Выпущенные, поставленные и в разработке
 
@@ -186,6 +186,16 @@
 
 **Почему стоит посмотреть**: детерминированное повествование и интерфейс без изображений здесь стали проверяемыми ограничениями, а не демонстрацией идеи.
 
+#### Chiubay 玖白 · Исследовательский прототип
+
+| | |
+|---|---|
+| Что это | Агент, растущий с нуля: долгосрочное исследование механизмов персонального AGI, полностью собственный стек обучения |
+| Стек | Python · NumPy (свои тензоры и ручной backprop; без torch, JAX и предобученных весов) |
+| Статус | Прототип: тензорный стек и эксперимент E3 работают; пять контуров пока на бумаге |
+| Лицензия | Apache-2.0 / MIT |
+| Репозиторий | <https://github.com/ntars/Chiubay> |
+
 #### Flutter-IDE · Этап каркаса
 
 #### NovaKit · Этап каркаса
@@ -282,6 +292,18 @@
 Никаких изменений системы, чистый пользовательский режим, удаление возвращает всё назад. Четыре компонента делят один набор дизайн-токенов и включаются по отдельности. Бюджет производительности служит порогом выпуска: простой CPU < 1 %, память < 150 МБ, увеличение dock ≥ 55 fps — не выполнено, значит не выходит.
 
 **Почему стоит посмотреть**: на распространённую жалобу «инструменты оформления замедляют систему» он отвечает конкретными числами, а не «оптимизируем позже».
+
+
+#### Taycho-OS 太初 · Проектирование (заглушка)
+
+| | |
+|---|---|
+| Что это | Нативная система с нуля на Serica: модель исполнения, границы возможностей, сообщения, окна и текст переписаны |
+| Стек | Serica (план) · нативные исполняемые файлы |
+| Статус | Проектирование: только документы и репозиторий-заглушка; кода нет |
+| Лицензия | Apache-2.0 / MIT |
+| Репозиторий | <https://github.com/ntars/Taycho-OS> |
+
 
 ### 3.3 Формулировки статуса
 

@@ -2,9 +2,9 @@
 
 # Apex
 
-**El sitio oficial de Ntarstudio (星玖工作室) — y el índice de los trece proyectos.**
+**El sitio oficial de Ntarstudio (星玖工作室) — y el índice de los quince proyectos.**
 
-> **Este repositorio tiene dos roles**: es el código fuente del sitio del estudio (un archivo HTML, una hoja de estilos, unos pocos scripts nativos) y es **el índice de los trece proyectos**. Este documento se centra en lo segundo: qué es cada proyecto, en qué punto está y dónde mirar. La implementación del sitio se comprime en el capítulo 5 y se mantiene deliberadamente breve.
+> **Este repositorio tiene dos roles**: es el código fuente del sitio del estudio (un archivo HTML, una hoja de estilos, unos pocos scripts nativos) y es **el índice de los quince proyectos**. Este documento se centra en lo segundo: qué es cada proyecto, en qué punto está y dónde mirar. La implementación del sitio se comprime en el capítulo 5 y se mantiene deliberadamente breve.
 
 ![Status](https://img.shields.io/badge/status-online-2ea44f?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/ntars/Apex?style=flat-square)](./LICENSE)
@@ -13,14 +13,14 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/ntars/Apex?style=flat-square&color=3cb371)
 
 [![Live](https://img.shields.io/badge/live-www.ntars.cn-0078d4.svg?style=flat-square)](https://www.ntars.cn/)
-[![Projects](https://img.shields.io/badge/projects-13-8957e5.svg?style=flat-square)](#)
+[![Projects](https://img.shields.io/badge/projects-15-8957e5.svg?style=flat-square)](#)
 [![Build](https://img.shields.io/badge/build-none-2ea44f.svg?style=flat-square)](#)
 
 ---
 
 ## 1. Nombre y posicionamiento
 
-> **仓库描述 / Description**：`Apex —— 星玖工作室（Ntarstudio）官网与十三个项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of its thirteen projects: one HTML file, one stylesheet, a few plain scripts.`
+> **仓库描述 / Description**：`星玖工作室官网与十五个开源项目总索引：一个 HTML、一份样式表、几个原生脚本 | The Ntarstudio official site and an index of fifteen open-source projects, in one HTML file and a stylesheet.`
 >
 > **话题标签 / Topics**（20 个，仅英文）：`frontend`, `landing-page`, `no-framework`, `personal-website`, `portfolio-site`, `pwa`, `service-worker`, `single-page`, `static-site`, `studio-website`, `vanilla-css`, `vanilla-javascript`, `ntarstudio`, `chinese-website`, `html`, `css`, `javascript`, `dark-mode`, `responsive-design`, `no-dependencies`
 
@@ -35,7 +35,7 @@
 2. **Son archivos estáticos, no una aplicación.** Sin backend, sin base de datos, sin cuentas. Todo el contenido está escrito en `index.html`; cambiar una línea de texto es un commit.
 3. **Es un índice, no una fuente de contenido.** La información real de un proyecto vive en su propio repositorio y su propio sitio. Esta página resume y enlaza; no duplica.
 
-**Por qué este README se centra en los proyectos**: la sección «星玖工作室出品» de la página de inicio enumera los trece proyectos. Esa lista, el capítulo 3 de este documento y el README de perfil de GitHub son tres representaciones de una misma fuente. **Quien quiera una idea rápida de lo que construye el estudio solo necesita esta página** — no hace falta abrir trece repositorios.
+**Por qué este README se centra en los proyectos**: la sección «星玖工作室出品» de la página de inicio enumera los quince proyectos. Esa lista, el capítulo 3 de este documento y el README de perfil de GitHub son tres representaciones de una misma fuente. **Quien quiera una idea rápida de lo que construye el estudio solo necesita esta página** — no hace falta abrir quince repositorios.
 
 ---
 
@@ -73,11 +73,11 @@ El sitio tiene exactamente tres responsabilidades:
 
 ---
 
-## 3. Funciones principales: los trece proyectos
+## 3. Funciones principales: los quince proyectos
 
-La sección «星玖工作室出品» de la página de inicio muestra trece proyectos, agrupados por estado — publicados o entregados primero, en desarrollo en medio, planificados al final — y ordenados por nombre latino dentro de cada grupo.
+La sección «星玖工作室出品» de la página de inicio muestra quince proyectos, agrupados por estado — publicados o entregados primero, en desarrollo en medio, planificados al final — y ordenados por nombre latino dentro de cada grupo.
 
-**Los trece proyectos son Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Flutter-IDE, Serica, TapMC y Desop.** GitHub es la plataforma que los aloja, no un proyecto; las cuatro direcciones internas de Wacmin son un detalle de implementación y no se enumeran por separado.
+**Los quince proyectos son Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Chiubay, Flutter-IDE, Serica, TapMC, Desop y Taycho-OS.** GitHub es la plataforma que los aloja, no un proyecto; las cuatro direcciones internas de Wacmin son un detalle de implementación y no se enumeran por separado.
 
 ### 3.1 Publicados, entregados y en desarrollo
 
@@ -108,7 +108,7 @@ Un archivo HTML, una hoja de estilos, unos pocos scripts nativos. Sin framework,
 
 Una especificación por archivo, independiente y consultada según necesidad. Un CLI sin dependencias comprueba enlaces rotos, archivos huérfanos, frases de responsabilidad, bloques de código, recuentos de índice y registro de marcadores.
 
-**Por qué vale la pena**: convierte convenciones —qué 20 capítulos necesita un README, cómo se nombra un repositorio, cómo se redactan descripción y temas— en archivos y comandos verificables. La alineación de los trece repositorios se apoyó en esta base única.
+**Por qué vale la pena**: convierte convenciones —qué 20 capítulos necesita un README, cómo se nombra un repositorio, cómo se redactan descripción y temas— en archivos y comandos verificables. La alineación de los quince repositorios se apoyó en esta base única.
 
 #### Ondra (空谷) · Beta interna
 
@@ -185,6 +185,16 @@ Cubre Cuatro Pilares, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei H
 La misma semilla da la misma historia; otra semilla da otro Amphoreus. El motor decide qué ocurre y el modelo local solo cómo contarlo. La interfaz web no carga imágenes ni SVG en tiempo de ejecución.
 
 **Por qué merece la pena**: la narrativa determinista y la interfaz sin imágenes se vuelven restricciones verificables, no una demo conceptual.
+
+#### Chiubay 玖白 · Prototipo de investigación
+
+| | |
+|---|---|
+| Qué es | Criar desde cero un agente que crece solo: investigación de mecanismos de AGI personal a largo plazo con pila de entrenamiento propia |
+| Stack | Python · NumPy (tensores y retropropagación propios; sin torch, JAX ni pesos preentrenados) |
+| Estado | Prototipo de investigación: la pila de tensores y el experimento E3 funcionan; cinco bucles siguen en papel |
+| Licencia | Apache-2.0 / MIT |
+| Repositorio | <https://github.com/ntars/Chiubay> |
 
 #### Flutter-IDE · Etapa de esqueleto
 
@@ -283,6 +293,18 @@ Cero cambios en el sistema, modo usuario puro, desinstalar lo restaura todo. Los
 
 **Por qué vale la pena**: responde a la queja habitual de que las herramientas de personalización ralentizan la máquina con cifras concretas, no con «optimizaremos más adelante».
 
+
+#### Taycho-OS 太初 · Diseño (marcador de posición)
+
+| | |
+|---|---|
+| Qué es | Un sistema nativo escrito desde cero en Serica: modelo de ejecución, límites de capacidades, mensajes, ventanas y texto reescritos |
+| Stack | Serica (previsto) · ejecutables nativos |
+| Estado | Diseño: solo documentos y repositorio de marcador; sin código |
+| Licencia | Apache-2.0 / MIT |
+| Repositorio | <https://github.com/ntars/Taycho-OS> |
+
+
 ### 3.3 Redacción del estado
 
 **El estado del sitio y el del producto no son equivalentes** — un sitio funcionando no significa software instalable, y software funcionando no significa sitio accesible.
@@ -306,7 +328,7 @@ Cero cambios en el sistema, modo usuario puro, desinstalar lo restaura todo. Los
 
 ## 4. Características principales
 
-### Destacado 1: trece proyectos en una página, tres fuentes sincronizadas
+### Destacado 1: quince proyectos en una página, tres fuentes sincronizadas
 
 - **Nombre**: índice de página única.
 - **Valor**: resuelve «para saber qué construye este estudio hay que abrir seis repositorios».
@@ -599,7 +621,7 @@ El README describe el estado actual del sitio; las releases registran qué cambi
 ## 17. Hoja de ruta
 
 1. **Automatizar la versión de caché**: sustituir el `CACHE_NAME` escrito a mano por un hash de recursos en tiempo de compilación.
-2. **Iconos de las tarjetas**: montar los iconos de los trece proyectos cuando existan; ahora todos son `icon: null`.
+2. **Iconos de las tarjetas**: montar los iconos de los quince proyectos cuando existan; ahora todos son `icon: null`.
 3. **Auditoría de accesibilidad**: hay `role`, `tabindex` y `aria-*`, pero no se ha hecho un recorrido completo con teclado ni una prueba con lector de pantalla.
 4. **Reducir dependencias de terceros**: Typed.js es lo bastante simple para reemplazarlo con unas cuarenta líneas nativas.
 5. **Imagen de vista previa Open Graph**: actualmente no hay `og:image`.

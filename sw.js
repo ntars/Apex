@@ -4,7 +4,7 @@
  * 策略：缓存优先 (Cache First) + 网络回退 + 后台更新 (Stale-While-Revalidate)
  * 版本：v11（项目清单由十个扩为十三个，新增 Amphoreus/NovaKit/Relax，index.html 变更，必须升版否则回访命中旧缓存）
  */
-var CACHE_NAME = 'ntarstudio-v11';
+var CACHE_NAME = 'ntarstudio-v12';
 
 // 核心静态资源预缓存列表
 var urlsToCache = [
