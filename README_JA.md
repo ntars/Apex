@@ -79,7 +79,7 @@
 
 公式サイトの「星玖工作室出品」ブロックは十五のプロジェクトを状態で三組に分けて並べます：公開・提供済みが先、開発中が中、計画中が後。組内はプロジェクト名のラテン文字順です。
 
-**十五のプロジェクト＝Apex、Gitrule-skill、Ondra、Wacmin、Webroit、Xael、Chiubay、Flutter-IDE、Serica、TapMC、Desop、Taycho-OS。** GitHub はこれらを載せる platform であり、プロジェクトではありません。Wacmin 内部の四方向は実装詳細であり、単独では列挙しません。
+**十五のプロジェクト＝Apex、Gitrule-skill、Ondra、Wacmin、Webroit、Xael、Amphoreus、Chiubay、Flutter-IDE、NovaKit、Relax、Serica、TapMC、Desop、Taycho-OS。** GitHub はこれらを載せる platform であり、プロジェクトではありません。Wacmin 内部の四方向は実装詳細であり、単独では列挙しません。
 
 ### 3.1 公開済み・提供済み・開発中
 

@@ -77,7 +77,7 @@ The site has exactly three responsibilities:
 
 The homepage's "星玖工作室出品" section shows fifteen projects, grouped by status — released or delivered first, in development in the middle, planned last — and sorted by Latin name within each group.
 
-**The fifteen projects are Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Amphoreus, Flutter-IDE, NovaKit, Relax, Serica, TapMC and Desop.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
+**The fifteen projects are Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Amphoreus, Chiubay, Flutter-IDE, NovaKit, Relax, Serica, TapMC, Desop and Taycho-OS.** GitHub is the platform hosting them, not a project; the four directions inside Wacmin are its implementation detail and are not listed separately.
 
 ### 3.1 Released, delivered and in development
 

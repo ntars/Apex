@@ -79,7 +79,7 @@
 
 공식 사이트의 「星玖工作室出品」 블록은 열다섯 프로젝트를 상태에 따라 세 그룹으로 나눠 배치합니다: 공개·제공 완료가 먼저, 개발 중이 가운데, 계획 중이 마지막. 그룹 안은 프로젝트 이름의 라틴 문자 순서입니다.
 
-**열다섯 프로젝트 = Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Chiubay, Flutter-IDE, Serica, TapMC, Desop, Taycho-OS.** GitHub는 이들을 싣는 플랫폼이며 프로젝트가 아닙니다. Wacmin 내부의 네 방향은 구현 세부이며 단독으로 열거하지 않습니다.
+**열다섯 프로젝트 = Apex、Gitrule-skill、Ondra、Wacmin、Webroit、Xael、Amphoreus、Chiubay、Flutter-IDE、NovaKit、Relax、Serica、TapMC、Desop、Taycho-OS.** GitHub는 이들을 싣는 플랫폼이며 프로젝트가 아닙니다. Wacmin 내부의 네 방향은 구현 세부이며 단독으로 열거하지 않습니다.
 
 ### 3.1 공개·제공 완료·개발 중
 

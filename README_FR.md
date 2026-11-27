@@ -77,7 +77,7 @@ Le site a exactement trois responsabilités :
 
 La section « 星玖工作室出品 » de la page d'accueil présente quinze projets, répartis par état — publiés ou livrés d'abord, en développement au milieu, planifiés en dernier — et triés par nom latin à l'intérieur de chaque groupe.
 
-**Les quinze projets sont Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Chiubay, Flutter-IDE, Serica, TapMC, Desop et Taycho-OS.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
+**Les quinze projets sont Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Amphoreus, Chiubay, Flutter-IDE, NovaKit, Relax, Serica, TapMC, Desop et Taycho-OS.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
 
 ### 3.1 Publiés, livrés et en développement
 
