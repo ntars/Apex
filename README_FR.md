@@ -73,256 +73,272 @@ Le site a exactement trois responsabilités :
 
 ---
 
-## 3. Fonctionnalités clés : les quinze projets
+## 3. Fonctionnalités clés
 
-La section « 星玖工作室出品 » de la page d'accueil présente quinze projets, répartis par état — publiés ou livrés d'abord, en développement au milieu, planifiés en dernier — et triés par nom latin à l'intérieur de chaque groupe.
+Le bloc « 星玖工作室出品 » de la page d'accueil présente quinze projets dans un seul ordre alphabétique latin ; chaque carte indique son propre état, et la formulation des états est définie en 3.2.
 
-**Les quinze projets sont Apex, Gitrule-skill, Ondra, Wacmin, Webroit, Xael, Amphoreus, Chiubay, Flutter-IDE, NovaKit, Relax, Serica, TapMC, Desop et Taycho-OS.** GitHub est la plateforme qui les héberge, pas un projet ; les quatre directions internes à Wacmin sont un détail d'implémentation et ne sont pas listées séparément.
+**Les quinze projets sont Amphoreus, Apex, Chiubay, Desop, Flutter-IDE, Gitrule-skill, NovaKit, Ondra, Relax, Serica, TapMC, Taycho-OS, Wacmin, Webroit et Xael.** GitHub les héberge et n'est pas un projet ; les quatre directions internes de Wacmin relèvent du détail d'implémentation et ne sont pas listées séparément.
 
-### 3.1 Publiés, livrés et en développement
+### 3.1 Tous les projets (A–Z)
 
-#### Apex · En ligne
-
-| | |
-|---|---|
-| Ce que c'est | Le site que vous lisez — la plaque du studio et l'index des projets |
-| Technologies | HTML · CSS · Vanilla JS |
-| Licence | MIT (Apache-2.0 pour les parties dérivées) |
-| Entrée | <https://www.ntars.cn/> |
-| Dépôt | <https://github.com/ntars/Apex> |
-
-Un fichier HTML, une feuille de style, quelques scripts natifs. Pas de framework, pas de build, pas de backend. Zéro dépendance signifie qu'il fonctionnera encore dans trois ans.
-
-**Pourquoi y jeter un œil** : c'est un exemple de front-end sans build — comment un seul fichier HTML organise tout un site, et survit six ans sans mise à jour.
-
-#### Gitrule-skill · Livré
-
-| | |
-|---|---|
-| Ce que c'est | Un jeu de spécifications génériques couvrant tout le cycle de vie : cadrage, exigences, architecture, développement, tests, déploiement, exploitation, itération, ainsi que documentation, conformité et accès programmatique par IA |
-| Technologies | Markdown (aucune dépendance tierce) · CLI Python · serveur MCP |
-| Volume | 66 spécifications en chinois simplifié et en anglais, en correspondance un à un |
-| État | Livré : le CLI ne signale aucun problème ; Skill, paquet expert et serveur MCP sont disponibles |
-| Licence | MIT |
-| Dépôt | <https://github.com/ntars/Gitrule-skill> |
-
-Une spécification par fichier, indépendante et consultée à la demande. Un CLI sans dépendance vérifie les liens morts, les fichiers orphelins, les phrases de responsabilité, les blocs de code, les comptes d'index et l'enregistrement des espaces réservés.
-
-**Pourquoi y jeter un œil** : les conventions — les 20 chapitres d'un README, le nom d'un dépôt, la rédaction de la description et des topics — deviennent des fichiers et des commandes vérifiables. L'alignement des quinze dépôts s'est appuyé sur cette base unique.
-
-#### Ondra (空谷) · Bêta interne
-
-| | |
-|---|---|
-| Ce que c'est | Compagnon IA de bureau entièrement modulaire : l'interface ne lit que la projection des plugins ; émotion, mémoire et contexte sont les trois mécanismes clés ; les données restent locales |
-| Technologies | Flutter (bureau et web) · Cordis 4.1.0 (framework de plugins) · noyau dsh (Node) |
-| Version | `2.0.0-alpha` |
-| Plateformes | macOS exécutable, web compilable ; les autres cibles n'ont que des projets générés |
-| Licence | Apache-2.0 / MIT |
-| Entrée | <https://ai.ntars.cn/> |
-| Dépôt | <https://github.com/ntars/Ondra> |
-
-Trois mécanismes clés : émotion (état à inertie), mémoire (chaîne de onze maillons), contexte (préfixe figé + injection incrémentale + budget). La page des plugins fusionne 18 entrées embarquées et 75 entrées d'assemblage, soit 93.
-
-**Pourquoi y jeter un œil** : l'accompagnement y est décomposé en mécanismes ingénierables séparément, et un correctif d'ordre de démarrage a ramené de 55 à 0 les dégradations silencieuses de 18 plugins.
-
-#### Wacmin · Disponible
-
-| | |
-|---|---|
-| Ce que c'est | Suite d'interopérabilité bidirectionnelle entre macOS et Windows |
-| Technologies | Node.js · Python · Rust |
-| Licence | MIT |
-| Dépôt | <https://github.com/ntars/Wacmin> |
-
-Remplit quatre directions en croisant « hôte » et « action » : produire un installeur Windows sur Mac, exécuter un programme Windows sur Mac, produire un bundle macOS sur Windows, exécuter un programme mac sur Windows. Les quatre partagent une couche de contrat avec des codes de sortie et des segments d'erreur unifiés.
-
-**Pourquoi y jeter un œil** : il ordonne le développement par certitude, laisse l'échec le plus probable pour la fin et définit à l'avance un chemin de dégradation — même en cas d'échec, les trois premiers tiennent.
-
-#### Webroit · En ligne
-
-| | |
-|---|---|
-| Ce que c'est | Une boîte à outils Android dans le navigateur : ADB et Fastboot en WebUSB, 152 fonctions |
-| Technologies | TypeScript · Vite · WebUSB · ya-webadb |
-| Forme | Site purement statique — sans backend, sans installation, sans pilotes |
-| Licence | Apache-2.0 / MIT |
-| Entrée | <https://adb.ntars.cn/> |
-| Dépôt | <https://github.com/ntars/Webroit> |
-
-Tout ce qu'il faut pour bricoler un Android, ramené dans le navigateur. Le protocole ADB repose sur Tango ; ce qui est livré, c'est l'interface et les parcours qu'un utilisateur emploie vraiment — gestion d'applications, navigation de fichiers, terminal, miroir d'écran, journaux et flashage, 152 fonctions au total, chacune assortie d'un niveau de risque.
-
-**Pourquoi y jeter un œil** : il supprime entièrement la couche « préparation de l'environnement ». Le parcours classique est télécharger Platform-Tools → configurer le PATH → installer les pilotes USB → écrire des règles udev → connecter → taper des commandes ; il compresse les cinq premières étapes en « ouvrir la page → cliquer sur connecter → cliquer sur une fonction ». Et la vraie difficulté n'a jamais été de taper les commandes, mais ce moment où, l'installation terminée, ça ne se connecte toujours pas et où l'on ne sait pas si c'est le câble, le port, le pilote, ou un `adb.exe` resté en arrière-plan qui tient l'interface.
-
-**Deux points à retenir** : le produit est un `dist/` statique, et `grep -r "http" dist/` ne trouve aucune adresse de backend propre — « les données ne quittent pas votre machine » est un fait vérifiable, pas une promesse. Il classe aussi chaque opération par risque : une commande copiée quelque part indique ce qu'elle va changer et si c'est réversible.
-
-#### Xael (玄玖灵犀) · Publié
-
-| | |
-|---|---|
-| Ce que c'est | Corpus hors ligne de métaphysique chinoise : 22 fonctions calculées depuis les principes premiers, sans tables de correspondance, sans réseau |
-| Technologies | JavaScript (aucune dépendance) · PWA · mini-programme WeChat · uni-app |
-| Version | 5.0.0 |
-| Licence | Apache-2.0 / MIT |
-| Entrée | <https://x.ntars.cn/> |
-| Dépôt | <https://github.com/ntars/Xael> |
-
-Couvre les Quatre Piliers, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, les Étoiles Volantes Xuan Kong et la sélection de dates du almanach. La base calendaire dérive les nouvelles lunes de séries astronomiques en temps réel plutôt que d'embarquer une table ; vingt classiques du domaine public servent de textes de référence, chaque règle étant corrigée élément par élément avec son niveau de preuve indiqué. Le mini-programme et le compte officiel sont recherchables sous le même nom.
-
-**Pourquoi y jeter un œil** : il pousse « calculer plutôt que consulter » jusqu'au bout, et annote chaque conclusion avec sa base textuelle et l'incertitude restante.
+> Les quinze projets sont classés dans un seul ordre alphabétique latin, sans regroupement par état ; un nouveau projet est inséré à sa place, jamais ajouté à la fin. Cette liste, le tableau `PROJECTS` du site et le [profil ntars](https://github.com/ntars/ntars) restent identiques. La formulation des états est définie en 3.2.
 
 #### Amphoreus · En développement
 
 | | |
 |---|---|
-| Ce que c'est | Simulateur du monde d'Amphoreus en observation seule : douze Titans, treize Héritiers dorés et douze Braises calculés par le code, avec une recréation en CSS pur du livre « Comme je l'ai écrit » |
-| Technologies | Python 3.11+ (stdlib) · SQLite · HTML / CSS / Vanilla JS |
-| État | En développement : le simulateur et `/book` tournent en local ; les images de référence officielles manquent, aucune correspondance au pixel n'est revendiquée |
-| Plateforme | macOS / Linux / Windows |
+| Ce que c'est | Une reconstitution à l'identique du « Livre tel que je l'écris » d'Amphoreus, tiré de Honkai: Star Rail, transformée en monde simulé autonome : douze Titans, treize Héritiers dorés et douze braises calculés à partir d'une graine, la même graine donnant toujours la même histoire |
+| Technique | Python 3.11+ (bibliothèque standard uniquement) · SQLite · HTML / CSS / Vanilla JS |
+| État | En développement : le simulateur tourne et `/book` fonctionne ; les captures de référence officielles manquent, aucune correspondance au pixel près n'est revendiquée |
+| Plateformes | macOS / Linux / Windows (bibliothèque standard uniquement) |
 | Licence | MIT |
 | Dépôt | <https://github.com/ntars/Amphoreus> |
 
-Même graine, même histoire ; une autre graine donne un autre Amphoreus. Le moteur décide de ce qui arrive, le modèle local seulement de la manière de le raconter. L'interface web ne charge ni image ni SVG à l'exécution.
+La même graine donne toujours la même histoire ; une autre graine donne un autre Amphoreus. Le moteur de règles décide *ce qui s'est passé*, le modèle local seulement *comment le raconter*. À l'exécution, la page ne charge ni bitmap ni SVG : toutes les formes sont tracées avec des dégradés, des bordures et `clip-path`.
 
-**Pourquoi y jeter un œil** : le récit déterministe et l'interface sans image y deviennent des contraintes vérifiables, pas une démonstration de concept.
+**Pourquoi le regarder** : il transforme « récit déterministe » et « interface sans image » en contraintes d'ingénierie vérifiables, et non en démonstration de concept.
 
-#### Chiubay 玖白 · Prototype de recherche
+#### Apex · En ligne
 
 | | |
 |---|---|
-| Ce que c'est | Élever de zéro un agent qui grandit seul : recherche de mécanismes AGI personnelle à long terme, pile d'entraînement entièrement maison |
-| Pile | Python · NumPy (tenseurs et rétropropagation écrits à la main ; ni torch, ni JAX, ni poids pré-entraînés) |
-| État | Prototype de recherche : la pile de tenseurs et l'expérience E3 fonctionnent ; cinq boucles restent sur papier |
+| Ce que c'est | Le site que vous lisez : l'enseigne du studio et l'index de tous les projets |
+| Technique | HTML · CSS · Vanilla JS |
+| Licence | MIT (règles dérivées d'asorn/asorn-open sous Apache-2.0, voir [LICENSING.md](LICENSING.md)) |
+| Entrée | <https://www.ntars.cn/> |
+| Dépôt | <https://github.com/ntars/Apex> |
+
+Un fichier HTML, une feuille de style, quelques scripts natifs. Pas de framework, pas de build, pas de backend. Zéro dépendance signifie qu'aucune chaîne d'outils ne pourra le casser plus tard.
+
+**Pourquoi le regarder** : c'est un exemple de front-end sans build — comment un seul fichier HTML organise tout un site sans dépendre d'une chaîne d'outils vouée à disparaître.
+
+#### Chiubay (玖白) · Prototype de recherche
+
+| | |
+|---|---|
+| Ce que c'est | Faire grandir un agent depuis zéro sur le long terme : recherche personnelle sur les mécanismes de l'AGI, construite en six boucles de développement |
+| Technique | Python · NumPy (tenseurs et rétropropagation écrits maison ; ni torch, ni JAX, ni poids pré-entraînés) |
+| État | Prototype de recherche : la pile de tenseurs maison et l'expérience E3 sur l'identité fonctionnent ; les cinq autres boucles restent sur le papier |
 | Licence | Apache-2.0 / MIT |
 | Dépôt | <https://github.com/ntars/Chiubay> |
 
-#### Flutter-IDE · Étape de squelette
+L'objectif n'est pas de livrer une AGI de niveau humain, mais de décomposer « comment un agent est élevé jusqu'à prendre forme » en expériences de mécanismes réfutables. Chaque rapport n'énonce que ce qui a été vérifié, jamais que l'AGI est atteinte.
+
+**Pourquoi le regarder** : il publie les règles d'entraînement, le protocole d'évaluation et les limites d'échec, et traite l'écart de puissance de calcul comme une limite physique, non comme un problème d'optimisation.
+
+#### Desop · MVP constructible
+
+| | |
+|---|---|
+| Ce que c'est | Une suite de bureau façon macOS pour Windows : dock, barre supérieure, widgets de bureau et îlot dynamique |
+| Technique | Python 3.10+ · PySide6 (mode utilisateur) |
+| Version | `0.2.0` |
+| Licence | Apache-2.0 / MIT |
+| Dépôt | <https://github.com/ntars/Desop> |
+
+Aucune modification du système, fonctionnement en mode utilisateur, et la désinstallation restaure le bureau. Les quatre composants partagent un jeu de jetons de design et s'activent séparément. Le budget de performance est un critère de publication : CPU au repos < 1 %, mémoire < 150 Mo, agrandissement du dock ≥ 55 fps ; s'il n'est pas tenu, pas de publication.
+
+**Pourquoi le regarder** : il répond au reproche courant selon lequel les outils d'esthétique ralentissent la machine par des chiffres précis, et non par « nous optimiserons plus tard ».
+
+#### Flutter-IDE · Disponible, 0.2.0
+
+| | |
+|---|---|
+| Ce que c'est | Un IDE visuel Flutter centré sur le source : glisser des widgets sur un canevas, modifier les valeurs dans un panneau de propriétés et conserver du Dart maintenable sans l'outil |
+| Technique | Dart 3.14+ · Flutter Desktop |
+| Version | `0.2.0` |
+| État | Disponible : validation et génération en CLI, arborescence et édition multi-onglets, glisser sur canevas, édition des propriétés, sélection par VM et hot reload, distribution macOS DMG/ZIP |
+| Licence | Apache-2.0 / MIT |
+| Dépôt | <https://github.com/ntars/Flutter-IDE> |
+
+Le seul critère qui décide de l'existence du projet : supprimez l'IDE, le projet doit toujours passer `flutter run`. Les contours d'intention, les surcouches et les jetons de design sont donc des fichiers texte versionnés dans git ; aucune structure de projet ne vit uniquement dans l'outil.
+
+**Pourquoi le regarder** : « ne pas être enfermé dans un outil » y est écrit comme trois critères d'acceptation — pas de schéma privé, une modification donne un seul diff, la même entrée produit deux fois le même résultat — et non comme un slogan.
+
+#### Gitrule-skill · Livré
+
+| | |
+|---|---|
+| Ce que c'est | Un ensemble de spécifications couvrant tout le cycle de vie d'un projet : cadrage, exigences, architecture, développement, tests, déploiement, exploitation et itération, plus la documentation, la conformité et l'accès programmatique par les agents IA |
+| Technique | Markdown (aucune dépendance tierce) · CLI Python · serveur MCP |
+| Ampleur | 68 spécifications × 12 langues, avec les mêmes identifiants correspondant un à un dans chaque dossier de langue |
+| État | Livré : la CLI ne signale aucun problème ; le Skill, le pack expert et le serveur MCP sont tous disponibles |
+| Licence | MIT |
+| Dépôt | <https://github.com/ntars/Gitrule-skill> |
+
+Une spécification par fichier, indépendante et consultée à la demande. Une CLI sans dépendance vérifie les liens morts, les fichiers orphelins, les phrases de responsabilité, les blocs de code, les comptes d'index et l'enregistrement des espaces réservés ; `optimize` n'applique que les corrections sûres à automatiser.
+
+**Pourquoi le regarder** : il transforme des conventions — les 20 chapitres d'un README, le nom d'un dépôt, la description et les topics — en fichiers et commandes vérifiables. L'alignement documentaire des quinze dépôts l'a pris pour unique référence.
 
 #### NovaKit · Étape de squelette
 
 | | |
 |---|---|
-| Ce que c'est | La boîte à outils hors ligne à installer en premier sur une machine neuve : fichiers, images, texte et utilitaires système, sans réseau ni compte |
-| Technologies | Rust (edition 2024) · Tauri 2 |
-| État | Squelette : le projet et la liste des 36 outils sont fixés, le code métier se construit, pas de version |
-| Plateforme | macOS d'abord ; Windows / Linux prévus |
+| Ce que c'est | Les premiers outils à installer sur une machine neuve : fichiers, images, texte et petits utilitaires système dans une suite hors ligne, sans réseau ni compte |
+| Technique | Rust (edition 2024) · Tauri 2 |
+| État | Étape de squelette : le projet et la liste de 36 outils sont fixés, le code métier est en cours d'écriture, aucune version publiée |
+| Plateformes | macOS d'abord ; Windows / Linux prévus |
 | Licence | Apache-2.0 / MIT |
 | Dépôt | <https://github.com/ntars/NovaKit> |
 
-Les outils sont répartis en quatre niveaux — Rust pur, capacité système, composant externe, plugin de processus — chacun avec son implémentation et sa validation. Les plugins parlent JSON-RPC 2.0 sur stdio, permissions refusées par défaut.
+Les outils sont organisés en quatre niveaux — Rust pur, capacité système, composant externe, plugin de processus — chacun avec sa mise en œuvre et sa méthode d'acceptation. Les plugins parlent JSON-RPC 2.0 sur stdio, toutes les permissions étant refusées par défaut.
 
-**Pourquoi y jeter un œil** : la liste découle de « ce dont on a besoin la première semaine » et la frontière de sécurité est fixée par niveau.
+**Pourquoi le regarder** : il déduit la liste des outils de « ce dont on a besoin la première semaine après l'installation » et fixe la frontière de sécurité par niveau au lieu de gonfler en suite à tout faire.
 
-
-#### Relax · Étape de squelette
+#### Ondra (空谷) · Bêta interne, 3.0.0-alpha.22
 
 | | |
 |---|---|
-| Ce que c'est | Un hub familial auto-hébergé pour messages, agenda, fichiers et photos : un serveur mono-processus, des clients Android, des données qui ne quittent pas la maison |
-| Technologies | Rust · Tauri 2 · axum · SQLite · React + TypeScript |
-| État | Squelette : espace de travail, contrats et squelette front en place ; logique métier non implémentée |
-| Plateforme | Serveur macOS / Linux ; client Android API 24+ |
+| Ce que c'est | Un compagnon IA de bureau entièrement à plugins : l'interface ne lit que les projections des plugins ; émotion, mémoire et contexte sont les trois mécanismes centraux ; toutes les données restent sur la machine |
+| Technique | Flutter (bureau et web) · Cordis 4.1.0 (cadre de plugins) · noyau dsh (Node) |
+| Version | Bêta `3.0.0-alpha.22` |
+| Plateformes | macOS fonctionne ; Windows dispose d'un paquet de publication ; le noyau Android démarre sur appareil (poignée de main réelle en attente) ; le web se compile ; iOS / OHOS n'ont que des projets générés |
+| Licence | Apache-2.0 / MIT |
+| Entrée | <https://ai.ntars.cn/> |
+| Dépôt | <https://github.com/ntars/Ondra> |
+
+Trois mécanismes centraux : l'émotion (une variable d'état avec inertie), la mémoire (une chaîne à onze maillons) et le contexte (préfixe figé + injection incrémentale + emballage budgétaire). La page des plugins réunit 18 entrées embarquées et 75 de la couche d'assemblage, soit 93 entrées activables une à une.
+
+**Pourquoi le regarder** : il décompose la compagnie en mécanismes isolément industrialisables, et un correctif d'ordre de démarrage a ramené de 55 à zéro les dégradations silencieuses de 18 plugins dues à des `apply` concurrents. Une seule couche de projection sépare l'interface des plugins, les pages ne détiennent jamais l'état interne d'un plugin.
+
+#### Relax (悠然) · Développement précoce
+
+| | |
+|---|---|
+| Ce que c'est | Une plateforme familiale auto-hébergée : discussion, agenda, fichiers et photos ; un seul serveur mono-processus, des clients Android, des données qui ne quittent pas la maison |
+| Technique | Rust · Tauri 2 · axum · SQLite · React + TypeScript |
+| État | Développement précoce : les squelettes de routes serveur (authentification, synchronisation, discussion, annonces, agenda, fichiers) sont en place ; la boucle métier n'est pas terminée |
+| Plateformes | Serveur sous macOS / Linux ; client Android API 24+ |
 | Licence | Apache-2.0 / MIT |
 | Dépôt | <https://github.com/ntars/Relax> |
 
-Toute la logique métier est en Rust : le front ne fait que rendre et appeler `invoke()`, sans requête réseau, sans accès direct à SQLite et sans token persisté. Les messages passent par un outbox et sont soumis de façon idempotente via `opId`.
+Toute la logique métier vit en Rust : le front ne fait que rendre et appeler `invoke()` ; il n'émet aucune requête réseau, ne touche jamais SQLite directement et ne persiste aucun jeton. Les messages entrent dans une outbox et sont soumis de façon idempotente par `opId` après reprise.
 
-**Pourquoi y jeter un œil** : la souveraineté des données y devient cinq verrous architecturaux vérifiables par machine.
+**Pourquoi le regarder** : il transforme « la souveraineté des données » en cinq verrous architecturaux vérifiables par machine, et non en slogan de confidentialité.
 
-
-
-| | |
-|---|---|
-| Ce que c'est | Un IDE visuel Flutter centré sur le source : glisser sur un canevas, modifier dans les panneaux, et produire du Dart maintenable sans l'outil |
-| Technologies | Dart 3.14+ · Flutter Desktop |
-| Version | `0.1.0` |
-| État | Squelette : espace de travail, 47 jetons de design, protocole de blocs et cinq règles de validation terminés ; codegen, écriture AST et sélection restent à faire |
-| Licence | Apache-2.0 / MIT |
-| Dépôt | <https://github.com/ntars/Flutter-IDE> |
-
-Le seul critère d'existence du projet : supprimez l'IDE, le projet doit toujours passer `flutter run`. Les plans d'intention, les surcouches et les jetons de design sont donc des fichiers texte versionnés ; aucune structure ne vit uniquement dans l'outil.
-
-**Pourquoi y jeter un œil** : « ne pas être prisonnier d'un outil » y est écrit comme trois critères d'acceptation — pas de Schema privé, une modification donne un seul diff, la même entrée produit deux fois le même résultat — et non comme un slogan.
-
-#### Serica（行简）· Étape de squelette
+#### Serica (行简) · Spécification gelée, implémentation arrêtée au lexer
 
 | | |
 |---|---|
 | Ce que c'est | Un langage de programmation pour applications synchronisées multi-appareils : tout en chinois, sources `.serica`, commande `serica`, exécutables natifs en sortie |
-| Technologies | Go (compilateur germe stage0) · voie de l'auto-hébergement · écrit directement le Mach-O |
-| Version | Étape `P1b` pre-alpha ; P0b a passé l'acceptation stricte sur macOS arm64 le 2026-11-20 |
-| Taille | 1 928 lignes de germe pour un plafond de 5 000, avec table d'attribution ligne par ligne ; le répertoire germe est supprimé après l'auto-hébergement |
-| Licence | Apache-2.0 (noyau et germe) / MIT (spécifications et écosystème) |
-| Plateformes | Vérifié sur macOS arm64 uniquement, le reste non testé |
+| Technique | Go (compilateur d'amorce stage0) · voie d'auto-hébergement · écrit directement le Mach-O |
+| Version | Spécification v3.1 gelée ; l'implémentation d'amorce s'arrête au lexer et à `check` : la génération d'IR (M3) et de code (M4) n'est pas implémentée, aucun exécutable ne peut encore être produit |
+| Ampleur | 1 928 lignes d'amorce pour un plafond de 5 000, avec table d'attribution ligne par ligne ; le dossier d'amorce est supprimé après l'auto-hébergement |
+| Licence | Apache-2.0 |
+| Plateformes | Vérifié sur macOS arm64 uniquement |
 | Dépôt | <https://github.com/ntars/Serica> |
 
-Le compilateur germe ne produit pas de C et n'appelle ni LLVM, ni assembleur, ni éditeur de liens : il écrit le Mach-O lui-même. La ponctuation chinoise est une grammaire au niveau lexical, pas de la typographie ; les diagnostics donnent à la fois la colonne en points de code et la colonne affichée (`ligne 3, colonne 38 (affichage 55)`), et reconstruire la même source donne des octets identiques. Ce qui fonctionne aujourd'hui : constantes de compilation, tranches en points de code, arithmétique entière, opérations bit à bit, tableaux constants et une fenêtre déclarative — **insuffisant pour écrire un logiciel de production**.
+Par conception, le compilateur d'amorce n'émet pas de C et n'appelle ni LLVM, ni assembleur, ni éditeur de liens : il écrit lui-même le Mach-O. La ponctuation chinoise relève de la grammaire au niveau lexical, pas de la typographie ; les diagnostics donnent la colonne en points de code et la colonne affichée (`ligne 3, colonne 38 (cellule 55)`). **Ce sont des objectifs de conception, pas les capacités actuelles** : seuls le lexer et la commande `check` fonctionnent ; `ir` renvoie « générateur d'IR non implémenté (M3) » et `build` « générateur de code non implémenté (M4) », donc aucun exécutable ne peut être produit et le langage **ne permet pas d'écrire un logiciel de production**.
 
-**Pourquoi cela vaut le détour** : « le chinois n'est pas qu'une traduction de mots-clés » y devient des contraintes d'ingénierie vérifiables — plafond de 5 000 lignes, table d'attribution ligne par ligne, suppression du germe après auto-hébergement, et un type de sortie qu'une seule commande `file` confirme.
+**Pourquoi le regarder** : il fait de « le chinois n'est pas qu'une traduction de mots-clés » des contraintes vérifiables — plafond de 5 000 lignes, table d'attribution ligne par ligne, suppression de l'amorce après auto-hébergement, type de sortie qu'une seule commande `file` confirmera — plutôt qu'un document de pure vision.
 
-#### TapMC · Étape de squelette
+#### TapMC · Étape de squelette, 0.1.0
 
 | | |
 |---|---|
-| Ce que c'est | Squelette de jeu sandbox multijoueur modulaire : un front Flutter sur sept cibles et un serveur Java, reliés par un seul contrat JSON-RPC 2.0 |
-| Technologies | Flutter (front) · Java 21 (serveur) |
-| État | Squelette : le chemin fonctionne, 61 tests serveur et 18 tests front passent ; aucune version publiée |
-| Plateformes | Web et Android compilent ; les cinq autres cibles restent à vérifier |
+| Ce que c'est | Un lanceur Minecraft Java Edition visant sept plateformes : instances, mods et runtimes Java gérés séparément, interface et couche de processus séparées par un seul contrat JSON-RPC |
+| Technique | Flutter (interface) · Rust + eframe (enveloppe native) · Java 21 (côté serveur) |
+| État | Étape de squelette : la chaîne fonctionne ; 84 tests Java et 21 cas Dart passent ; aucune version publiée |
+| Plateformes | Web et Android compilent ; les cinq autres cibles ne sont pas vérifiées |
 | Licence | Apache-2.0 / MIT |
 | Dépôt | <https://github.com/ntars/TapMC> |
 
-Le serveur est l'unique source de vérité ; le front se contente d'afficher et de capter les entrées. Monde en grille 24×16, cinq types de blocs. Les mods ne reçoivent que `ModContext`, jamais `WorldGrid` : les règles ne peuvent pas être contournées.
+Le backend est l'unique source de vérité, le front ne fait que rendre et recueillir les entrées. Instances, mods et runtimes Java sont gérés séparément ; l'interface et l'enveloppe native partagent un seul contrat JSON-RPC. Le dépôt contient encore le code et les documents d'un ancien serveur bac à sable, à côté de la ligne du lanceur, sans nettoyage.
 
-**Pourquoi y jeter un œil** : la question « où les règles sont-elles calculées » est fixée par une contrainte de compilation, pas par la discipline en revue. Le noyau n'a aucune dépendance réseau, donc toute la logique se teste sans ouvrir de port (22 cas).
+**Pourquoi le regarder** : il garde du côté interface la logique partagée par sept plateformes et confie la détection de Java et le contrôle des processus à l'enveloppe Rust, si bien que l'interface peut changer sans toucher à la gestion des processus. Les capacités inachevées (accès Modrinth, résolution des dépendances, versions Java multiples) sont listées une à une dans les limites connues au lieu d'être comptées comme faites.
 
-### 3.2 Planifiés
-
-**Le projet ci-dessous n'a que de la documentation — aucun code exécutable.** Le libellé d'état sépare strictement « publié » et « planifié ».
-
-
-#### Desop · Planifié
+#### Taycho-OS (太初) · Stade de conception (espace réservé)
 
 | | |
 |---|---|
-| Ce que c'est | Suite de personnalisation du bureau Windows : dock, barre de menus, widgets, îlot dynamique |
-| Technologies | À définir |
-| Licence | Apache-2.0 / MIT |
-| Dépôt | <https://github.com/ntars/Desop> |
-
-Aucune modification système, mode utilisateur pur, la désinstallation restaure tout. Les quatre composants partagent un jeu de jetons de design et peuvent être activés séparément. Le budget de performance est un seuil de publication : CPU au repos < 1 %, mémoire < 150 Mo, magnification du dock ≥ 55 fps — en dessous, pas de publication.
-
-**Pourquoi y jeter un œil** : il répond à la plainte courante selon laquelle les outils de personnalisation ralentissent la machine par des chiffres précis, non par « nous optimiserons plus tard ».
-
-
-#### Taycho-OS 太初 · Conception (espace réservé)
-
-| | |
-|---|---|
-| Ce que c'est | Un système natif écrit de zéro en Serica : modèle d'exécution, frontière de capacités, messages, fenêtres et texte réécrits |
-| Pile | Serica (prévu) · exécutables natifs |
-| État | Conception : documents de conception et dépôt d'attente uniquement ; aucun code |
+| Ce que c'est | Un système natif écrit de zéro en Serica : modèle d'exécution, frontière de capacités, mécanisme de messages, fenêtres et texte, tous refaits |
+| Technique | Serica (prévu) · exécutables natifs |
+| État | Stade de conception : uniquement des documents de conception et un dépôt espace réservé ; aucun code |
 | Licence | Apache-2.0 / MIT |
 | Dépôt | <https://github.com/ntars/Taycho-OS> |
 
+Aucun noyau, runtime ou pile graphique existant n'est réutilisé ; chaque IO et chaque accès système doit déclarer une capacité, tout ce qui n'est pas déclaré est refusé.
 
-### 3.3 Libellé d'état
+**Pourquoi le regarder** : il énonce « de zéro » comme des conditions de frontière vérifiables par machine, et non comme un manifeste.
 
-**L'état du site et l'état du produit ne sont pas équivalents** — un site qui tourne ne signifie pas un logiciel installable, et un logiciel qui tourne ne signifie pas un site accessible.
+#### Wacmin · Disponible (trois directions livrables, AppOnWin expérimental)
+
+| | |
+|---|---|
+| Ce que c'est | Une suite d'interopérabilité bidirectionnelle entre macOS et Windows, avec une couche d'accès pour l'IA |
+| Technique | Node.js · Python · Rust |
+| État | Trois directions livrables (Mac2Win / ExeOnMac / Win2Mac) ; AppOnWin est expérimental et non vérifié, l'environnement local ne le permettant pas |
+| Licence | Apache-2.0 / MIT |
+| Dépôt | <https://github.com/ntars/Wacmin> |
+
+Quatre directions obtenues en croisant deux hôtes et deux actions ; les trois premières sont livrables, la quatrième reste expérimentale :
+
+| Rang | Direction | Action sur l'hôte | Tests |
+|---|---|---|---|
+| 1 | **Mac2Win** | Produire un installeur Windows sur un Mac | 125 |
+| 2 | **ExeOnMac** | Exécuter un programme Windows sur un Mac | 319 |
+| 3 | **Win2Mac** | Produire un paquet d'application macOS sous Windows | 121 |
+| 4 | **AppOnWin** | Exécuter un programme macOS sous Windows | Expérimental, non vérifié |
+
+**Plus une couche d'accès `ai/`** : une même couche d'ordonnancement exposée en quatre formes — serveur MCP (pour Claude Desktop, WorkBuddy, Cline), CLI unifiée, Skill et pack expert. Les couches protocole et transport font ensemble moins de 900 lignes, sans dépendance tierce ; le SDK officiel n'a pas été utilisé.
+
+**Pourquoi le regarder** : il ordonne le développement par certitude, laisse le maillon le plus susceptible d'échouer pour la fin et définit d'avance la voie de repli — même si la dernière direction échoue, les trois premières tiennent. Cette direction n'a pas produit de résultat de vérification reproductible : elle est donc marquée expérimentale et ne compte pas comme disponible. La couche `ai/` n'a pas été ajoutée comme un emballage MCP : elle est née de l'extraction de l'ordonnancement hors du shell vers `directions.mjs`, extraction qui a aussi révélé un défaut dormant — `/api/status` écrivait 21 lignes d'aide en chinois sur stdout à chaque requête et fixait `exitCode` à 2 ; la console ne le voyait pas puisqu'elle ne lit jamais son propre stdout, mais la règle MCP qui réserve stdout aux messages du protocole rend le procédé fatal.
+
+#### Webroit · En ligne
+
+| | |
+|---|---|
+| Ce que c'est | Une boîte à outils Android dans le navigateur : ADB et Fastboot en WebUSB, 61 fonctions implémentées et 152 prévues |
+| Technique | TypeScript · Vite · WebUSB · ya-webadb |
+| Forme | Site purement statique : sans backend, sans installation, sans pilote |
+| Licence | Apache-2.0 / MIT |
+| Entrée | <https://adb.ntars.cn/> |
+| Dépôt | <https://github.com/ntars/Webroit> |
+
+Tout ce qu'il faut pour bricoler Android passe dans le navigateur. Le protocole ADB est implémenté au-dessus de Tango ; ce qui est livré, c'est l'interface et les parcours réellement utiles — gestion d'applications, navigation de fichiers, terminal, miroir d'écran, journaux et flashage — 61 implémentées et 152 prévues, chacune avec un niveau de risque.
+
+**Pourquoi le regarder** : il supprime toute la couche « préparation de l'environnement ». Le chemin habituel est télécharger Platform-Tools → configurer PATH → installer un pilote USB → écrire des règles udev → connecter → taper des commandes ; Webroit compresse les cinq premières étapes en « ouvrir la page → cliquer connecter → cliquer une fonction ». La vraie difficulté n'a jamais été de taper des commandes, mais le moment où, après l'installation, l'appareil ne se connecte toujours pas et où l'on ne sait pas si c'est le câble, le port, le pilote ou un `adb.exe` qui tient encore l'interface.
+
+**Deux points de plus** : tout le produit est un `dist/` statique, et `grep -r "http" dist/` n'y trouve aucune adresse de backend propre — « les données ne quittent pas cette machine » est un fait vérifiable, pas une promesse. Chaque opération est aussi classée par risque : une commande copiée ailleurs indique ce qu'elle va changer et si c'est réversible.
+
+#### Xael (玄玖灵犀) · En ligne
+
+| | |
+|---|---|
+| Ce que c'est | Un corpus local et hors ligne de calendriers chinois et de littérature divinatoire : 22 fonctions calculées de zéro, sans tables de correspondance ni réseau |
+| Technique | JavaScript (zéro dépendance) · PWA · mini-programme WeChat · uni-app |
+| Version | `5.0.0` |
+| Licence | Apache-2.0 / MIT |
+| Entrée | <https://x.ntars.cn/> |
+| Dépôt | <https://github.com/ntars/Xael> |
+
+Il couvre les Quatre Piliers, Zi Wei Dou Shu, Qi Men Dun Jia, Da Liu Ren, Liu Yao, Mei Hua Yi Shu, Xuan Kong Fei Xing et le choix des dates almanachiques. La base calendaire déduit les nouvelles lunes de séries astronomiques en temps réel au lieu de s'appuyer sur une table ; vingt classiques du domaine public servent de textes de référence, chaque règle étant corrigée article par article avec son niveau de preuve indiqué. Le mini-programme WeChat et le compte officiel sont cherchables sous le même nom.
+
+**Pourquoi le regarder** : il mène jusqu'au bout le principe « calculer au lieu de chercher », et annote chaque conclusion avec sa base textuelle et ses points d'incertitude.
+
+### 3.2 Formulation des états
+
+**L'état du site et celui du produit ne sont pas équivalents** : un site qui tourne ne signifie pas un logiciel installable, et un logiciel qui tourne ne signifie pas un site accessible.
 
 | Projet | État | Signification |
 |---|---|---|
 | Apex | En ligne | Le site tourne et la source est publique |
-| Gitrule-skill | Livré | 66 spécifications en chinois et en anglais, CLI sans problème ; pas de numéro de version, livré depuis la branche main |
-| Ondra | Bêta interne | `2.0.0-alpha` : macOS exécutable, web compilable ; les autres cibles ne sont que générées |
-| Wacmin | Disponible | Les quatre directions terminées et testées, avec accès CLI et MCP |
-| Webroit | En ligne | Site statique en service sur adb.ntars.cn, 26 fonctions utilisables, source publique |
-| Xael | Publié | Une version stable existe, téléchargeable et utilisable |
-| Flutter-IDE | Étape de squelette | Contrats, jetons et cinq règles de validation utilisables ; codegen, écriture AST et sélection non implémentés ; aucune version publiée |
-| Serica | Étape de squelette | Le compilateur germe transforme le sous-ensemble P0b/P1b en Mach-O, et P0b a passé l'acceptation sur macOS arm64 ; aucune version publiée, inutilisable pour un logiciel de production |
-| TapMC | Étape de squelette | Le chemin fonctionne et 79 tests passent, sans version publiée |
-| Desop | Planifié | Documentation seulement, aucun code exécutable |
+| Gitrule-skill | Livré | 68 spécifications × 12 langues, la CLI ne signale aucun problème ; pas de version publiée, livraison depuis la branche principale |
+| Ondra | Bêta interne | `3.0.0-alpha.22` : macOS fonctionne, Windows a un paquet de publication, le noyau Android démarre sur appareil (poignée de main en attente), le web se compile |
+| Wacmin | Disponible | Mac2Win / ExeOnMac / Win2Mac sont livrables, avec accès CLI et MCP ; AppOnWin est expérimental et ne compte pas comme disponible |
+| Webroit | En ligne | Le site statique tourne sur `adb.ntars.cn`, 61 fonctions utilisables, source publique |
+| Xael | En ligne | Une version stable (`5.0.0`) existe et est utilisable |
+| Amphoreus | En développement | Simulateur et livre fonctionnent en local ; références officielles incomplètes, aucune revendication au pixel près |
+| Flutter-IDE | Disponible | `0.2.0` : édition de bureau, glisser sur canevas, panneau de propriétés et distribution macOS utilisables |
+| NovaKit | Étape de squelette | Le projet Tauri 2 et la liste de 36 outils sont en place ; le code métier n'a pas commencé |
+| Chiubay | Prototype de recherche | La pile de tenseurs maison et l'expérience E3 fonctionnent ; les cinq autres boucles restent sur le papier |
+| Taycho-OS | Stade de conception | Documents de conception et dépôt espace réservé uniquement ; aucun code |
+| Relax | Développement précoce | Squelettes de routes serveur en place ; boucle métier inachevée ; pas d'APK |
+| Serica | Spécification gelée | Spécification v3.1 gelée ; l'implémentation d'amorce s'arrête au lexer et au contrôle, génération d'IR et de code non implémentées ; aucune version, inutilisable pour un logiciel de production |
+| TapMC | Étape de squelette | La chaîne fonctionne ; 84 tests Java et 21 cas Dart passent ; aucune version publiée |
+| Desop | MVP constructible | `0.2.0` : l'implémentation Python + PySide6 en mode utilisateur se construit et s'exécute, 77 tests passent, acceptation sur VM Windows 11 8/8 PASS ; acceptation sur machine physique non faite; les widgets de bureau n'ont qu'une option de configuration, sans interface |
 
-**Pourquoi les projets planifiés figurent quand même sur le site** : le site est la plaque du studio, montrant « ce qui est en construction », pas seulement « ce qui est terminé ». Indiquer clairement l'état suffit — un visiteur qui lit « Planifié » sait qu'il n'y a rien à télécharger, ce qui est plus honnête que de le cacher.
+**Pourquoi les projets au stade de conception figurent quand même** : le site est l'enseigne du studio et montre ce qui se construit, pas seulement ce qui est terminé. Indiquer clairement l'état suffit : un visiteur qui lit « stade de conception » ou « étape de squelette » sait qu'il n'y a rien à télécharger, ce qui est plus honnête que de le cacher.
 
 ---
 
@@ -334,7 +350,7 @@ Aucune modification système, mode utilisateur pur, la désinstallation restaure
 - **Valeur** : résout « pour savoir ce que construit ce studio il faut ouvrir six dépôts ».
 - **Mise en œuvre** : les cartes du site, le chapitre 3 de ce document et le README de profil GitHub listent le même ensemble avec le même libellé d'état.
 - **Différenciation** : la plupart des pages personnelles ne listent que les projets publiés, ou dispersent l'information dans les README de chaque dépôt.
-- **Preuve** : les trois listes correspondent élément par élément ; voir le tableau d'état en 5.9.
+- **Preuve** : les trois listes correspondent élément par élément ; voir le tableau d'état en 3.2.
 
 ### Point fort 2 : zéro dépendance, zéro build, éditer et rafraîchir
 
@@ -417,7 +433,7 @@ Chaque fichier fait une chose et peut être retiré seul. La seule dépendance d
 
 ### 5.6 Le numéro de version du cache est l'étape la plus facile à oublier
 
-**`CACHE_NAME` vaut actuellement `ntarstudio-v10`.** Modifier quoi que ce soit dans la liste de pré-cache — y compris Typed.js chargé par CDN — impose d'incrémenter la version, sinon les visiteurs récurrents restent sur l'ancien cache.
+**`CACHE_NAME` vaut actuellement `ntarstudio-v12`.** Modifier quoi que ce soit dans la liste de pré-cache — y compris Typed.js chargé par CDN — impose d'incrémenter la version, sinon les visiteurs récurrents restent sur l'ancien cache.
 
 ### 5.7 Les limites honnêtes des mesures de sécurité
 
@@ -606,7 +622,7 @@ Apex/
 3. **Le basculement au tap est désactivé sur tablette** : le mode suit l'orientation.
 4. **La protection du contenu front-end ne fonctionne pas** : `security.js` ne fait qu'élever le seuil.
 5. **Typed.js vient d'un CDN** : si unpkg est injoignable, l'effet de frappe échoue, le reste du contenu n'est pas affecté.
-6. **Les cartes des projets planifiés n'ont rien à télécharger** : le coût d'un libellé d'état honnête — et la raison pour laquelle rien de planifié n'est décrit comme construit.
+6. **Les cartes des projets non publiés n'ont rien à télécharger** : le coût d'un libellé d'état honnête — et la raison pour laquelle rien de planifié n'est décrit comme construit.
 
 ---
 
